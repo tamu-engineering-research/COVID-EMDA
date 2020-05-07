@@ -69,7 +69,7 @@ This data hub contains three major sources: U.S. electricity market data, COVID-
 **Link**:  [Cellphone Dataset from SafeGraph](https://docs.safegraph.com/docs)
 
 - Night Time Light Satellite Dataset:\
-**Description**: This dataset includes the raw satellite image taken at night time in each area.
+**Description**: This dataset includes the raw satellite image taken at night time in each area.\
 **Link**:  [NTL Dataset from NASA](https://ladsweb.modaps.eosdis.nasa.gov/missions-and-measurements/products/VNP46A1/)
 
 ## Contact Us
