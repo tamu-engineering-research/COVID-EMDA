@@ -64,12 +64,12 @@ This data hub contains three major sources: U.S. electricity market data, COVID-
 [Iowa State Univ IEM](https://mesonet.agron.iastate.edu/request/download.phtml).
 
 ## Additional Dataset
-- Cellphone Dataset
--- Description:
+- Cellphone Dataset:\
+Description:
   
--- Link:  
+Link:  [Cellphone Dataset from SafeGraph](https://docs.safegraph.com/docs), &nbsp
 
-- Night Time Light Satellite Dataset
+- Night Time Light Satellite Dataset:\
 -- Description:
   
 -- Link:  
