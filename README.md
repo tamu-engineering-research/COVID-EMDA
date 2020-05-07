@@ -65,14 +65,12 @@ This data hub contains three major sources: U.S. electricity market data, COVID-
 
 ## Additional Dataset
 - Cellphone Dataset:\
-Description:
-  
-Link:  [Cellphone Dataset from SafeGraph](https://docs.safegraph.com/docs), &nbsp
+Description: This dataset aggregates and processes the real-time GPS location of cellphone users by Census Block Group. It includes social distancing data and patterns of visits to Point of Interests (POIs). To obtain the access, please click the link below and apply for SafeGraph's permission which is totally free.
+Link:  [Cellphone Dataset from SafeGraph](https://docs.safegraph.com/docs)
 
 - Night Time Light Satellite Dataset:\
--- Description:
-  
--- Link:  
+Description:
+Link:  
 
 ## Contact Us
 Please contact our emails: &ensp; [Guangchun Ruan](mailto:guangchun@tamu.edu?subject=[GitHub]%20COVID-EMDA), &nbsp; [Le Xie](mailto:le.xie@tamu.edu?subject=[GitHub]%20COVID-EMDA).
