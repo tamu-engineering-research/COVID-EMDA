@@ -64,13 +64,13 @@ This data hub contains three major sources: U.S. electricity market data, COVID-
 [Iowa State Univ IEM](https://mesonet.agron.iastate.edu/request/download.phtml).
 
 ## Additional Dataset
-- Cellphone Dataset:\
-Description: This dataset aggregates and processes the real-time GPS location of cellphone users by Census Block Group. It includes social distancing data and patterns of visits to Point of Interests (POIs). To obtain the access, please click the link below and apply for SafeGraph's permission which is totally free.\
-Link:  [Cellphone Dataset from SafeGraph](https://docs.safegraph.com/docs)
+- **Cellphone Dataset**:\
+**Description**: This dataset aggregates and processes the real-time GPS location of cellphone users by Census Block Group. It includes social distancing data and patterns of visits to Point of Interests (POIs). To obtain the access, please click the link below and apply for SafeGraph's permission which is totally free.\
+**Link**:  [Cellphone Dataset from SafeGraph](https://docs.safegraph.com/docs)
 
 - Night Time Light Satellite Dataset:\
-Description:
-Link:  
+**Description**: This dataset includes the raw satellite image taken at night time in each area.
+**Link**:  [NTL Dataset from NASA](https://ladsweb.modaps.eosdis.nasa.gov/missions-and-measurements/products/VNP46A1/)
 
 ## Contact Us
 Please contact our emails: &ensp; [Guangchun Ruan](mailto:guangchun@tamu.edu?subject=[GitHub]%20COVID-EMDA), &nbsp; [Le Xie](mailto:le.xie@tamu.edu?subject=[GitHub]%20COVID-EMDA).
