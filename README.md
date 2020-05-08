@@ -80,13 +80,12 @@ Pull requests are welcome. For major changes, please open an issue first to disc
 ## Aknowledgements
 This data repository is based on the collaborated work of our fellow group members and our instructor Professor Le Xie at Texas A&M University:
 
-<p float="left">
-    <img src="figure/ruan.png" alt="ruan" width=100>
-    <p> Guangchun Ruan </p>
-    <img src="figure/wu.png"" alt="Forest"  width=100>
-    <img src="figure/zheng.png"" alt="Mountains"  width=100>
-    <img src="figure/xie.png"" alt="Mountains" width=100>
-    <img src="figure/alimi.png"" alt="Mountains"  width=100>                                                            
+<p align = "middle">
+    <img src="figure/ruan.png" alt="ruan" width=100 />
+    <img src="figure/wu.png"" alt="Forest"  width=100 />
+    <img src="figure/zheng.png"" alt="Mountains"  width=100 />
+    <img src="figure/xie.png"" alt="Mountains" width=100 />
+    <img src="figure/alimi.png"" alt="Mountains"  width=100 />                                                            
 </p>
 
 
