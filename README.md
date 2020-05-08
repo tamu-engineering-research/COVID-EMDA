@@ -81,8 +81,8 @@ Pull requests are welcome. For major changes, please open an issue first to disc
 This data repository is based on the collaborated work of our fellow group members and our instructor Professor Le Xie at Texas A&M University:
 
 <p>
-  <a href="mailto:guangchun@tamu.edu?subject=[GitHub]%20COVID-EMDA">
-    <img src="figure/ruan.png" alt="ruan" title="Guangchun Ruan" width=100 />
+  <a href="mailto:guangchun@tamu.edu?subject=[GitHub]%20COVID-EMDA" width=100 >
+    <img src="figure/ruan.png" alt="ruan" title="Guangchun Ruan"/>
     <div class="caption">Guangchun Ruan</div>
   </a>
   <a href="mailto:dqwu@tamu.edu?subject=[GitHub]%20COVID-EMDA">
