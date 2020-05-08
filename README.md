@@ -95,6 +95,6 @@ Emails (from left):\
 @ [Xiangtian Zheng](mailto:zxt0515@tamu.edu?subject=[GitHub]%20COVID-EMDA)
 @ [Suraj Abolaji Alimi](mailto:alimiabolaji@tamu.edu?subject=[GitHub]%20COVID-EMDA)
 @ [Jiahan Wu](mailto:jiahwu95@tamu.edu?subject=[GitHub]%20COVID-EMDA)
-@ [Le Xie](https://gridx.engr.tamu.edu/)
+@ [Le Xie](https://gridx.engr.tamu.edu/?page_id=66)
 
-Please also check our [Group Website](https://gridx.engr.tamu.edu/?page_id=115) for detailed bio of each member of our group!
+Please also check our [Group Website](https://gridx.engr.tamu.edu/?page_id=115) for the detailed bio of each group member.
