@@ -82,19 +82,19 @@ This data repository is based on the collaborated work of our fellow group membe
 
 <div class="row" align="center">
   <div class="column">
-    <img src="figure/ruan.png" alt="ruan" style="width:100%">
+    <img src="figure/ruan.png" alt="ruan" style="width:20%">
   </div>
   <div class="column">
-    <img src="figure/wu.png"" alt="Forest" style="width:100%">
+    <img src="figure/wu.png"" alt="Forest" style="width:20%">
   </div>
   <div class="column">
-    <img src="figure/wu.png"" alt="Mountains" style="width:100%">
+    <img src="figure/wu.png"" alt="Mountains" style="width:20%">
   </div>
    <div class="column">
-    <img src="figure/xie.png"" alt="Mountains" style="width:100%">
+    <img src="figure/xie.png"" alt="Mountains" style="width:20%">
   </div>
   <div class="column">
-    <img src="figure/alimi.png"" alt="Mountains" style="width:100%">
+    <img src="figure/alimi.png"" alt="Mountains" style="width:20%">
   </div>                                                             
 </div>
 
