@@ -80,22 +80,15 @@ Pull requests are welcome. For major changes, please open an issue first to disc
 ## Aknowledgements
 This data repository is based on the collaborated work of our fellow group members and our instructor Professor Le Xie at Texas A&M University:
 
-<p>
-  <a href="mailto:guangchun@tamu.edu?subject=[GitHub]%20COVID-EMDA" width=100 >
-    <img src="figure/ruan.png" alt="ruan" title="Guangchun Ruan"/>
-    <div class="caption">Guangchun Ruan</div>
-  </a>
-  <a href="mailto:dqwu@tamu.edu?subject=[GitHub]%20COVID-EMDA">
-    <img src="figure/wu.png" alt="ruan" title="Dongqi" width=100 />
-    <div class="caption">Dongqi Wu</div>
-  </a>
-                                                
-</p>
-
+<p aligh = "middle">
+    <img src="figure/ruan.png"" alt="ruan" title="Gangchun Ruan" width=100 />
     <img src="figure/wu.png"" alt="wu" title="Dongqi Wu" width=100 />
     <img src="figure/zheng.png"" alt="zheng" title="Xiangtian Zheng" width=100 />
     <img src="figure/xie.png"" alt="xie" title="Le Xie" width=100 />
-    <img src="figure/alimi.png"" alt="alimi" title="Suraj Abolaji Alimi" width=100 />   
+    <img src="figure/alimi.png"" alt="alimi" title="Suraj Abolaji Alimi" width=100 />                                        
+</p>
+
+Emails (from left)
 @ [Guangchun Ruan](mailto:guangchun@tamu.edu?subject=[GitHub]%20COVID-EMDA)&ensp;
 @ [Dongqi Wu](mailto:dqwu@tamu.edu?subject=[GitHub]%20COVID-EMDA)&ensp;
 @ [Xiangtian Zheng](mailto:zxt0515@tamu.edu?subject=[GitHub]%20COVID-EMDA)&ensp;
