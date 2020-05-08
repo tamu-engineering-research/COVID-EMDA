@@ -85,6 +85,10 @@ This data repository is based on the collaborated work of our fellow group membe
     <img src="figure/ruan.png" alt="ruan" title="Guangchun Ruan" width=100 />
     <div class="caption">Guangchun Ruan</div>
   </a>
+  <a href="mailto:dqwu@tamu.edu?subject=[GitHub]%20COVID-EMDA">
+    <img src="figure/wu.png" alt="ruan" title="Dongqi" width=100 />
+    <div class="caption">Dongqi Wu</div>
+  </a>
     <img src="figure/wu.png"" alt="wu" title="Dongqi Wu" width=100 />
     <img src="figure/zheng.png"" alt="zheng" title="Xiangtian Zheng" width=100 />
     <img src="figure/xie.png"" alt="xie" title="Le Xie" width=100 />
