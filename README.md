@@ -79,6 +79,14 @@ Pull requests are welcome. For major changes, please open an issue first to disc
 
 ## Aknowledgements
 This data repository is based on the collaborated work of our fellow group members and Professor Le Xie at Texas A&M University:\
+<p align="center">
+<img src="figure/ruan.JPG" alt="COVID-EMDA Logo" /> 
+<img src="figure/wu.JPG" alt="COVID-EMDA Logo" /> 
+<img src="figure/zheng.JPG" alt="COVID-EMDA Logo" /> 
+<img src="figure/xie.JPG" alt="COVID-EMDA Logo" /> 
+<img src="figure/alimi.JPG" alt="COVID-EMDA Logo" /> 
+<img src="figure/steven.JPG" alt="COVID-EMDA Logo" /> 
+</ p>
 @ [Guangchun Ruan](mailto:guangchun@tamu.edu?subject=[GitHub]%20COVID-EMDA)&ensp;\
 @ [Dongqi Wu](mailto:dqwu@tamu.edu?subject=[GitHub]%20COVID-EMDA)&ensp;\
 @ [Xiangtian Zheng](mailto:zxt0515@tamu.edu?subject=[GitHub]%20COVID-EMDA)&ensp;\
