@@ -78,7 +78,7 @@ Please contact our emails: &ensp; [Guangchun Ruan](mailto:guangchun@tamu.edu?sub
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
 ## Contributors
-This project is a collaboration of our group members with the supervision of Prof. Le Xie at Texas A&M University:\
+This project is a collaboration of our group members with the supervision of Prof. Le Xie at Texas A&M University:
 
 <p align = "middle">
     <img src="figure/ruan.png"" alt="ruan" title="Gangchun Ruan" width=100 />
