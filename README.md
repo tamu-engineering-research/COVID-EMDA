@@ -78,11 +78,11 @@ Please contact our emails: &ensp; [Guangchun Ruan](mailto:guangchun@tamu.edu?sub
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
 ## Aknowledgements
-This data repository is based on the collaborated work of our fellow group members at Texas A&M University:\
+This data repository is based on the collaborated work of our fellow group members and Professor Le Xie at Texas A&M University:\
 @ [Guangchun Ruan](mailto:guangchun@tamu.edu?subject=[GitHub]%20COVID-EMDA)&ensp;\
 @ [Dongqi Wu](mailto:dqwu@tamu.edu?subject=[GitHub]%20COVID-EMDA)&ensp;\
 @ [Xiangtian Zheng](mailto:zxt0515@tamu.edu?subject=[GitHub]%20COVID-EMDA)&ensp;\
-@ [Le Xie](mailto:le.xie@tamu.edu?subject=[GitHub]%20COVID-EMDA)&ensp;\
+@ [Dr. Le Xie](mailto:le.xie@tamu.edu?subject=[GitHub]%20COVID-EMDA)&ensp;\
 @ [Suraj Abolaji Alimi](mailto:alimiabolaji@tamu.edu?subject=[GitHub]%20COVID-EMDA)&ensp;\
 @ [Jiahan Wu](mailto:jiahwu95@tamu.edu?subject=[GitHub]%20COVID-EMDA)&ensp;
 
