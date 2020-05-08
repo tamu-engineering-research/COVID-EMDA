@@ -88,7 +88,7 @@ This data repository is based on the collaborated work of our fellow group membe
     <img src="figure/wu.png"" alt="Forest" style="width:20%">
   </div>
   <div class="column">
-    <img src="figure/wu.png"" alt="Mountains" style="width:20%">
+    <img src="figure/zheng.png"" alt="Mountains" style="width:20%">
     
   </div>
    <div class="column">
