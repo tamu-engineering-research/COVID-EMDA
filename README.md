@@ -78,14 +78,26 @@ Please contact our emails: &ensp; [Guangchun Ruan](mailto:guangchun@tamu.edu?sub
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
 ## Aknowledgements
-This data repository is based on the collaborated work of our fellow group members and Professor Le Xie at Texas A&M University:\
-<p align="center">
-<img src="figure/ruan.png"/> 
-<img src="figure/wu.png"/> 
-<img src="figure/zheng.png"/> 
-<img src="figure/xie.png"/> 
-<img src="figure/alimi.tif"/>
-</p>
+This data repository is based on the collaborated work of our fellow group members and our instructor Professor Le Xie at Texas A&M University:
+
+<div class="row" align="center">
+  <div class="column">
+    <img src="figure/ruan.png" alt="ruan" style="width:100%">
+  </div>
+  <div class="column">
+    <img src="figure/wu.png"" alt="Forest" style="width:100%">
+  </div>
+  <div class="column">
+    <img src="figure/wu.png"" alt="Mountains" style="width:100%">
+  </div>
+   <div class="column">
+    <img src="figure/xie.png"" alt="Mountains" style="width:100%">
+  </div>
+  <div class="column">
+    <img src="figure/alimi.png"" alt="Mountains" style="width:100%">
+  </div>                                                             
+</div>
+
 
 @ [Guangchun Ruan](mailto:guangchun@tamu.edu?subject=[GitHub]%20COVID-EMDA)&ensp;\
 @ [Dongqi Wu](mailto:dqwu@tamu.edu?subject=[GitHub]%20COVID-EMDA)&ensp;\
