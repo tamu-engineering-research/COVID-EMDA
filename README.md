@@ -89,13 +89,13 @@ This data repository is based on the collaborated work of our fellow group membe
     <img src="figure/wu.png" alt="ruan" title="Dongqi" width=100 />
     <div class="caption">Dongqi Wu</div>
   </a>
+                                                
+</p>
+
     <img src="figure/wu.png"" alt="wu" title="Dongqi Wu" width=100 />
     <img src="figure/zheng.png"" alt="zheng" title="Xiangtian Zheng" width=100 />
     <img src="figure/xie.png"" alt="xie" title="Le Xie" width=100 />
-    <img src="figure/alimi.png"" alt="alimi" title="Suraj Abolaji Alimi" width=100 />                                                       
-</p>
-
-
+    <img src="figure/alimi.png"" alt="alimi" title="Suraj Abolaji Alimi" width=100 />   
 @ [Guangchun Ruan](mailto:guangchun@tamu.edu?subject=[GitHub]%20COVID-EMDA)&ensp;
 @ [Dongqi Wu](mailto:dqwu@tamu.edu?subject=[GitHub]%20COVID-EMDA)&ensp;
 @ [Xiangtian Zheng](mailto:zxt0515@tamu.edu?subject=[GitHub]%20COVID-EMDA)&ensp;
