@@ -83,11 +83,10 @@ This data repository is based on the collaborated work of our fellow group membe
 <img src="figure/ruan.png"/> 
 <img src="figure/wu.png"/> 
 <img src="figure/zheng.png"/> 
-</p>
 <img src="figure/xie.png"/> 
-<img src="figure/alimi.png"/> 
-<img src="figure/steven.png"/> 
-\
+<img src="figure/alimi.tif"/>
+</p>
+
 @ [Guangchun Ruan](mailto:guangchun@tamu.edu?subject=[GitHub]%20COVID-EMDA)&ensp;\
 @ [Dongqi Wu](mailto:dqwu@tamu.edu?subject=[GitHub]%20COVID-EMDA)&ensp;\
 @ [Xiangtian Zheng](mailto:zxt0515@tamu.edu?subject=[GitHub]%20COVID-EMDA)&ensp;\
