@@ -84,16 +84,16 @@ This project is a collaboration of our group members with the supervision of Pro
     <img src="figure/ruan.png"" alt="ruan" title="Gangchun Ruan" width=100 />
     <img src="figure/wu.png"" alt="wu" title="Dongqi Wu" width=100 />
     <img src="figure/zheng.png"" alt="zheng" title="Xiangtian Zheng" width=100 />
-    <img src="figure/xie.png"" alt="xie" title="Le Xie" width=100 />
     <img src="figure/alimi.png"" alt="alimi" title="Suraj Abolaji Alimi" width=100 />        
-    <img src="figure/steven.png"" alt="steven" title="Jiahan Wu" width=100 />                  
+    <img src="figure/steven.png"" alt="steven" title="Jiahan Wu" width=100 />   
+    <img src="figure/xie.png"" alt="xie" title="Le Xie" width=100 />
 </p>
 
 Emails (from left):\
 @ [Guangchun Ruan](mailto:guangchun@tamu.edu?subject=[GitHub]%20COVID-EMDA)&ensp;
 @ [Dongqi Wu](mailto:dqwu@tamu.edu?subject=[GitHub]%20COVID-EMDA)&ensp;
 @ [Xiangtian Zheng](mailto:zxt0515@tamu.edu?subject=[GitHub]%20COVID-EMDA)&ensp;
-@ [Le Xie](mailto:le.xie@tamu.edu?subject=[GitHub]%20COVID-EMDA)&ensp;
 @ [Suraj Abolaji Alimi](mailto:alimiabolaji@tamu.edu?subject=[GitHub]%20COVID-EMDA)&ensp;
 @ [Jiahan Wu](mailto:jiahwu95@tamu.edu?subject=[GitHub]%20COVID-EMDA)&ensp;
+@ [Le Xie](mailto:le.xie@tamu.edu?subject=[GitHub]%20COVID-EMDA)&ensp;
 
