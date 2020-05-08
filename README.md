@@ -80,25 +80,14 @@ Pull requests are welcome. For major changes, please open an issue first to disc
 ## Aknowledgements
 This data repository is based on the collaborated work of our fellow group members and our instructor Professor Le Xie at Texas A&M University:
 
-<div class="row">
-  <div class="column">
+<p float="left">
     <img src="figure/ruan.png" alt="ruan" style="width:20%">
-    <p> Guangchun Ruan
-  </div>
-  <div class="column">
+    <p> Guangchun Ruan </p>
     <img src="figure/wu.png"" alt="Forest" style="width:20%">
-  </div>
-  <div class="column">
     <img src="figure/zheng.png"" alt="Mountains" style="width:20%">
-    
-  </div>
-   <div class="column">
     <img src="figure/xie.png"" alt="Mountains" style="width:20%">
-  </div>
-  <div class="column">
-    <img src="figure/alimi.png"" alt="Mountains" style="width:20%">
-  </div>                                                             
-</div>
+    <img src="figure/alimi.png"" alt="Mountains" style="width:20%">                                                            
+</p>
 
 
 @ [Guangchun Ruan](mailto:guangchun@tamu.edu?subject=[GitHub]%20COVID-EMDA)&ensp;\
