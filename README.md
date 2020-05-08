@@ -80,7 +80,7 @@ Pull requests are welcome. For major changes, please open an issue first to disc
 ## Aknowledgements
 This data repository is based on the collaborated work of our fellow group members and our instructor Professor Le Xie at Texas A&M University:
 
-<p align = "middle">
+<p>
   <a href="mailto:guangchun@tamu.edu?subject=[GitHub]%20COVID-EMDA">
     <img src="figure/ruan.png" alt="ruan" title="Guangchun Ruan" width=100 />
     <div class="caption">Guangchun Ruan</div>
