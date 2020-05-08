@@ -83,6 +83,7 @@ This data repository is based on the collaborated work of our fellow group membe
 <div class="row">
   <div class="column">
     <img src="figure/ruan.png" alt="ruan" style="width:20%">
+    <p> Guangchun Ruan
   </div>
   <div class="column">
     <img src="figure/wu.png"" alt="Forest" style="width:20%">
