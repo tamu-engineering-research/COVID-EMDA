@@ -16,9 +16,9 @@
 - All the coronavirus case, weather and electricity market data are carefully verified and coordinated to match the geological scale.
 - `Daily load profile`, `hourly generation mix` and `day-ahead price` are recorded and tidied in a consistent, compact and ready-to-use data format that makes it easy for cross-market analysis.
 - Historical data dating back to 2017 are included as a time-series benchmark.
-- A working paper containing comprehensive introduction of this data hub and preliminary analysis is available at:
-[EnerarXiv] (http://www.enerarxiv.org/page/thesis.html?id=1840) and
-[arXiv] (https://arxiv.org/submit/3172381)
+- A working paper containing comprehensive introduction of this data hub and preliminary analysis is available at:\
+[EnerarXiv](http://www.enerarxiv.org/page/thesis.html?id=1840) and\
+[arXiv](https://arxiv.org/submit/3172381)
 
 
 ## Navigation
