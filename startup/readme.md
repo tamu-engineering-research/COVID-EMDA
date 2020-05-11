@@ -15,7 +15,9 @@
 - This script demonstrates the usage of the .csv datasets and utility functions by plotting the daily new confirmed cases and deaths in the entire CAISO RTO region.
 
 ## example_gemix.py
-- This script demonstrates the usage of the .csv datasets and utility functions by aggregating and plotting the: 1) year-long generation from each type of energy sources in the entire CAISO RTO region and 2): daily output of solar generation in the same region
+- This script demonstrates the usage of the .csv datasets and utility functions by aggregating and plotting the:\
+	1) year-long generation from each type of energy sources in the entire CAISO RTO region\
+	2) daily output of solar generation in the entire CAISO RTO region\
 
 ## Dependencies
 NumPy and Matplotlib are required to run the example demonstration scripts.
