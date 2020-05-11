@@ -20,6 +20,6 @@
 	2) daily output of solar generation in the entire CAISO RTO region
 
 ## Dependencies
-NumPy and Matplotlib are required to run the example demonstration scripts.
-Installation commands:
+NumPy and Matplotlib are required to run the example demonstration scripts.\
+Installation commands:\
 `pip install numpy` and `pip install matplotlib`
