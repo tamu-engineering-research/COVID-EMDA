@@ -21,3 +21,5 @@
 
 ## Dependencies
 NumPy and Matplotlib are required to run the example demonstration scripts.
+Installation commands:
+`pip install numpy` and `pip install matplotlib`
