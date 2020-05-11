@@ -63,10 +63,40 @@ This data hub contains three major sources: U.S. electricity market data, COVID-
 - Weather Data:\
 [Iowa State Univ IEM](https://mesonet.agron.iastate.edu/request/download.phtml).
 
+## Additional Dataset
+- **Cellphone Dataset**:\
+**Description**: This dataset aggregates and processes the real-time GPS location of cellphone users by Census Block Group. It includes social distancing data and patterns of visits to Point of Interests (POIs). To obtain the access, please click the link below and apply for SafeGraph's permission which is totally free.\
+**Link**:  [Cellphone Dataset from SafeGraph](https://docs.safegraph.com/docs)
+
+- Night Time Light Satellite Dataset:\
+**Description**: This dataset includes the raw satellite image taken at night time in each area.\
+**Link**:  [NTL Dataset from NASA](https://ladsweb.modaps.eosdis.nasa.gov/missions-and-measurements/products/VNP46A1/)
 
 ## Contact Us
 Please contact our emails: &ensp; [Guangchun Ruan](mailto:guangchun@tamu.edu?subject=[GitHub]%20COVID-EMDA), &nbsp; [Le Xie](mailto:le.xie@tamu.edu?subject=[GitHub]%20COVID-EMDA).
 
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
+## Contributors
+This project is a collaboration of our group members with the supervision of Prof. Le Xie at Texas A&M University:
 
+<p align = "middle">
+    <img src="figure/ruan.png"" alt="ruan" title="Gangchun Ruan" width=100 />
+    <img src="figure/wu.png"" alt="wu" title="Dongqi Wu" width=100 />
+    <img src="figure/zheng.png"" alt="zheng" title="Xiangtian Zheng" width=100 />
+    <img src="figure/siva.jpg"" alt="siva" title="Sivaranjani Seetharaman" width=100 />
+    <img src="figure/alimi.png"" alt="alimi" title="Suraj Abolaji Alimi" width=100 />        
+    <img src="figure/steven.png"" alt="steven" title="Jiahan Wu" width=100 />   
+    <img src="figure/xie.png"" alt="xie" title="Le Xie" width=100 />
+</p>
+
+Emails (from left):\
+@ [Guangchun Ruan](mailto:guangchun@tamu.edu?subject=[GitHub]%20COVID-EMDA)
+@ [Dongqi Wu](mailto:dqwu@tamu.edu?subject=[GitHub]%20COVID-EMDA)
+@ [Xiangtian Zheng](mailto:zxt0515@tamu.edu?subject=[GitHub]%20COVID-EMDA)
+@ [Sivaranjani Seetharaman](mailto:sivaranjani@tamu.edu?subject=[GitHub]%20COVID-EMDA)
+@ [Suraj Abolaji Alimi](mailto:alimiabolaji@tamu.edu?subject=[GitHub]%20COVID-EMDA)
+@ [Jiahan Wu](mailto:jiahwu95@tamu.edu?subject=[GitHub]%20COVID-EMDA)
+@ [Le Xie](https://gridx.engr.tamu.edu/?page_id=66)
+
+Please also check our [Group Website](https://gridx.engr.tamu.edu/?page_id=115) for the detailed bio of each group member.
