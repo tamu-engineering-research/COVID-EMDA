@@ -5,10 +5,10 @@
 
 ## EMDA_Utilities.py
 - This script contains 4 APIS to handle .csv files that have different contents:
-	`read_load_lmp`: Parses load and LMP data into Numpy data arrays and Python string lists
-	`read_covid_lmp`: Parses aggregated COVID-19 data into Numpy data arrays and Python string lists
-	`read_genmix`: Parses generation data into Numpy data arrays and Python string lists
-	`read_weather`: Parses weather and climate data into Numpy data arrays and Python string lists
+	`read_load_lmp`: Parses load and LMP data into Numpy data arrays and Python string lists\
+	`read_covid_lmp`: Parses aggregated COVID-19 data into Numpy data arrays and Python string lists\
+	`read_genmix`: Parses generation data into Numpy data arrays and Python string lists\
+	`read_weather`: Parses weather and climate data into Numpy data arrays and Python string lists\
 	
 	
 ## example_covid.py
