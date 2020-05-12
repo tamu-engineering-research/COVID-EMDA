@@ -1,6 +1,6 @@
 # Combined Data Hub with Electricity Market and Coronavirus Case Data in U.S.
 
-[![GitHub commit](https://img.shields.io/github/last-commit/GuangchunRuan/COVID-EMDA)](https://github.com/GuangchunRuan/COVID-EMDA/commits/master) &nbsp;
+[![GitHub commit](https://img.shields.io/github/last-commit/tamu-engineering-research/COVID-EMDA)](https://github.com/GuangchunRuan/COVID-EMDA/commits/master) &nbsp;
 [![GitHub license](https://img.shields.io/badge/license-MIT-yellow)](https://choosealicense.com/licenses/mit/)
 
 
