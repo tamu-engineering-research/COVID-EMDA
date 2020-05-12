@@ -1,6 +1,5 @@
 # Start-up Examples and Utility Functions
-- This folder contains a script of Python APIs to parse .csv files in `data_release` folders into Python and Numpy arrays
-- Two examples are provided to demonstrate the usage of the .csv files and utility functions
+This folder contains a script of Python APIs to parse .csv files in `data_release` folders into Python and Numpy arrays. Two examples are provided to demonstrate the usage of the .csv files and utility functions
 
 
 ## EMDA_Utilities.py

@@ -1,6 +1,6 @@
-# Combined Data Hub with and Electricity Market and Coronavirus Case Data in U.S.
+# Combined Data Hub with Electricity Market and Coronavirus Case Data in U.S.
 
-[![GitHub commit](https://img.shields.io/github/last-commit/GuangchunRuan/COVID-EMDA)](https://github.com/GuangchunRuan/COVID-EMDA/commits/master) &nbsp;
+[![GitHub commit](https://img.shields.io/github/last-commit/tamu-engineering-research/COVID-EMDA)](https://github.com/GuangchunRuan/COVID-EMDA/commits/master) &nbsp;
 [![GitHub license](https://img.shields.io/badge/license-MIT-yellow)](https://choosealicense.com/licenses/mit/)
 
 
@@ -17,14 +17,20 @@
 - `Daily load profile`, `hourly generation mix` and `day-ahead price` are recorded and tidied in a consistent, compact and ready-to-use data format that makes it easy for cross-market analysis.
 - Historical data dating back to 2017 are included as a time-series benchmark.
 
-
+## Working Paper 
+- A working paper containing comprehensive introduction of this data hub and preliminary analysis is available at both:\
+[EnerarXiv](http://www.enerarxiv.org/page/thesis.html?id=1840) and [arXiv](https://arxiv.org/submit/3172381)
+- Please refer to the following paper for publications of this database: \
+`
+G. Ruan, D. Wu, X. Zheng, S. Sivaranjani, L. Xie, H. Zhong and C. Kang, Tracking and Analyzing the Short-Run Impact of COVID-19 on the U.S. Electricity Sector, EnerarXiv preprint, 2020.
+`
 
 ## Navigation
 This github repository is structured as follows.
 ```text
   COVID-EMDA
   |
-  ├── db1_source/
+  ├── data_source/
   │    ├── caiso/
   │    ├── miso/
   │    ├── isone/
@@ -35,7 +41,7 @@ This github repository is structured as follows.
   │    ├── covid/
   │    ├── weather/
   │    ├── README.md
-  ├── db2_release/
+  ├── data_release/
   │    ├── caiso/
   │    ├── miso/
   │    ├── isone/
@@ -44,13 +50,13 @@ This github repository is structured as follows.
   │    ├── spp/
   │    ├── ercot/
   │    ├── README.md
-  ├── quick_start/
+  ├── startup/
   ├── parser/
   ├── README.md
 ```
-All the data source files are archived in folder `db1_source/`, the cleaned and processed data are stored in folder `db2_release`. The supporting team will provide daily updates to capture the latest sitation. All these files are properly collected by location. The file naming rule is: `MARKET_AREA_CATEGORY.csv`, e.g. `nyiso_nyc_load.csv`. This is a dataset of load profile in New York City, from 2017 to present.
+All the data source files are archived in folder `date_source/`, the cleaned and processed data are stored in folder `data_release`. The supporting team will provide daily updates to capture the latest sitation. All these files are properly collected by location. The file naming rule is: `MARKET_AREA_CATEGORY.csv`, e.g. `nyiso_nyc_load.csv`. This is a dataset of load profile in New York City, from 2017 to present.
 
-Readers can turn to folder `quick_start/` for information about basic applications. For the need of extension, we provide the parser codes, which can be found in folder `parser/`.
+Readers can turn to folder `startup/` for information about basic applications. For the need of extension, we provide the parser codes, which can be found in folder `parser/`.
 
 
 ## Data Source
