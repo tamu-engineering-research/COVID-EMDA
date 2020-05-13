@@ -12,7 +12,7 @@
 
 
 ## Features
-- Overall, this data hub contains the `coronavirus case`, `weather`, `generation mix`, `load` and `price data` for all the existing U.S. electricity marketplaces (CAISO, MISO, ISO-NE, NYISO, PJM, SPP , ERCOT) and seven typical cities in each market (San Francisco, Chicago, Boston, New York City, Philadelphia, Kansas City, Houston). 
+- Overall, this data hub contains the `coronavirus case`, `weather`, `generation mix`, `load` and `price data` for all the existing U.S. electricity marketplaces (CAISO, MISO, ISO-NE, NYISO, PJM, SPP , ERCOT) and some typical cities in these markets (San Francisco, Boston, New York City, Philadelphia, Kansas City, Houston). 
 - All the coronavirus case, weather and electricity market data are carefully verified and coordinated to match the geological scale.
 - `Daily load profile`, `hourly generation mix` and `day-ahead price` are recorded and tidied in a consistent, compact and ready-to-use data format that makes it easy for cross-market analysis.
 - Historical data dating back to 2017 are included as a time-series benchmark.
