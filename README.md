@@ -105,4 +105,4 @@ Emails (from left):\
 @ [Jiahan Wu](mailto:jiahwu95@tamu.edu?subject=[GitHub]%20COVID-EMDA)
 @ [Le Xie](https://gridx.engr.tamu.edu/?page_id=66)
 
-Please also check our [Group Website](https://gridx.engr.tamu.edu/?page_id=115) for the detailed bio of each group member.
+Please also check our [Group Website](https://gridx.engr.tamu.edu/?page_id=30) for the detailed bio of each group member.
