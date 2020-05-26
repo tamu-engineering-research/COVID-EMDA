@@ -18,8 +18,8 @@
 - Historical data dating back to 2017 are included as a time-series benchmark.
 
 ## Suggested Reference 
-- A paper containing comprehensive introduction of this data hub and preliminary analysis is available at:\
- <!---[EnerarXiv](http://www.enerarxiv.org/page/thesis.html?id=1840) and  --> [arXiv](https://arxiv.org/abs/2005.06631)
+- A paper containing comprehensive introduction of this data hub and preliminary analysis is available at: [arXiv](https://arxiv.org/abs/2005.06631)
+ <!---[EnerarXiv](http://www.enerarxiv.org/page/thesis.html?id=1840) and  -->  
 - Please refer to the following paper for publications of this database: \
 `
 G. Ruan, D. Wu, X. Zheng, S. Sivaranjani, H. Zhong, C. Kang and L. Xie, A Cross-Domain Approach to Analyzing the Short-Run Impact of COVID-19 on the U.S. Electricity Sector , submitted to Nature Energy, arXiv preprint, 2020.
