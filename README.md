@@ -18,7 +18,7 @@
 - Historical data dating back to 2017 are included as a time-series benchmark.
 
 ## Suggested Reference 
-- A paper containing comprehensive introduction of this data hub and preliminary analysis is available at both:\
+- A paper containing comprehensive introduction of this data hub and preliminary analysis is available at:\
  <!---[EnerarXiv](http://www.enerarxiv.org/page/thesis.html?id=1840) and  --> [arXiv](https://arxiv.org/abs/2005.06631)
 - Please refer to the following paper for publications of this database: \
 `
