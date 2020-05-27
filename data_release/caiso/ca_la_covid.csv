@@ -1,4 +1,4 @@
-date,accum_confirmed,new_confirmed,infect_rate,accum_death,new_death,fatal_rate
+date,accum_confirm,new_confirm,infect_rate,accum_death,new_death,fatal_rate
 2020-01-23,0,0,0.0,0,0,0.0
 2020-01-24,0,0,0.0,0,0,0.0
 2020-01-25,0,0,0.0,0,0,0.0
