@@ -19,7 +19,7 @@
 
 ## Suggested Reference 
 - A paper containing comprehensive introduction of this data hub and preliminary analysis is available at: [arXiv](https://arxiv.org/abs/2005.06631) and [EnerarXiv](http://www.enerarxiv.org/page/thesis.html?id=1840) 
-- Please refer to the following paper for publications of this database: \
+- Suggested reference for publication associated with this data hub: \
 `
 G. Ruan, D. Wu, X. Zheng, S. Sivaranjani, H. Zhong, C. Kang, M. A. Dahleh and L. Xie, A Cross-Domain Approach to Analyzing the Short-Run Impact of COVID-19 on the U.S. Electricity Sector , arXiv preprint: https://arxiv.org/abs/2005.06631, 2020.
 `
