@@ -5,6 +5,7 @@
 
 
 > This data hub, **COVID-EMDA** (**C**oronavirus **D**isease - **E**lectricity **M**arket **D**ata **A**ggregation), is orginally designed to track the potential impacts of COVID-19 on the electricity markets in the United States of America, and could also contribute to relevant interdisciplinary researches.
+> [News Report from Texas A&M Energy Institute](https://energy.tamu.edu/xie-group-tracks-short-run-impact-of-covid-19-on-the-u-s-electricity-sector/)
 
 <p align="center">
 <img src="figure/covid_emda_logo.jpg" alt="COVID-EMDA Logo" />
