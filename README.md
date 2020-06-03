@@ -4,7 +4,7 @@
 [![GitHub license](https://img.shields.io/badge/license-MIT-yellow)](https://choosealicense.com/licenses/mit/)
 
 
-> This data hub, **COVID-EMDA** (**C**oronavirus **D**isease - **E**lectricity **M**arket **D**ata **A**ggregation), is orginally designed to track the potential impacts of COVID-19 on the electricity markets in the United States of America, and could also contribute to relevant interdisciplinary researches.
+> This data hub, **COVID-EMDA** (**C**oronavirus **D**isease - **E**lectricity **M**arket **D**ata **A**ggregation), is orginally designed to track the potential impacts of COVID-19 on the electricity markets in the United States of America, and could also contribute to relevant interdisciplinary researches.\
 
 <p align="center">
 <img src="figure/covid_emda_logo.jpg" alt="COVID-EMDA Logo" />
@@ -19,7 +19,7 @@
 
 ## Suggested Reference 
 - A paper containing comprehensive introduction of this data hub and preliminary analysis is available at: [arXiv](https://arxiv.org/abs/2005.06631) and [EnerarXiv](http://www.enerarxiv.org/page/thesis.html?id=1840) 
-- Please refer to the following paper for publications of this database: \
+- Suggested reference for publication associated with this data hub: \
 `
 G. Ruan, D. Wu, X. Zheng, S. Sivaranjani, H. Zhong, C. Kang, M. A. Dahleh and L. Xie, A Cross-Domain Approach to Analyzing the Short-Run Impact of COVID-19 on the U.S. Electricity Sector , arXiv preprint: https://arxiv.org/abs/2005.06631, 2020.
 `
