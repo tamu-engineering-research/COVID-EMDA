@@ -19,7 +19,7 @@ with open(file,'rb') as fh:
 ```
 
 ## Field Description
-Please refer to the (NASA VIIRS Black Marble Userguide)[https://viirsland.gsfc.nasa.gov/PDF/VIIRS_BlackMarble_UserGuide.pdf] for a detailed description of each measurement entry.
+Please refer to the [NASA VIIRS Black Marble Userguide](https://viirsland.gsfc.nasa.gov/PDF/VIIRS_BlackMarble_UserGuide.pdf) for a detailed description of each measurement entry.
 The data object from pickle is a dictionary containing the following fields: 
 - `dnb_radiance` is the raw 500m resolution light radiance level measured at the sensor.
 - `cloud_mask` is the information of cloud abd weather above each datapoint. The number should be intepreted as concatenated binary flags where different bits represents different information. Please refer to the userguide for details.
