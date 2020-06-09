@@ -21,3 +21,21 @@ dwpc, relh, sped, tmpc
 - Field `accum_death`: Accumulated confirmed deth number recorded at each date
 - Field `new_death`: Newly confirmed death number of each date
 - Field `fatal_rate`: Fatal rate calculated at each date
+
+## Visit Pattern to Point of Interests (POIs)
+- Field `date`: list all the date from 12/30/2019 to present. Format: `mm/dd/YYYY`
+- Field `Restaurant_Recreation`: Daily total number of visits to Restaurant and Recreation places
+- Field `Grocery_Pharmacy`: Daily total number of visits to Grocery and Pharmacy places
+- Field `Retail`: Daily total number of visits to Retail places
+
+## Social Distancing
+- Field `date`: list all the date from 01/01/2020 to present. Format: `mm/dd/YYYY`
+- Field `completely_home_device_count_percentage`: percentage of devices that stay at home 24 hours out of all devices
+- Field `median_home_dwell_time_percentage`: median proportion of home dwell time in one day
+- Field `part_time_work_behavior_devices_percentage`: percentage of devices that go to workplaces for 3 to 6 hours out of all devices
+- Field `full_time_work_behavior_devices_percentage`: percentage of devices that go to workplaces for more than 6 hours out of all devices
+- Field `completely_home_device_count`: count of devices that stay at home 24 hours
+- Field `device_count`: total count of devices
+- Field `part_time_work_behavior_devices`: count of devices that go to workplaces for 3 to 6 hours
+- Field `full_time_work_behavior_devices`: count of devices that go to workplaces for more than 6 hours
+
