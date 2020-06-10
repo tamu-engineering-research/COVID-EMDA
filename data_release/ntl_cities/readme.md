@@ -22,7 +22,7 @@ with open(file,'rb') as fh:
 Please refer to the [NASA VIIRS Black Marble Userguide](https://viirsland.gsfc.nasa.gov/PDF/VIIRS_BlackMarble_UserGuide.pdf) for a detailed description of each measurement entry.
 The data object from pickle is a dictionary containing the following fields: 
 - `dnb_radiance` is the raw 500m resolution light radiance level measured at the sensor.
-- `cloud_mask` is the information of cloud abd weather above each datapoint. The number should be intepreted as concatenated binary flags where different bits represents different information. Please refer to the userguide for details.
+- `cloud_mask` is the information of cloud and weather above each datapoint. The number should be intepreted as concatenated binary flags where different bits represents different information. Please refer to the userguide for details.
 - `utc_time` is the UTC timestamp recorded at the time the data was sampled.
 - `moon_fraction` is the moon illumination fraction at the time of measurement. 
 - `lunar_zenith` and `lunar_azimuth` are the Zenith and Azimuth angle of the moon at the time of measurement.
