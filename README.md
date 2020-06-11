@@ -50,12 +50,12 @@ This github repository is structured as follows.
   │    ├── ercot/
   │    ├── README.md
   ├── startup/
-  ├── parser/
+  ├── supplementary/
   ├── README.md
 ```
 All the data source files are archived in folder `date_source/`, the cleaned and processed data are stored in folder `data_release`. The supporting team will provide daily updates to capture the latest sitation. All these files are properly collected by location. The file naming rule is: `MARKET_AREA_CATEGORY.csv`, e.g. `nyiso_nyc_load.csv`. This is a dataset of load profile in New York City, from 2017 to present.
 
-Readers can turn to folder `startup/` for information about basic applications. For the need of extension, we provide the parser codes, which can be found in folder `parser/`.
+Readers can turn to folder `startup/` for information about basic applications, and there are also some supplementary codes for further applications in our research papers.
 
 
 ## Data Source
