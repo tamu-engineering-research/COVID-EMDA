@@ -1,9 +1,13 @@
-# Cleaned Database
+# Cleaned Datasets for Release
 
-This folder contains all the cleaned and processed data, the data source files can be found in folder `db1_source/`. All the file namess in this folder obey the rule of `MARKET_AREA_CATEGORY.csv`. Readers can find their interested files quickly by activating the Github's file finder (Press `T`).
+This folder contains all the cleaned and processed data, the data source files can be found in another folder `data_source/`. All the file namess in this folder obey the rule of `MARKET_AREA_CATEGORY.csv`. Readers can find their interested files quickly by activating the Github's file finder (Press `T`).
 
-Current data are updated to `April 29, 2020`. After final release, the supporting team will implement daily updates to catch the latest situations.
-
+## Data Updating
+The electricity market datasets in this folder are updated daily, and the additional celluar phone and satellite data are updated weekly. The latest available time for different datasets are listed below.
+- **Electricity Market Data**: Most are avaiable for June 7, 2020 (except ercot_genmix.csv for May 31, and ercot_lmp.csv for June 6, due to the data source limitation).
+- **Weather and COVID Cases Data**: Available for June 7, 2020 (align with the other sources).
+- **Visit Pattern and Social Distancing Data**: Available for May 31, 2020.
+- **Night-Time Lighting Data**: Available for June 6, 2020.
 
 ## Electricity Data Field Description
 All files are organized in a wide csv table.
@@ -38,4 +42,17 @@ dwpc, relh, sped, tmpc
 - Field `device_count`: total count of devices
 - Field `part_time_work_behavior_devices`: count of devices that go to workplaces for 3 to 6 hours
 - Field `full_time_work_behavior_devices`: count of devices that go to workplaces for more than 6 hours
+
+## Data Quality Control
+To provide reliable and easy-to-use datasets, we implement a series of data checking and cleaning procedures, and also take advantage of different data sources for cross validation. When using the datasets in this folder, please check the following table to get some knowledge for the released data.
+
+| Dataset Name         | Market     | Area         | Category       | Missing Dates        |
+|----------------------|------------|--------------|----------------|----------------------|
+| caiso_rto_genmix.csv | CAISO      | RTO Level    | Generation Mix | Sep 23 - Oct 3, 2019 |
+| caiso_rto_lmp.csv    | CAISO      | RTO Level    | Day-Ahead LMP  | Jan 1 - Jan 18, 2017 |
+| caiso_la_load.csv    | Near CAISO | Los Angeles  | Hourly Load    | Nov 5, 2017; Jan 11 - 12, Jun 29 - 30, Jul 1 - 9, Jul 12, Sep 27, Nov 3, Nov 11 - 12, 2018; Mar 10, Nov 3, 2019; Mar 8, 2020 |
+| isone_rto_genmix.csv | ISO-NE     | RTO Level    | Generation Mix | Jul 12, 2018         |
+| spp_rto_genmix.csv   | SPP        | RTO Level    | Generation Mix | Mar 29, 2019         |
+| pjm_rto_genmix.csv   | PJM        | RTO Level    | Generation Mix | Mar 29 - Apr 2, 2017 |
+
 
