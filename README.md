@@ -1,10 +1,10 @@
-# Combined Data Hub with Electricity Market and Coronavirus Case Data in U.S.
+# A Cross-Domain Data Hub to Track the Impact of COVID-19 on the U.S. Electricity Markets
 
 [![GitHub commit](https://img.shields.io/github/last-commit/tamu-engineering-research/COVID-EMDA)](https://github.com/GuangchunRuan/COVID-EMDA/commits/master) &nbsp;
 [![GitHub license](https://img.shields.io/badge/license-MIT-yellow)](https://choosealicense.com/licenses/mit/)
 
 
-> This data hub, **COVID-EMDA** (**C**oronavirus **D**isease - **E**lectricity **M**arket **D**ata **A**ggregation), is orginally designed to track the potential impacts of COVID-19 on the electricity markets in the United States of America, and could also contribute to relevant interdisciplinary researches.\
+> This data hub, **COVID-EMDA+** (**C**oronavirus **D**isease - **E**lectricity **M**arket **D**ata **A**ggregation+), is orginally designed to track the potential impacts of COVID-19 on the electricity markets in the United States of America, and could also contribute to relevant interdisciplinary researches.
 
 <p align="center">
 <img src="figure/covid_emda_logo.jpg" alt="COVID-EMDA Logo" />
@@ -12,7 +12,7 @@
 
 
 ## Features
-- Overall, this data hub contains the `coronavirus case`, `weather`, `generation mix`, `load` and `price data` for all the existing U.S. electricity marketplaces (CAISO, MISO, ISO-NE, NYISO, PJM, SPP , ERCOT) and some typical cities in these markets (San Francisco, Boston, New York City, Philadelphia, Kansas City, Houston). 
+- Overall, this data hub contains the `coronavirus case`, `weather`, `generation mix`, `load` and `price data` for all the existing U.S. electricity marketplaces (CAISO, MISO, ISO-NE, NYISO, PJM, SPP , ERCOT) and some typical cities in these markets (Los Angeles, Boston, New York City, Philadelphia, Chicago, Kansas City, Houston). We also integrate the cellphone and night-time lighting datasets as additional resources.
 - All the coronavirus case, weather and electricity market data are carefully verified and coordinated to match the geological scale.
 - `Daily load profile`, `hourly generation mix` and `day-ahead price` are recorded and tidied in a consistent, compact and ready-to-use data format that makes it easy for cross-market analysis.
 - Historical data dating back to 2017 are included as a time-series benchmark.
@@ -50,12 +50,12 @@ This github repository is structured as follows.
   │    ├── ercot/
   │    ├── README.md
   ├── startup/
-  ├── parser/
+  ├── supplementary/
   ├── README.md
 ```
 All the data source files are archived in folder `date_source/`, the cleaned and processed data are stored in folder `data_release`. The supporting team will provide daily updates to capture the latest sitation. All these files are properly collected by location. The file naming rule is: `MARKET_AREA_CATEGORY.csv`, e.g. `nyiso_nyc_load.csv`. This is a dataset of load profile in New York City, from 2017 to present.
 
-Readers can turn to folder `startup/` for information about basic applications. For the need of extension, we provide the parser codes, which can be found in folder `parser/`.
+Readers can turn to folder `startup/` for information about basic applications, and there are also some supplementary codes for further applications in our research papers.
 
 
 ## Data Source

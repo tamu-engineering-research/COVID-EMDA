@@ -1,7 +1,7 @@
 "C","Dispatch Fuel Mix Report"
 "C","Filename: genfuelmix_20200516.csv"
 "C","Report for 05/16/2020"
-"C","Report generated 05/27/2020 15:11:16 EDT"
+"C","Report generated 06/10/2020 16:32:09 EDT"
 "H","Date","Time","Fuel Category","Fuel Category Rollup","Gen Mw","Marginal Flag"
 "H","Local Date","Local Time","String","String","MWh","String"
 "D","05/16/2020","00:07:35","Hydro","Hydro",1363,"No"
