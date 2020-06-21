@@ -1,7 +1,7 @@
 "C","Real-Time Hourly System Load Report"
 "C","Filename: rt_hourlysysload_20200615.csv"
 "C","Report for: 06/15/2020 - 06/15/2020"
-"C","Report generated: 06/18/2020 01:14:33 EDT"
+"C","Report generated: 06/21/2020 09:49:10 EDT"
 "H","Date","Hour Ending","Total Load"
 "H","Date","HE","MWh"
 "D","06/15/2020","01",9916.64
