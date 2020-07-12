@@ -4,7 +4,7 @@ This folder contains all the cleaned and processed data, the data source files c
 
 ## Data Updating
 The electricity market datasets in this folder are updated daily, and the additional celluar phone and satellite data are updated weekly. The latest available time for different datasets are listed below.
-- **Electricity Market Data**: Most are avaiable for July 08, 2020 (except ercot_genmix.csv for May 31 due to the data source limitation).
+- **Electricity Market Data**: Most are avaiable for July 08, 2020 (except ercot_genmix.csv for June 31 due to the data source limitation).
 - **Weather and COVID Cases Data**: Available for July 08, 2020 (align with the other sources).
 - **Visit Pattern Data**: Available for June 28, 2020.
 - **Social Distancing Data**: Available for June 29, 2020.
