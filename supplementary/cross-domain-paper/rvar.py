@@ -6,10 +6,10 @@ class CrossDomainData(object):
     def __init__(self, city, date_range):
         self.city, self.date_range = city, date_range
         self.dict, self.dict1, self.dict2 = {}, {}, {}
-        self.download_date()
+        self.download_data()
         self.preprocess()
 
-    def download_date(self):
+    def download_data(self):
         city_mapping = {
             'nyc':      'nyiso/nyiso_nyc',
             'phila':    'pjm/pjm_phila',
