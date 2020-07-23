@@ -4,11 +4,11 @@ This folder contains all the cleaned and processed data, the data source files c
 
 ## Data Updating
 The electricity market datasets in this folder are updated daily, and the additional celluar phone and satellite data are updated weekly. The latest available time for different datasets are listed below.
-- **Electricity Market Data**: Most are avaiable for July 08, 2020 (except ercot_genmix.csv for June 31 due to the data source limitation).
-- **Weather and COVID Cases Data**: Available for July 08, 2020 (align with the other sources).
-- **Visit Pattern Data**: Available for June 28, 2020.
-- **Social Distancing Data**: Available for June 29, 2020.
-- **Night-Time Lighting Data**: Available for June 22, 2020 (except Kansas for June 13 due to the data source limitation).
+- **Electricity Market Data**: Most are avaiable for July 19, 2020 (except ercot_genmix.csv for June 31 due to the data source limitation).
+- **Weather and COVID Cases Data**: Available for July 19, 2020 (align with the other sources).
+- **Visit Pattern Data**: Available for July 05, 2020.
+- **Social Distancing Data**: Available for July 09, 2020.
+- **Night-Time Lighting Data**: Available for July 12, 2020.
 
 ## Electricity Data Field Description
 All files are organized in a wide csv table.
@@ -51,8 +51,8 @@ To provide reliable and easy-to-use datasets, we implement a series of data chec
 |----------------------|------------|--------------|----------------|----------------------|
 | caiso_rto_genmix.csv | CAISO      | RTO Level    | Generation Mix | Sep 23 - Oct 3, 2019 |
 | caiso_rto_lmp.csv    | CAISO      | RTO Level    | Day-Ahead LMP  | Jan 1 - Jan 18, 2017 |
-| caiso_la_load.csv    | Near CAISO | Los Angeles  | Hourly Load    | Nov 5, 2017; Jan 11 - 12, Jun 29 - 30, Jul 1 - 9, Jul 12, Sep 27, Nov 3, Nov 11 - 12, 2018; Mar 10, Nov 3, 2019; Mar 8, 2020 |
-| isone_rto_genmix.csv | ISO-NE     | RTO Level    | Generation Mix | Jul 12, 2018; Jun 21, 2020 |
+| caiso_la_load.csv    | Near CAISO | Los Angeles  | Hourly Load    | Nov 5, 2017; Jan 11 - 12, Jun 29 - 30, Jul 1 - 9, Sep 27, Nov 4, 2018; Mar 10, Nov 3, 2019; Mar 8, 2020 |
+| isone_rto_genmix.csv | ISO-NE     | RTO Level    | Generation Mix | Apr 30, 2018; Jun 21, 2020 |
 | spp_rto_genmix.csv   | SPP        | RTO Level    | Generation Mix | Mar 29, 2019         |
 | pjm_rto_genmix.csv   | PJM        | RTO Level    | Generation Mix | Mar 29 - Apr 2, 2017 |
 
