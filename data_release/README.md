@@ -1,8 +1,8 @@
 # Cleaned Datasets for Release
 
-This folder contains all the cleaned and processed data, the data source files can be found in another folder `data_source/`. All the file namess in this folder obey the rule of `MARKET_AREA_CATEGORY.csv`. Readers can find their interested files quickly by activating the Github's file finder (Press `T`).
+This folder contains all the cleaned and processed data, and the source files can be found in another folder `data_source/`. All the file namess in this folder follow the file naming convention of `MARKET_AREA_CATEGORY.csv`. Readers can find the files of interest quickly by activating the Github's file finder (Press `T`), or directly import the data from website link (Click [Here](https://github.com/tamu-engineering-research/COVID-EMDA/tree/master/supplementary/impact-assessment-paper) for some examples).
 
-## Data Updating
+## Data Updates
 The electricity market datasets in this folder are updated daily, and the additional celluar phone and satellite data are updated weekly. The latest available time for different datasets are listed below.
 - **Electricity Market Data**: Most are avaiable for July 22, 2020 (except ercot_genmix.csv for June 31 due to the data source limitation).
 - **Weather and COVID Cases Data**: Available for July 22, 2020 (align with the other sources).
@@ -12,14 +12,14 @@ The electricity market datasets in this folder are updated daily, and the additi
 
 ## Electricity Data Field Description
 All files are organized in a wide csv table.
-- Field `date`: list all the date from 2017 to present. Format: `mm/dd/YYYY`
-- Field `fuel`: only in generation mix dataset, represent the different fuel souce used by generators. Possible values: coal, gas, oil, nuclear, hydro, wind, solar, other, export. We harmonize all the different definitions in different electricity markets.
+- Field `date`: list all the date from 2017 to present. Format: `YYYY-mm-dd`
+- Field `fuel`: only in generation mix dataset, represent the different fuel souce used by generators. Possible values: coal, gas, oil, nuclear, hydro, wind, solar, export, other. We harmonize all the different definitions in different electricity markets.
 - Field `kind`: only in weather dataset, represent the type of measurement that is recorded in each corresponding row. Possible values:
-dwpc, relh, sped, tmpc
-- Field `HH:MM`: represent the hourly time slot. For example, items in the column 08:00 represent the recorded data of period 8AM to 9AM.
+dwpc (dew point temperature), relh (relative humidity), sped (wind speed), tmpc (temperature)
+- Field `HH:MM`: represent the hourly time slot. For example, column "08:00" records the data of period 8AM to 9AM.
 
 ## COVID-19 Data Field Description
-- Field `date`: list all the date from 1/23/2020 to present. Format: `mm/dd/YYYY`
+- Field `date`: list all the date from January 23, 2020 to present. Format: `YYYY-mm-dd`
 - Field `accum_confirm`: Accumulated confirmed case number recorded at each date
 - Field `new_confirm`: Newly confirmed case number of each date
 - Field `infect_rate`: Infection ratio calculated at each date
@@ -28,13 +28,13 @@ dwpc, relh, sped, tmpc
 - Field `fatal_rate`: Fatal rate calculated at each date
 
 ## Visit Pattern to Point of Interests (POIs)
-- Field `date`: list all the date from 12/30/2019 to present. Format: `mm/dd/YYYY`
+- Field `date`: list all the date from December 30, 2019 to present. Format: `YYYY-mm-dd`
 - Field `Restaurant_Recreation`: Daily total number of visits to Restaurant and Recreation places
 - Field `Grocery_Pharmacy`: Daily total number of visits to Grocery and Pharmacy places
 - Field `Retail`: Daily total number of visits to Retail places
 
 ## Social Distancing
-- Field `date`: list all the date from 01/01/2020 to present. Format: `mm/dd/YYYY`
+- Field `date`: list all the date from January 1, 2020 to present. Format: `YYYY-mm-dd`
 - Field `completely_home_device_count_percentage`: percentage of devices that stay at home 24 hours out of all devices
 - Field `median_home_dwell_time_percentage`: median proportion of home dwell time in one day
 - Field `part_time_work_behavior_devices_percentage`: percentage of devices that go to workplaces for 3 to 6 hours out of all devices
