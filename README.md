@@ -57,7 +57,7 @@ This data hub contains five major components: U.S. electricity market data, publ
 **Link**: &nbsp; [Iowa State Univ IEM](https://mesonet.agron.iastate.edu/request/download.phtml), &nbsp; [NOAA](https://www.nws.noaa.gov/ost/asostech.html).
 
 - **Mobile Device Location Data**:\
-**Description**: &nbsp; This part includes social distancing data and patterns of visits to Point of Interests (POIs). These data are derived by aggregating and processing the real-time GPS location of cellphone users by Census Block Group. To obtain the access, please click the link below and apply for SafeGraph's permission (totally free).\
+**Description**: &nbsp; This part includes social distancing data and patterns of visits to Point of Interests (POIs). These data are derived by aggregating and processing the real-time GPS location of cellphone users by Census Block Group. To obtain the access to the original data, please click the link below and apply for SafeGraph's permission (totally free).\
 **Link**: &nbsp; [Mobility Data from SafeGraph](https://docs.safegraph.com/docs)
 
 - **Night Time Light (NTL) Satellite Data**:\
