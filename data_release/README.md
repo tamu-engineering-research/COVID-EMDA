@@ -8,7 +8,7 @@ The electricity market datasets in this folder are updated daily, and the additi
 - **Weather and COVID Cases Data**: Available for July 23, 2020 (align with the other sources).
 - **Visit Pattern Data**: Available for July 19, 2020.
 - **Social Distancing Data**: Available for July 19, 2020.
-- **Night-Time Lighting Data**: Available for July 12, 2020.
+- **Night-Time Lighting Data**: Available for July 25, 2020.
 
 ## Electricity Data Field Description
 All files are organized in a wide csv table.
