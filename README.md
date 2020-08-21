@@ -45,9 +45,9 @@ G. Ruan, J. Wu, H. Zhong, Q. Xia, and L. Xie, Quantitative Assessment of U.S. Bu
 This paper substantiates the pandemic's impacts from the perspectives of power system security, electric power generation, electric power demand and electricity prices.\
 Available at: [EnerarXiv](http://www.enerarxiv.org/page/thesis.html?id=2196).\
 `
-H. Zhong, Z. Tan, Y. He, L. Xie, and C. Kang, Implications of COVID-19 for the electricity industry: A comprehensive review, CSEE Journal of Power and Energy Systems, 2020.
+H. Zhong, Z. Tan, Y. He, L. Xie, and C. Kang, Implications of COVID-19 for the Electricity Industry: A Comprehensive Review, CSEE Journal of Power and Energy Systems, 2020.
 `\
-This paper provides a review of the existing impacts that the pandemic has caused on the electricity sector.\
+This paper provides a review of the global impacts that COVID-19 has caused on the electricity sector.\
 Available at: [JPES](https://ieeexplore.ieee.org/abstract/document/9160443).
 
 ## Data Source
