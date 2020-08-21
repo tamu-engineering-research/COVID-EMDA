@@ -32,14 +32,23 @@ Readers can turn to folder `startup/` for quick start, `supplementary/` for addt
 
 
 ## Suggested Citation 
-- Please cite the following paper when you use this data hub:\
+- Please cite the following paper when you use this data hub:  
 `
-G. Ruan, D. Wu, X. Zheng, S. Sivaranjani, H. Zhong, C. Kang, M. A. Dahleh and L. Xie, A Cross-Domain Approach to Analyzing the Short-Run Impact of COVID-19 on the U.S. Electricity Sector, Joule (Accepted), 2020.
+G. Ruan, D. Wu, X. Zheng, S. Sivaranjani, H. Zhong, C. Kang, M. A. Dahleh, and L. Xie, A Cross-Domain Approach to Analyzing the Short-Run Impact of COVID-19 on the U.S. Electricity Sector, Joule (Accepted), 2020.
 `\
 This paper conducts a comprehensive introduction of the data hub and some preliminary analysis results.\
-Available at: [arXiv](https://arxiv.org/abs/2005.06631) and [EnerarXiv](http://www.enerarxiv.org/page/thesis.html?id=1840) 
-
-
+Available at: [arXiv](https://arxiv.org/abs/2005.06631) and [EnerarXiv](http://www.enerarxiv.org/page/thesis.html?id=1840).
+- Other research studies of our group are recommended:   
+`
+G. Ruan, J. Wu, H. Zhong, Q. Xia, and L. Xie, Quantitative Assessment of U.S. Bulk Power Systems and Market Operations during the COVID-19 Pandemic, 2020. (in submission to Applied Energy)
+`\
+This paper substantiates the pandemic's impacts from the perspectives of power system security, electric power generation, electric power demand and electricity prices.\
+Available at: [EnerarXiv](http://www.enerarxiv.org/page/thesis.html?id=2196).\
+`
+H. Zhong, Z. Tan, Y. He, L. Xie, and C. Kang, Implications of COVID-19 for the electricity industry: A comprehensive review, CSEE Journal of Power and Energy Systems, 2020.
+`\
+This paper provides a review of the existing impacts that the pandemic has caused on the electricity sector.\
+Available at: [JPES](https://ieeexplore.ieee.org/abstract/document/9160443).
 
 ## Data Source
 This data hub contains five major components: U.S. electricity market data, public health data, weather data, mobile device location data, and satellite images. For some categories, multiple data sources are carefully gathered to ensure accuracy.
