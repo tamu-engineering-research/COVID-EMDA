@@ -36,7 +36,7 @@ Readers can turn to folder `startup/` for quick start, `supplementary/` for addt
 `
 G. Ruan, D. Wu, X. Zheng, S. Sivaranjani, H. Zhong, C. Kang, M. A. Dahleh, and L. Xie, A Cross-Domain Approach to Analyzing the Short-Run Impact of COVID-19 on the U.S. Electricity Sector, Joule (Accepted), 2020.
 `\
-This paper conducts a comprehensive introduction of the data hub and further analysis results for electricity usage.\
+This paper conducts a comprehensive introduction of this data hub and further analysis results for electricity demand across the U.S.\
 Available at: [arXiv](https://arxiv.org/abs/2005.06631) and [EnerarXiv](http://www.enerarxiv.org/page/thesis.html?id=1840).
 - Other research studies of our group are recommended:   
 `
