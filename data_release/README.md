@@ -4,8 +4,8 @@ This folder contains all the cleaned and processed data, and the source files ca
 
 ## Data Updates
 The electricity market datasets in this folder are updated daily, and the additional celluar phone and satellite data are updated weekly. The latest available time for different datasets are listed below.
-- **Electricity Market Data**: Most are avaiable for Nov 26, 2020 (except ercot_genmix.csv for Oct 31 due to the data source limitation).
-- **Weather and COVID Cases Data**: Available for Nov 26, 2020 (align with the other sources).
+- **Electricity Market Data**: Most are avaiable for Dec 07, 2020 (except ercot_genmix.csv for Nov 30 due to the data source limitation).
+- **Weather and COVID Cases Data**: Available for Dec 07, 2020 (align with the other sources).
 - **Visit Pattern Data**: Available up to Oct 11, 2020.
 - **Social Distancing Data**: Available up to Oct 15, 2020.
 - **Night-Time Lighting Data**: Available for Aug 28, 2020.
@@ -52,7 +52,7 @@ To provide reliable and easy-to-use datasets, we implement a series of data chec
 | caiso_rto_genmix.csv | CAISO      | RTO Level    | Generation Mix | Sep 23 - Oct 3, 2019 |
 | caiso_rto_lmp.csv    | CAISO      | RTO Level    | Day-Ahead LMP  | Jan 1 - Jan 18, 2017; Oct 5, Oct 9, 2020 |
 | caiso_la_load.csv    | Near CAISO | Los Angeles  | Hourly Load    | Nov 5, 2017; Jan 11 - 12, Jun 29 - 30, Jul 1 - 9, Sep 27, Nov 4, 2018; Mar 10, Nov 3, 2019; Mar 8, Nov 1, 2020 |
-| isone_rto_genmix.csv | ISO-NE     | RTO Level    | Generation Mix | Apr 30, 2018; Jun 21, Oct 30-31, 2020 |
+| isone_rto_genmix.csv | ISO-NE     | RTO Level    | Generation Mix | Apr 30, 2018; Jun 21, Oct 30-31, Dec 06, 2020 |
 | spp_rto_genmix.csv   | SPP        | RTO Level    | Generation Mix | Mar 29, 2019         |
 | pjm_rto_genmix.csv   | PJM        | RTO Level    | Generation Mix | Mar 29 - Apr 2, 2017 |
 | spp_kck_weather.csv  | SPP        | Kansas City  | Weather        | Sep 22 - 23 
