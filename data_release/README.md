@@ -55,6 +55,8 @@ To provide reliable and easy-to-use datasets, we implement a series of data chec
 | isone_rto_genmix.csv | ISO-NE     | RTO Level    | Generation Mix | Apr 30, 2018; Jun 21, Oct 30-31, Dec 06, 2020 |
 | spp_rto_genmix.csv   | SPP        | RTO Level    | Generation Mix | Mar 29, 2019         |
 | pjm_rto_genmix.csv   | PJM        | RTO Level    | Generation Mix | Mar 29 - Apr 2, 2017 |
-| spp_kck_weather.csv  | SPP        | Kansas City  | Weather        | Sep 22 - 23 
+| spp_kck_weather.csv  | SPP        | Kansas City  | Weather        | Sep 22 - 23          |
+| ercot_rto_load.csv   | ERCOT      | RTO Level    | Hourly Load    | Dec 13, 2020         |
+| ercot_houston_load.csv| ERCOT     | Houston City | Hourly Load    | Dec 13, 2020         |
 
 
