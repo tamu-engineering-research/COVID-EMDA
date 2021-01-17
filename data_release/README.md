@@ -7,7 +7,7 @@ The electricity market datasets in this folder are updated daily, and the additi
 - **Electricity Market Data**: Most are avaiable for Jan 13, 2021 (except ercot_genmix.csv for Dec 31 due to the data source limitation).
 - **Weather and COVID Cases Data**: Available for Jan 13, 2021 (align with the other sources).
 - **Visit Pattern Data**: Available up to Oct 11, 2020.
-- **Social Distancing Data**: Available up to Oct 15, 2020.
+- **Social Distancing Data**: Available up to Dec 31, 2020.
 - **Night-Time Lighting Data**: Available for Aug 28, 2020.
 
 ## Electricity Data Field Description
