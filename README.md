@@ -10,7 +10,7 @@
 </p>
 
 
-> 11/27: We have just identified some data problems associated with the genmix and load data for ERCOT and potentially other RTOs, please do not use them for now and this will be fixed soon.
+> (Fixed) 11/27: We have just identified some data problems associated with the genmix and load data for ERCOT and potentially other RTOs, please do not use them for now and this will be fixed soon.
 
 ## Features
 - Overall, this data hub contains the `coronavirus case & deaths`, `weather`, `generation mix`, `load` and `price data` for all the existing U.S. electricity marketplaces (CAISO, MISO, ISO-NE, NYISO, PJM, SPP , ERCOT) and some typical cities in these markets (Los Angeles, Boston, New York City, Philadelphia, Chicago, Kansas City, Houston). We also integrate other additional resources, including the `mobile device location`, `night-time lighting images`, `load forecasting`, `congestion price`, `forced outage` and `renewable curtailment data`. Historical data dating back to 2017 are included as time-series benchmarks.
