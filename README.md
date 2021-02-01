@@ -42,7 +42,7 @@ This paper conducts a comprehensive introduction of this data hub and further an
 Available at: [arXiv](https://arxiv.org/abs/2005.06631) and [EnerarXiv](http://www.enerarxiv.org/page/thesis.html?id=1840).
 - Other research studies of our group are recommended:   
 `
-G. Ruan, J. Wu, H. Zhong, Q. Xia, and L. Xie, ``Quantitative Assessment of U.S. Bulk Power Systems and Market Operations during the COVID-19 Pandemic,'' Applied Energy, vol. 286, pp. 116354 2021.
+G. Ruan, J. Wu, H. Zhong, Q. Xia, and L. Xie, ``Quantitative Assessment of U.S. Bulk Power Systems and Market Operations during the COVID-19 Pandemic,'' Applied Energy, vol. 286, pp. 116354, 2021.
 `\
 This paper substantiates the pandemic's impacts from the perspectives of power system security, electric power generation, electric power demand and electricity prices.\
 Available at: [EnerarXiv](http://www.enerarxiv.org/page/thesis.html?id=2196).\
