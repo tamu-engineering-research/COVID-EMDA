@@ -36,18 +36,18 @@ Readers can turn to folder `startup/` for quick start, `supplementary/` for addt
 ## Suggested Citation 
 - Please cite the following paper when you use this data hub:  
 `
-G. Ruan, D. Wu, X. Zheng, H. Zhong, C. Kang, M. A. Dahleh, S. Sivaranjani, and L. Xie, ``A Cross-Domain Approach to Analyzing the Short-Run Impact of COVID-19 on the U.S. Electricity Sector,'' Joule, 2020. (Accepted)
+G. Ruan, D. Wu, X. Zheng, H. Zhong, C. Kang, M. A. Dahleh, S. Sivaranjani, and L. Xie, ``A Cross-Domain Approach to Analyzing the Short-Run Impact of COVID-19 on the U.S. Electricity Sector,'' Joule, vol. 4, pp. 1-16, 2020.
 `\
 This paper conducts a comprehensive introduction of this data hub and further analysis results for electricity demand across the U.S.\
 Available at: [arXiv](https://arxiv.org/abs/2005.06631) and [EnerarXiv](http://www.enerarxiv.org/page/thesis.html?id=1840).
 - Other research studies of our group are recommended:   
 `
-G. Ruan, J. Wu, H. Zhong, Q. Xia, and L. Xie, ``Quantitative Assessment of U.S. Bulk Power Systems and Market Operations during the COVID-19 Pandemic,'' 2020. (Submitted to Applied Energy)
+G. Ruan, J. Wu, H. Zhong, Q. Xia, and L. Xie, ``Quantitative Assessment of U.S. Bulk Power Systems and Market Operations during the COVID-19 Pandemic,'' Applied Energy, vol. 286, pp. 116354, 2021.
 `\
 This paper substantiates the pandemic's impacts from the perspectives of power system security, electric power generation, electric power demand and electricity prices.\
 Available at: [EnerarXiv](http://www.enerarxiv.org/page/thesis.html?id=2196).\
 `
-H. Zhong, Z. Tan, Y. He, L. Xie, and C. Kang, ``Implications of COVID-19 for the Electricity Industry: A Comprehensive Review'', CSEE Journal of Power and Energy Systems, 2020.
+H. Zhong, Z. Tan, Y. He, L. Xie, and C. Kang, ``Implications of COVID-19 for the Electricity Industry: A Comprehensive Review,'' CSEE Journal of Power and Energy Systems, 2020.
 `\
 This paper provides a review of the global impacts that COVID-19 has caused on the electricity sector.\
 Available at: [JPES](https://ieeexplore.ieee.org/abstract/document/9160443).
