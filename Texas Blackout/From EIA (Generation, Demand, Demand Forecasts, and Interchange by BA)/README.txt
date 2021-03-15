@@ -1,0 +1,1 @@
+Downloaded from https://www.eia.gov/beta/electricity/gridmonitor/dashboard/electric_overview/US48/US48 on 2021/02/19
