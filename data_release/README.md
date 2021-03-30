@@ -4,8 +4,8 @@ This folder contains all the cleaned and processed data, and the source files ca
 
 ## Data Updates
 The electricity market datasets in this folder are updated daily, and the additional celluar phone and satellite data are updated weekly. The latest available time for different datasets are listed below.
-- **Electricity Market Data**: Most are avaiable for Mar 09, 2021 (except ercot_genmix.csv for Feb 28 due to the data source limitation).
-- **Weather and COVID Cases Data**: Available for Mar 09, 2021 (align with the other sources).
+- **Electricity Market Data**: Most are avaiable for Mar 14, 2021 (except ercot_genmix.csv for Feb 28 due to the data source limitation).
+- **Weather and COVID Cases Data**: Available for Mar 14, 2021 (align with the other sources).
 - **Visit Pattern Data**: Available up to Nov 22, 2020.
 - **Social Distancing Data**: Available up to Dec 31, 2020.
 - **Night-Time Lighting Data**: Available for Aug 28, 2020.
@@ -51,7 +51,7 @@ To provide reliable and easy-to-use datasets, we implement a series of data chec
 |----------------------|------------|--------------|----------------|----------------------|
 | caiso_rto_genmix.csv | CAISO      | RTO Level    | Generation Mix | Sep 23 - Oct 3, 2019 |
 | caiso_rto_lmp.csv    | CAISO      | RTO Level    | Day-Ahead LMP  | Jan 1 - Jan 18, 2017; Oct 5, Oct 9, 2020 |
-| caiso_la_load.csv    | Near CAISO | Los Angeles  | Hourly Load    | Nov 5, 2017; Jan 11 - 12, Jun 29 - 30, Jul 1 - 9, Sep 27, Nov 4, 2018; Mar 10, Nov 3, 2019; Mar 8, Nov 1, 2020 |
+| caiso_la_load.csv    | Near CAISO | Los Angeles  | Hourly Load    | Nov 5, 2017; Jan 11 - 12, Jun 29 - 30, Jul 1 - 9, Sep 27, Nov 4, 2018; Mar 10, Nov 3, 2019; Mar 8, Nov 1, 2020; Mar 14, 2021 |
 | ercot_rto_load.csv   | ERCOT      | RTO Level    | Hourly Load    | Dec 13, 2020         |
 | ercot_houston_load.csv| ERCOT     | Houston City | Hourly Load    | Dec 13, 2020         |
 | ercot_houston_weather.csv | ERCOT | Houston City | Weather        | Feb 15 - 16, 2020         |
