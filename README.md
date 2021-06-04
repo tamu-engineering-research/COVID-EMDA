@@ -79,8 +79,8 @@ This data hub contains five major components: U.S. electricity market data, publ
 ## Support Team
 This project is a collaboration of our group members under the supervision of Prof. Le Xie at Texas A&M University. The support team keeps processing, correcting and updating the data every day. The team will also conduct further research analysis and share the latest progress in this repository.
 <p align="center">
-<!--<img src="figure/contributor-0725.png" alt="Support Team" />-->
-<img src="figure/contributor-extend-20210408.png" alt="Support Team" />
+<!--<img src="figure/contributor-extend-20210408.png.pdf" alt="Support Team" />-->
+<img src="figure/contributor-extend-20210408.png.pdf" alt="Support Team" />
 </p>
 
 Please also check our [Group Website](https://gridx.engr.tamu.edu/?page_id=30) for the detailed biography of each group member.
