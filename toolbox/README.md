@@ -1,20 +1,20 @@
 # CoVEMDA
 
- This is the home page of an open-access toolbox: **CoVEMDA** (CoronaVirus - Electricity Market Data Analyzer).
+This is the home page of an open-access toolbox: **CoVEMDA** (CoronaVirus - Electricity Market Data Analyzer). The root path contains this introductory document, a copy of the user manul, and a zip file containing all the toolbox source codes.
  
 
- ## Features
+## Features
  
- Based on COVID-EMDA+ data hub, CoVEMDA is designed for functionalities including:
- 
- - Baseline Estimation
- - Regression Analysis
- - Data Visualization
- 
- As well as other useful supplementary functions.
+Based on COVID-EMDA+ data hub, CoVEMDA is designed for functionalities including:
+
+- Baseline Estimation
+- Regression Analysis
+- Scientific Visualization
+
+As well as other useful supplementary functions.
 
 
- ## Navigation
+## Navigation
 
 CoVEMDA root directory contains four folders and two `.m` files (apart from `README.md`). The two MATLAB scripts are `install.m` and `uninstall.m`, for installation and uninstallation of the toolbox. To install or uninstall CoVEMDA, just run these two scripts in your MATLAB console.
 
@@ -36,5 +36,5 @@ A detailed **User Manual** is attached to the toolbox, which can be found at `do
 3. Data Hub
 4. Baseline Estimation
 5. Regression Analysis
-6. Visualization
+6. Scientific Visualization
 7. Acknowledgments
