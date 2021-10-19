@@ -55,13 +55,13 @@ To provide reliable and easy-to-use datasets, we implement a series of data chec
 | caiso_la_weather     | CAISO      | Los Angeles  | Weather        | Apr 7 - 8, Sep 14, 2021 |
 | ercot_rto_load.csv   | ERCOT      | RTO Level    | Hourly Load    | Dec 13, 2020; Sep 13, 2021 |
 | ercot_houston_load.csv| ERCOT     | Houston City | Hourly Load    | Dec 13, 2020; Sep 13, 2021 |
-| ercot_houston_weather.csv | ERCOT | Houston City | Weather        | Feb 15 - 16, 2020    |
+| ercot_houston_weather.csv | ERCOT | Houston City | Weather        | Feb 15 - 16, 2020; Oct 4, 2021 |
 | isone_rto_genmix.csv | ISO-NE     | RTO Level    | Generation Mix | Apr 30, 2018; Jun 21, Oct 30-31, Dec 06, 2020 |
 | isone_rto_load.csv   | ISO-NE     | RTO Level    | Hourly Load    | Dec 17, 2020         |
+| miso_south_weather.csv| MISO      | Southern     | Weather        | Oct 4, 2021          |
 | pjm_rto_genmix.csv   | PJM        | RTO Level    | Generation Mix | Mar 29 - Apr 2, 2017 |
+| spp_kck_weather.csv  | SPP        | Kansas City  | Weather        | Sep 22 - 23, 2020; Oct 4, 2021 |
+| spp_north_weather.csv| SPP        | Northern     | Weather        | Oct 4, 2021          |
 | spp_rto_genmix.csv   | SPP        | RTO Level    | Generation Mix | Mar 29, 2019         |
-| spp_kck_weather.csv  | SPP        | Kansas City  | Weather        | Sep 22 - 23          |
-
-
-
-
+| spp_rto_weather.csv  | SPP        | RTO Level    | Weather        | Oct4, 2021           |
+| spp_south_weather.csv| SPP        | Southern     | Weather        | Oct 4, 2021          |
