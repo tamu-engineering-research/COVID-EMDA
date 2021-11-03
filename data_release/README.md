@@ -59,6 +59,7 @@ To provide reliable and easy-to-use datasets, we implement a series of data chec
 | isone_rto_genmix.csv | ISO-NE     | RTO Level    | Generation Mix | Apr 30, 2018; Jun 21, Oct 30-31, Dec 06, 2020 |
 | isone_rto_load.csv   | ISO-NE     | RTO Level    | Hourly Load    | Dec 17, 2020         |
 | miso_south_weather.csv| MISO      | Southern     | Weather        | Oct 4 - 5, 2021          |
+| miso_rto_lim.csv     | MISO       | RTO Level    | Day-Ahead LMP  | Oct 28, 2021         |
 | pjm_rto_genmix.csv   | PJM        | RTO Level    | Generation Mix | Mar 29 - Apr 2, 2017 |
 | spp_kck_weather.csv  | SPP        | Kansas City  | Weather        | Sep 22 - 23, 2020; Oct 4 - 5, 2021 |
 | spp_north_weather.csv| SPP        | Northern     | Weather        | Oct 4 - 5, 2021          |
