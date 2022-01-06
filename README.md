@@ -10,12 +10,13 @@
 </p>
 
 
-> (Fixed) 11/27: We have just identified some data problems associated with the genmix and load data for ERCOT and potentially other RTOs, please do not use them for now and this will be fixed soon.
+> Based on the data hub, we have developed a supporting toolbox to realize a series of advanced analysis. Both Python and Matlab versions are available, and read more at [this link](https://github.com/tamu-engineering-research/COVID-EMDA/tree/master/toolbox#readme).
 
 ## Features
 - Overall, this data hub contains the `coronavirus case & deaths`, `weather`, `generation mix`, `load` and `price data` for all the existing U.S. electricity marketplaces (CAISO, MISO, ISO-NE, NYISO, PJM, SPP , ERCOT) and some typical cities in these markets (Los Angeles, Boston, New York City, Philadelphia, Chicago, Kansas City, Houston). We also integrate other additional resources, including the `mobile device location`, `night-time lighting images`, `load forecasting`, `congestion price`, `forced outage` and `renewable curtailment data`. Historical data dating back to 2017 are included as time-series benchmarks.
 - This data hub is updated every day after careful quality control. All data are carefully verified and coordinated to match the geological scale. All data are recorded and tidied in a consistent, compact and ready-to-use data format that makes it easy for cross-market analysis.
 - Some useful parsers as well as supplementary resources are provided for other user-defined extensions.
+- A supporting toolbox written in Python and Matlab is realized to make the data-driven analysis as easy as possible. 
 
 <p align="center">
 <img src="figure/datahub-structure.png" alt="Data Hub Structure" />
@@ -46,6 +47,11 @@ G. Ruan, J. Wu, H. Zhong, Q. Xia, and L. Xie, ``Quantitative Assessment of U.S. 
 `\
 This paper substantiates the pandemic's impacts from the perspectives of power system security, electric power generation, electric power demand and electricity prices.\
 Available at: [EnerarXiv](http://www.enerarxiv.org/page/thesis.html?id=2196).\
+`
+G. Ruan, Z. Yu, S. Pu, S. Zhou, H. Zhong, Q. Xia, and C. Kang, ``Open-Access Data and Toolbox for Tracking COVID-19 Impact on Power Systems,'' 2021 (Under Review).
+`\
+This paper gives a comprehensive introduction of the toolbox, most of the implementation details and three real-world empirical cases are discussed.\
+Available at: [arXiv](https://arxiv.org/abs/2112.05320).\
 `
 H. Zhong, Z. Tan, Y. He, L. Xie, and C. Kang, ``Implications of COVID-19 for the Electricity Industry: A Comprehensive Review,'' CSEE Journal of Power and Energy Systems, 2020.
 `\
