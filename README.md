@@ -51,7 +51,7 @@ Available at: [EnerarXiv](http://www.enerarxiv.org/page/thesis.html?id=2196).\
 G. Ruan, Z. Yu, S. Pu, S. Zhou, H. Zhong, Q. Xia, and C. Kang, ``Open-Access Data and Toolbox for Tracking COVID-19 Impact on Power Systems,'' 2021 (Under Review).
 `\
 This paper gives a comprehensive introduction of the toolbox, most of the implementation details and three real-world empirical cases are discussed.\
-Available at: [arXiv](https://arxiv.org/abs/2112.05320).\
+Available at: [arXiv](https://arxiv.org/abs/2112.05320) and [TechRxiv](https://www.techrxiv.org/articles/preprint/Open-Access_Data_and_Toolbox_for_Tracking_COVID-19_Impact_on_Power_Systems/17156354).\
 `
 H. Zhong, Z. Tan, Y. He, L. Xie, and C. Kang, ``Implications of COVID-19 for the Electricity Industry: A Comprehensive Review,'' CSEE Journal of Power and Energy Systems, 2020.
 `\
