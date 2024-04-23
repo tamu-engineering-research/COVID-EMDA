@@ -1,0 +1,38 @@
+import cvxpy as cp
+
+# Define the power generation variables for each generator
+pA = cp.Variable()
+pB = cp.Variable()
+pC = cp.Variable()
+pD = cp.Variable()
+
+# Marginal costs for each generator
+costs = [12, 15, 10, 8]
+powers = [pA, pB, pC, pD]
+
+# Minimum and maximum generation capacities
+min_cap = [20, 30, 20, 30]
+max_cap = [150, 200, 150, 400]
+
+# Power demand at each node
+demand = [400, 80, 40]
+
+# Objective function: minimize total cost
+objective = cp.Minimize(sum(cost * power for cost, power in zip(costs, powers)))
+
+# Constraints
+constraints = [
+    pA >= min_cap[0], pA <= max_cap[0],  # Generator A capacity constraints
+    pB >= min_cap[1], pB <= max_cap[1],  # Generator B capacity constraints
+    pC >= min_cap[2], pC <= max_cap[2],  # Generator C capacity constraints
+    pD >= min_cap[3], pD <= max_cap[3],  # Generator D capacity constraints
+    pA + pB == demand[0],                # Node 1 demand
+    pA + pC + pD == demand[1] + demand[2]  # Node 2 and 3 demand
+]
+
+# Solve the problem
+prob = cp.Problem(objective, constraints)
+prob.solve()
+
+# Generator dispatches
+[pA.value, pB.value, pC.value, pD.value]

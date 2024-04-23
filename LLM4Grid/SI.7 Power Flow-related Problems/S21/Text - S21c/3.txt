@@ -1,0 +1,9 @@
+
+Optimal Generator Dispatch Instructions:
+
+Generator A at Node 2: 20 MW
+Generator B at Node 1: 30 MW
+Generator C at Node 3: 70 MW
+Generator D at Node 3: 400 MW
+
+Total Generation Cost: $4590

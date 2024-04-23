@@ -1,0 +1,49 @@
+import numpy as np
+
+def dc_power_flow(Ybus, P, slack_bus):
+    """
+    Perform DC power flow analysis.
+
+    :param Ybus: NxN numpy array representing the bus admittance matrix
+    :param P: N-element numpy array representing the net power injections at each bus (generation - load)
+    :param slack_bus: index of the slack bus
+    :return: theta - N-element array of voltage angles (in radians)
+    """
+    # Number of buses
+    n = Ybus.shape[0]
+
+    # Exclude the slack bus for setting up the matrix
+    if slack_bus >= n:
+        raise ValueError("Slack bus index is out of range.")
+    
+    # Adjust matrices to remove slack bus
+    Ybus_reduced = np.delete(np.delete(Ybus, slack_bus, axis=0), slack_bus, axis=1)
+    P_reduced = np.delete(P, slack_bus)
+
+    # Solve for the voltage angles
+    theta_reduced = np.linalg.solve(Ybus_reduced, P_reduced)
+
+    # Insert the slack bus angle (0 radians) into the solution vector
+    theta = np.insert(theta_reduced, slack_bus, 0.0)
+    
+    return theta
+
+# Example Usage
+# Define the bus admittance matrix (Ybus)
+# Note: This is just an example; actual values should come from your network data.
+Ybus = np.array([[3, -1, -2],
+                 [-1, 3, -2],
+                 [-2, -2, 4]])
+
+# Define the power injections at each bus (in per unit)
+P = np.array([1.0, -0.5, -0.5])
+
+# Slack bus index
+slack_bus = 0
+
+# Calculate the voltage angles
+theta = dc_power_flow(Ybus, P, slack_bus)
+
+# Output the results
+print("Voltage angles (in radians):")
+print(theta)

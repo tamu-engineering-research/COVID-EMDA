@@ -1,0 +1,60 @@
+import numpy as np
+from scipy.sparse import csr_matrix
+from scipy.sparse.linalg import spsolve
+
+def dc_power_flow(bus_data, branch_data):
+    """
+    Solve the DC power flow equations for a given system.
+
+    Parameters:
+    - bus_data: 2D array containing bus data, structured as [bus_id, P_injection].
+    - branch_data: 2D array containing branch data, structured as [from_bus, to_bus, reactance].
+
+    Returns:
+    - theta: Phase angles at each bus.
+    """
+
+    # Number of buses
+    n_bus = bus_data.shape[0]
+
+    # Initialize the B' matrix
+    B_prime = csr_matrix((n_bus, n_bus))
+
+    # Populate the B' matrix
+    for line in branch_data:
+        i, j, x = int(line[0]) - 1, int(line[1]) - 1, line[2]
+        B_prime[i, j] -= 1 / x
+        B_prime[j, i] -= 1 / x
+        B_prime[i, i] += 1 / x
+        B_prime[j, j] += 1 / x
+
+    # Power injection vector
+    P = bus_data[:, 1]
+
+    # Reference bus: typically the first bus or a specified bus
+    # Set the phase angle of the reference bus to 0
+    ref_bus = 0
+    B_prime = B_prime[1:, 1:]  # Remove the reference bus row and column
+    P = P[1:]  # Remove the reference bus power injection
+
+    # Solve for the phase angles
+    theta = np.zeros(n_bus)
+    theta[1:] = spsolve(B_prime, P)
+
+    return theta
+
+# Example usage
+bus_data = np.array([
+    [1, -100],  # Bus 1, Power injection of -100 MW
+    [2, 50],    # Bus 2, Power injection of 50 MW
+    [3, 50]     # Bus 3, Power injection of 50 MW
+])
+
+branch_data = np.array([
+    [1, 2, 0.01],  # Line from Bus 1 to Bus 2 with reactance of 0.01 p.u.
+    [2, 3, 0.015], # Line from Bus 2 to Bus 3 with reactance of 0.015 p.u.
+    [1, 3, 0.02]   # Line from Bus 1 to Bus 3 with reactance of 0.02 p.u.
+])
+
+theta = dc_power_flow(bus_data, branch_data)
+print("Phase Angles (in radians):", theta)

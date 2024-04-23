@@ -1,0 +1,6 @@
+The bus voltage magnitudes are all 1 pu. The bus angles in radians relative to the slack bus are as follows:
+
+Bus 1: Voltage Magnitude = 1 pu, Angle = 0 radians
+Bus 2: Voltage Magnitude = 1 pu, Angle = -0.075 radians
+Bus 3: Voltage Magnitude = 1 pu, Angle = -0.05 radians
+Bus 4: Voltage Magnitude = 1 pu, Angle = -0.075 radians

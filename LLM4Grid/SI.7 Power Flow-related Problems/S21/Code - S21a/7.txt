@@ -1,0 +1,40 @@
+from scipy.optimize import linprog
+
+# Minimize the cost function coefficients (marginal costs for each generator)
+c = [12, 15, 10, 8]  # Cost coefficients: A, B, C, D
+
+# Inequality constraints matrix (generator capacities)
+# Rows are constraints for each generator, columns are for generators A, B, C, D
+A = [
+    [-1, 0, 0, 0],  # Generator A min capacity
+    [1, 0, 0, 0],   # Generator A max capacity
+    [0, -1, 0, 0],  # Generator B min capacity
+    [0, 1, 0, 0],   # Generator B max capacity
+    [0, 0, -1, 0],  # Generator C min capacity
+    [0, 0, 1, 0],   # Generator C max capacity
+    [0, 0, 0, -1],  # Generator D min capacity
+    [0, 0, 0, 1],   # Generator D max capacity
+]
+
+# Inequality constraints bounds (min and max capacities for each generator)
+b = [-20, 150, -30, 200, -20, 150, -30, 400]  # Capacity bounds: Amin, Amax, Bmin, Bmax, Cmin, Cmax, Dmin, Dmax
+
+# Equality constraints matrix (demand at each node)
+# Rows are constraints for each node's demand, columns are for generators A, B, C, D
+A_eq = [
+    [0, 1, 0, 0],  # Node 1 demand satisfied by Generator B
+    [1, 0, 0, 0],  # Node 2 demand satisfied by Generator A
+    [0, 0, 1, 1],  # Node 3 demand satisfied by Generators C and D
+]
+
+# Equality constraints bounds (exact demand at each node)
+b_eq = [400, 80, 40]  # Node 1 demand, Node 2 demand, Node 3 demand
+
+# Bounds for each generator's output
+x_bounds = [(20, 150), (30, 200), (20, 150), (30, 400)]  # Bounds for A, B, C, D
+
+# Linear programming solution
+result = linprog(c, A_ub=A, b_ub=b, A_eq=A_eq, b_eq=b_eq, bounds=x_bounds, method='highs')
+
+# Output power dispatch for each generator
+result.x

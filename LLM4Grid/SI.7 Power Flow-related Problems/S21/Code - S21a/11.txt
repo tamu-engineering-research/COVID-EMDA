@@ -1,0 +1,42 @@
+from scipy.optimize import linprog
+
+# Objective coefficients: Minimize the total cost
+c = [12, 15, 10, 8]  # Cost per MWh for Generators A, B, C, D
+
+# Inequality constraints matrix (generator capacities)
+A = [
+    [-1, 0, 0, 0],  # Generator A capacity constraint
+    [1, 0, 0, 0],   # Generator A capacity constraint
+    [0, -1, 0, 0],  # Generator B capacity constraint
+    [0, 1, 0, 0],   # Generator B capacity constraint
+    [0, 0, -1, 0],  # Generator C capacity constraint
+    [0, 0, 1, 0],   # Generator C capacity constraint
+    [0, 0, 0, -1],  # Generator D capacity constraint
+    [0, 0, 0, 1],   # Generator D capacity constraint
+]
+
+# Bounds for generator capacities
+b = [
+    -20, 150,  # Generator A min and max capacity
+    -30, 200,  # Generator B min and max capacity
+    -20, 150,  # Generator C min and max capacity
+    -30, 400   # Generator D min and max capacity
+]
+
+# Equality constraints for power demands at nodes
+A_eq = [
+    [0, 1, 0, 0],    # Power supply to node 1 by Gen B
+    [1, 0, 0, 0],    # Power supply to node 2 by Gen A
+    [0, 0, 1, 1]     # Power supply to node 3 by Gen C and D
+]
+b_eq = [400, 80, 40]  # Demand at nodes 1, 2, and 3 respectively
+
+# Bounds for each variable (generator output)
+x_bounds = [(20, 150), (30, 200), (20, 150), (30, 400)]  # A, B, C, D
+
+# Solve the linear programming problem
+result = linprog(c, A_ub=A, b_ub=b, A_eq=A_eq, b_eq=b_eq, bounds=x_bounds, method='highs')
+
+# Extract the results
+output_gen_a, output_gen_b, output_gen_c, output_gen_d = result.x
+result.x, result.success

@@ -1,0 +1,52 @@
+
+Pentesting Methodology for Substation Modbus Systems
+===================================================
+
+1. Introduction
+---------------
+This document outlines a comprehensive methodology for penetration testing of Modbus systems in substations. Modbus is a widely used communication protocol in industrial environments, including power generation and distribution systems. This methodology is designed for security researchers and penetration testers with explicit permission from system operators.
+
+2. Planning and Preparation
+--------------------------
+   - **Objective Definition**: Clearly define the scope and objectives of the penetration test. Objectives may include identifying vulnerabilities, assessing potential impacts, and verifying the security measures in place.
+   - **Legal and Compliance Review**: Ensure all testing activities are compliant with local laws and regulations. Obtain and verify permissions from all relevant parties.
+   - **Tool Selection**: Choose appropriate tools for scanning and exploitation. Common tools include Modscan, Nmap, Metasploit, and custom scripts.
+
+3. Reconnaissance
+-----------------
+   - **Network Mapping**: Use tools like Nmap to discover devices on the network that communicate using the Modbus protocol.
+   - **Service Identification**: Identify Modbus services running on devices. Check for standard ports such as 502 (TCP) for Modbus TCP.
+   - **Gather Documentation**: Collect all available documentation on the network architecture, devices, and their configurations.
+
+4. Vulnerability Scanning
+-------------------------
+   - **Active Scanning**: Use tools like Modscan to interact with Modbus services to identify vulnerabilities such as weak authentication, unauthorized access, and command injections.
+   - **Passive Monitoring**: Monitor the network traffic using tools like Wireshark to identify vulnerabilities without interacting with the systems directly.
+
+5. Exploitation
+---------------
+   - **Exploit Development**: Develop or customize exploits based on identified vulnerabilities. This may involve crafting malicious Modbus packets to test the robustness of the system against unauthorized commands.
+   - **Simulation of Attacks**: Simulate attack scenarios to demonstrate how an attacker could exploit the vulnerabilities. This includes unauthorized command execution, denial of service attacks, and data exfiltration.
+
+6. Post-Exploitation
+--------------------
+   - **Data Analysis**: Analyze the data compromised during the exploitation phase to assess the impact.
+   - **Persistence**: Evaluate the possibility of an attacker maintaining persistent access to the system.
+
+7. Reporting and Recommendations
+--------------------------------
+   - **Drafting the Report**: Document all findings, methodologies, and steps taken during the test. Include evidence such as logs, screenshots, and descriptions of each exploit.
+   - **Recommendations**: Provide detailed recommendations for mitigating identified risks. This may include patch management, configuration changes, and additional security measures.
+   - **Review with Stakeholders**: Discuss the findings and recommendations with stakeholders to plan further actions.
+
+8. Cleanup
+----------
+   - **Revert Changes**: Remove any changes made to the system during testing, such as disabling any accounts created.
+   - **System Restoration**: Ensure that the system is restored to its original state to prevent any unintended security issues.
+
+9. Continuous Improvement
+-------------------------
+   - **Feedback Loop**: Incorporate feedback from the stakeholders and refine the testing methodologies and processes based on the outcomes of the penetration test.
+   - **Schedule Regular Tests**: Plan for regular penetration tests to continuously improve the security posture of the substation systems.
+
+End of Document

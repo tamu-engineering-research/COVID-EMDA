@@ -1,0 +1,51 @@
+from PIL import Image
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Load the images
+transmission_lines_path = '/mnt/data/Transmission_line.png'
+august_wildfire_path = '/mnt/data/aug.png'
+september_wildfire_path = '/mnt/data/sep.png'
+october_wildfire_path = '/mnt/data/oct.png'
+
+# Open images
+transmission_lines_img = Image.open(transmission_lines_path)
+august_wildfire_img = Image.open(august_wildfire_path)
+september_wildfire_img = Image.open(september_wildfire_path)
+october_wildfire_img = Image.open(october_wildfire_path)
+
+# Convert wildfire images to arrays and extract only the red channel
+# The areas of the wildfires should be highlighted in the red channel of the images
+august_wildfire_arr = np.array(august_wildfire_img)[:, :, 0]
+september_wildfire_arr = np.array(september_wildfire_img)[:, :, 0]
+october_wildfire_arr = np.array(october_wildfire_img)[:, :, 0]
+
+# Since the red channel represents the fire, we consider high red values as fire
+# and use a threshold to create a binary mask
+threshold = 200
+
+august_mask = august_wildfire_arr > threshold
+september_mask = september_wildfire_arr > threshold
+october_mask = october_wildfire_arr > threshold
+
+# Create a blank image with the same dimensions as the transmission lines image
+output_image = np.zeros_like(np.array(transmission_lines_img))
+
+# Overlay the masks on the blank image
+# We use different color channels for each month to distinguish them
+output_image[august_mask, 0] = 255  # Red for August
+output_image[september_mask, 1] = 255  # Green for September
+output_image[october_mask, 2] = 255  # Blue for October
+
+# Overlay the transmission lines image on top of the output image
+transmission_lines_arr = np.array(transmission_lines_img)
+output_image[transmission_lines_arr[:, :, 0] == 0] = transmission_lines_arr[transmission_lines_arr[:, :, 0] == 0]
+
+# Convert the output array to an image
+output_img = Image.fromarray(output_image)
+
+# Plotting the result
+plt.figure(figsize=(10, 8))
+plt.imshow(output_img)
+plt.axis('off')  # Hide the axes
+plt.show()

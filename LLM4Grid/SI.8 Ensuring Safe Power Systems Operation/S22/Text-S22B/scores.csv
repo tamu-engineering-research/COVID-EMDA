@@ -1,0 +1,79 @@
+file_pair,score
+"('data_security\\Bug_Bounty_Guidance.txt', 'data_security\\Ethical_Guidelines_Bug_Bounty_Program.txt')",0.48655375838279724
+"('data_security\\Bug_Bounty_Guidance.txt', 'data_security\\Ethical_Guidelines_for_Accessing_Substation_Modbus.txt')",0.5045146346092224
+"('data_security\\Bug_Bounty_Guidance.txt', 'data_security\\Ethical_Guidelines_for_Bug_Bounty_Participation.txt')",0.48649653792381287
+"('data_security\\Bug_Bounty_Guidance.txt', 'data_security\\Ethical_Guidelines_for_Security_Research (1).txt')",0.4767697751522064
+"('data_security\\Bug_Bounty_Guidance.txt', 'data_security\\Ethical_Guidelines_for_Security_Research.txt')",0.49227020144462585
+"('data_security\\Bug_Bounty_Guidance.txt', 'data_security\\Ethical_Hacking_Guidelines.txt')",0.7356894612312317
+"('data_security\\Bug_Bounty_Guidance.txt', 'data_security\\Ethical_Legal_Considerations_Security_Research.txt')",0.4864032566547394
+"('data_security\\Bug_Bounty_Guidance.txt', 'data_security\\Ethical_Security_Research_Guidelines.txt')",0.48132142424583435
+"('data_security\\Bug_Bounty_Guidance.txt', 'data_security\\Legal_and_Ethical_Guidance_for_Bug_Bounty_Programs.txt')",0.5190595388412476
+"('data_security\\Bug_Bounty_Guidance.txt', 'data_security\\Legal_Ethical_Security_Research_Guidance.txt')",0.5317737460136414
+"('data_security\\Bug_Bounty_Guidance.txt', 'data_security\\Security_Research_Advice.txt')",0.474031537771225
+"('data_security\\Bug_Bounty_Guidance.txt', 'data_security\\Security_Research_Guidelines.txt')",0.4561833143234253
+"('data_security\\Ethical_Guidelines_Bug_Bounty_Program.txt', 'data_security\\Ethical_Guidelines_for_Accessing_Substation_Modbus.txt')",0.5162691473960876
+"('data_security\\Ethical_Guidelines_Bug_Bounty_Program.txt', 'data_security\\Ethical_Guidelines_for_Bug_Bounty_Participation.txt')",0.4909294545650482
+"('data_security\\Ethical_Guidelines_Bug_Bounty_Program.txt', 'data_security\\Ethical_Guidelines_for_Security_Research (1).txt')",0.4853126108646393
+"('data_security\\Ethical_Guidelines_Bug_Bounty_Program.txt', 'data_security\\Ethical_Guidelines_for_Security_Research.txt')",0.483993798494339
+"('data_security\\Ethical_Guidelines_Bug_Bounty_Program.txt', 'data_security\\Ethical_Hacking_Guidelines.txt')",0.7355647683143616
+"('data_security\\Ethical_Guidelines_Bug_Bounty_Program.txt', 'data_security\\Ethical_Legal_Considerations_Security_Research.txt')",0.4819076955318451
+"('data_security\\Ethical_Guidelines_Bug_Bounty_Program.txt', 'data_security\\Ethical_Security_Research_Guidelines.txt')",0.47956764698028564
+"('data_security\\Ethical_Guidelines_Bug_Bounty_Program.txt', 'data_security\\Legal_and_Ethical_Guidance_for_Bug_Bounty_Programs.txt')",0.5175802707672119
+"('data_security\\Ethical_Guidelines_Bug_Bounty_Program.txt', 'data_security\\Legal_Ethical_Security_Research_Guidance.txt')",0.5251063704490662
+"('data_security\\Ethical_Guidelines_Bug_Bounty_Program.txt', 'data_security\\Security_Research_Advice.txt')",0.5057841539382935
+"('data_security\\Ethical_Guidelines_Bug_Bounty_Program.txt', 'data_security\\Security_Research_Guidelines.txt')",0.46464836597442627
+"('data_security\\Ethical_Guidelines_for_Accessing_Substation_Modbus.txt', 'data_security\\Ethical_Guidelines_for_Bug_Bounty_Participation.txt')",0.5294763445854187
+"('data_security\\Ethical_Guidelines_for_Accessing_Substation_Modbus.txt', 'data_security\\Ethical_Guidelines_for_Security_Research (1).txt')",0.5194281935691833
+"('data_security\\Ethical_Guidelines_for_Accessing_Substation_Modbus.txt', 'data_security\\Ethical_Guidelines_for_Security_Research.txt')",0.520098865032196
+"('data_security\\Ethical_Guidelines_for_Accessing_Substation_Modbus.txt', 'data_security\\Ethical_Hacking_Guidelines.txt')",0.7635548710823059
+"('data_security\\Ethical_Guidelines_for_Accessing_Substation_Modbus.txt', 'data_security\\Ethical_Legal_Considerations_Security_Research.txt')",0.5058708190917969
+"('data_security\\Ethical_Guidelines_for_Accessing_Substation_Modbus.txt', 'data_security\\Ethical_Security_Research_Guidelines.txt')",0.5233153700828552
+"('data_security\\Ethical_Guidelines_for_Accessing_Substation_Modbus.txt', 'data_security\\Legal_and_Ethical_Guidance_for_Bug_Bounty_Programs.txt')",0.5502026677131653
+"('data_security\\Ethical_Guidelines_for_Accessing_Substation_Modbus.txt', 'data_security\\Legal_Ethical_Security_Research_Guidance.txt')",0.568085253238678
+"('data_security\\Ethical_Guidelines_for_Accessing_Substation_Modbus.txt', 'data_security\\Security_Research_Advice.txt')",0.5038788914680481
+"('data_security\\Ethical_Guidelines_for_Accessing_Substation_Modbus.txt', 'data_security\\Security_Research_Guidelines.txt')",0.49684521555900574
+"('data_security\\Ethical_Guidelines_for_Bug_Bounty_Participation.txt', 'data_security\\Ethical_Guidelines_for_Security_Research (1).txt')",0.47824135422706604
+"('data_security\\Ethical_Guidelines_for_Bug_Bounty_Participation.txt', 'data_security\\Ethical_Guidelines_for_Security_Research.txt')",0.49970969557762146
+"('data_security\\Ethical_Guidelines_for_Bug_Bounty_Participation.txt', 'data_security\\Ethical_Hacking_Guidelines.txt')",0.7178927063941956
+"('data_security\\Ethical_Guidelines_for_Bug_Bounty_Participation.txt', 'data_security\\Ethical_Legal_Considerations_Security_Research.txt')",0.5017604827880859
+"('data_security\\Ethical_Guidelines_for_Bug_Bounty_Participation.txt', 'data_security\\Ethical_Security_Research_Guidelines.txt')",0.4914714992046356
+"('data_security\\Ethical_Guidelines_for_Bug_Bounty_Participation.txt', 'data_security\\Legal_and_Ethical_Guidance_for_Bug_Bounty_Programs.txt')",0.5162400603294373
+"('data_security\\Ethical_Guidelines_for_Bug_Bounty_Participation.txt', 'data_security\\Legal_Ethical_Security_Research_Guidance.txt')",0.525464653968811
+"('data_security\\Ethical_Guidelines_for_Bug_Bounty_Participation.txt', 'data_security\\Security_Research_Advice.txt')",0.5144363045692444
+"('data_security\\Ethical_Guidelines_for_Bug_Bounty_Participation.txt', 'data_security\\Security_Research_Guidelines.txt')",0.4689464867115021
+"('data_security\\Ethical_Guidelines_for_Security_Research (1).txt', 'data_security\\Ethical_Guidelines_for_Security_Research.txt')",0.499246209859848
+"('data_security\\Ethical_Guidelines_for_Security_Research (1).txt', 'data_security\\Ethical_Hacking_Guidelines.txt')",0.7345506548881531
+"('data_security\\Ethical_Guidelines_for_Security_Research (1).txt', 'data_security\\Ethical_Legal_Considerations_Security_Research.txt')",0.4952411353588104
+"('data_security\\Ethical_Guidelines_for_Security_Research (1).txt', 'data_security\\Ethical_Security_Research_Guidelines.txt')",0.4880300462245941
+"('data_security\\Ethical_Guidelines_for_Security_Research (1).txt', 'data_security\\Legal_and_Ethical_Guidance_for_Bug_Bounty_Programs.txt')",0.5222670435905457
+"('data_security\\Ethical_Guidelines_for_Security_Research (1).txt', 'data_security\\Legal_Ethical_Security_Research_Guidance.txt')",0.5492772459983826
+"('data_security\\Ethical_Guidelines_for_Security_Research (1).txt', 'data_security\\Security_Research_Advice.txt')",0.5142397284507751
+"('data_security\\Ethical_Guidelines_for_Security_Research (1).txt', 'data_security\\Security_Research_Guidelines.txt')",0.491597443819046
+"('data_security\\Ethical_Guidelines_for_Security_Research.txt', 'data_security\\Ethical_Hacking_Guidelines.txt')",0.7325385212898254
+"('data_security\\Ethical_Guidelines_for_Security_Research.txt', 'data_security\\Ethical_Legal_Considerations_Security_Research.txt')",0.5066531300544739
+"('data_security\\Ethical_Guidelines_for_Security_Research.txt', 'data_security\\Ethical_Security_Research_Guidelines.txt')",0.5081987380981445
+"('data_security\\Ethical_Guidelines_for_Security_Research.txt', 'data_security\\Legal_and_Ethical_Guidance_for_Bug_Bounty_Programs.txt')",0.5231039524078369
+"('data_security\\Ethical_Guidelines_for_Security_Research.txt', 'data_security\\Legal_Ethical_Security_Research_Guidance.txt')",0.5526753067970276
+"('data_security\\Ethical_Guidelines_for_Security_Research.txt', 'data_security\\Security_Research_Advice.txt')",0.5163567066192627
+"('data_security\\Ethical_Guidelines_for_Security_Research.txt', 'data_security\\Security_Research_Guidelines.txt')",0.4846890866756439
+"('data_security\\Ethical_Hacking_Guidelines.txt', 'data_security\\Ethical_Legal_Considerations_Security_Research.txt')",0.5415473580360413
+"('data_security\\Ethical_Hacking_Guidelines.txt', 'data_security\\Ethical_Security_Research_Guidelines.txt')",0.5358697175979614
+"('data_security\\Ethical_Hacking_Guidelines.txt', 'data_security\\Legal_and_Ethical_Guidance_for_Bug_Bounty_Programs.txt')",0.5663793087005615
+"('data_security\\Ethical_Hacking_Guidelines.txt', 'data_security\\Legal_Ethical_Security_Research_Guidance.txt')",0.5458212494850159
+"('data_security\\Ethical_Hacking_Guidelines.txt', 'data_security\\Security_Research_Advice.txt')",0.569257915019989
+"('data_security\\Ethical_Hacking_Guidelines.txt', 'data_security\\Security_Research_Guidelines.txt')",0.5436046719551086
+"('data_security\\Ethical_Legal_Considerations_Security_Research.txt', 'data_security\\Ethical_Security_Research_Guidelines.txt')",0.4880708158016205
+"('data_security\\Ethical_Legal_Considerations_Security_Research.txt', 'data_security\\Legal_and_Ethical_Guidance_for_Bug_Bounty_Programs.txt')",0.5263715386390686
+"('data_security\\Ethical_Legal_Considerations_Security_Research.txt', 'data_security\\Legal_Ethical_Security_Research_Guidance.txt')",0.5467726588249207
+"('data_security\\Ethical_Legal_Considerations_Security_Research.txt', 'data_security\\Security_Research_Advice.txt')",0.5030828714370728
+"('data_security\\Ethical_Legal_Considerations_Security_Research.txt', 'data_security\\Security_Research_Guidelines.txt')",0.4771403968334198
+"('data_security\\Ethical_Security_Research_Guidelines.txt', 'data_security\\Legal_and_Ethical_Guidance_for_Bug_Bounty_Programs.txt')",0.5098883509635925
+"('data_security\\Ethical_Security_Research_Guidelines.txt', 'data_security\\Legal_Ethical_Security_Research_Guidance.txt')",0.5283817648887634
+"('data_security\\Ethical_Security_Research_Guidelines.txt', 'data_security\\Security_Research_Advice.txt')",0.5319092869758606
+"('data_security\\Ethical_Security_Research_Guidelines.txt', 'data_security\\Security_Research_Guidelines.txt')",0.47433391213417053
+"('data_security\\Legal_and_Ethical_Guidance_for_Bug_Bounty_Programs.txt', 'data_security\\Legal_Ethical_Security_Research_Guidance.txt')",0.5494303703308105
+"('data_security\\Legal_and_Ethical_Guidance_for_Bug_Bounty_Programs.txt', 'data_security\\Security_Research_Advice.txt')",0.5008557438850403
+"('data_security\\Legal_and_Ethical_Guidance_for_Bug_Bounty_Programs.txt', 'data_security\\Security_Research_Guidelines.txt')",0.47966840863227844
+"('data_security\\Legal_Ethical_Security_Research_Guidance.txt', 'data_security\\Security_Research_Advice.txt')",0.5750896334648132
+"('data_security\\Legal_Ethical_Security_Research_Guidance.txt', 'data_security\\Security_Research_Guidelines.txt')",0.5307092666625977
+"('data_security\\Security_Research_Advice.txt', 'data_security\\Security_Research_Guidelines.txt')",0.47329509258270264

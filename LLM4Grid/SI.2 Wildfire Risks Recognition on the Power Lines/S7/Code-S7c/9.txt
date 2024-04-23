@@ -1,0 +1,28 @@
+from PIL import Image
+import numpy as np
+
+# Load the image
+img_path = '/mnt/data/FIRMS_2020-09-09_2020-09-10[@-123.0,39.8,8.5z].jpg'
+img = Image.open(img_path)
+
+# Convert image to numpy array
+data = np.array(img)
+
+# Set the white (also shades of whites) and black areas to transparent
+# Assuming that the white areas correspond to the RGB values (255, 255, 255)
+# and black or very dark shades can be ignored, we use a threshold to identify them.
+# All pixels that are pure white (255, 255, 255) or very dark will be made transparent.
+red, green, blue = data[:,:,0], data[:,:,1], data[:,:,2]
+mask = (red == 255) & (green == 255) & (blue == 255)
+mask_black = (red < 5) & (green < 5) & (blue < 5) # Assuming threshold for dark shades to be 5
+data[:,:,:3][mask | mask_black] = [0, 0, 0]
+data[:,:,3] = ~mask * 255 # Inverting mask for alpha channel, and ignoring black areas
+
+# Create a new image using the modified data array
+img_with_transparency = Image.fromarray(data, 'RGBA')
+
+# Save the new image with transparency
+output_path = '/mnt/data/FIRMS_transparent.png'
+img_with_transparency.save(output_path)
+
+output_path

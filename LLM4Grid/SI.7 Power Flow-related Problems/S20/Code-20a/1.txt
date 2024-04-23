@@ -1,0 +1,75 @@
+import numpy as np
+
+# Given y-bus matrix
+Y_bus = np.array([
+    [-30j, 10j, 10j, 10j],
+    [10j, -20j, 10j, 0],
+    [10j, 10j, -30j, 10j],
+    [10j, 0, 10j, -20j]
+], dtype=complex)
+
+# Power generation and load demand in pu
+P_gen = np.array([2, 2, 4, 1])  # pu
+P_load = np.array([0, 1, 4, 0])  # pu
+
+# Net power injection (generation - load)
+P_net = P_gen - P_load  # pu
+
+# Assumptions for the slack bus and initial voltage (flat start except slack bus at 1 angle 0)
+V = np.array([1+0j, 1+0j, 1+0j, 1+0j], dtype=complex)  # all buses start with 1 pu and 0 angle
+
+# Constants
+n_buses = len(P_net)
+max_iter = 100
+tolerance = 1e-6
+
+# Iterate with Newton-Raphson
+for iter in range(max_iter):
+    V_prev = V.copy()
+    
+    # Calculate power mismatches
+    I = Y_bus @ V
+    S = V * np.conj(I)
+    P_calculated = S.real
+    Q_calculated = S.imag
+    
+    # Mismatch for PQ buses (Q_mismatch for PQ and P_mismatch for all except slack)
+    delta_P = P_net - P_calculated
+    delta_Q = -Q_calculated  # only Q for PQ buses, as slack does not have Q mismatch
+    delta_Q[0] = 0  # slack bus, no reactive power mismatch considered
+    
+    # Mismatch vector (delta_PQ)
+    delta_PQ = np.concatenate((delta_P[1:], delta_Q[1:]))
+    
+    # Check tolerance
+    if np.linalg.norm(delta_PQ) < tolerance:
+        break
+    
+    # Jacobian matrix calculation
+    # 1. Submatrix J11: ∂P/∂θ, J12: ∂P/∂V, J21: ∂Q/∂θ, J22: ∂Q/∂V
+    J11 = np.zeros((n_buses-1, n_buses-1))  # ∂P/∂θ
+    J12 = np.zeros((n_buses-1, n_buses-1))  # ∂P/∂V
+    J21 = np.zeros((n_buses-1, n_buses-1))  # ∂Q/∂θ
+    J22 = np.zeros((n_buses-1, n_buses-1))  # ∂Q/∂V
+
+    for i in range(1, n_buses):
+        for k in range(1, n_buses):
+            if i == k:
+                J11[i-1, k-1] = -Q_calculated[i] - np.abs(V[i])**2 * Y_bus[i, i].imag
+                J12[i-1, k-1] = P_calculated[i] / np.abs(V[i]) + np.abs(V[i]) * Y_bus[i, i].real
+                J21[i-1, k-1] = P_calculated[i] + np.abs(V[i])**2 * Y_bus[i, i].real
+                J22[i-1, k-1] = Q_calculated[i] / np.abs(V[i]) - np.abs(V[i]) * Y_bus[i, i].imag
+            else:
+                J11[i-1, k-1] = -V[i].imag * (V[k].real * Y_bus[i, k].real + V[k].imag * Y_bus[i, k].imag) - \
+                                V[i].real * (V[k].imag * Y_bus[i, k].real - V[k].real * Y_bus[i, k].imag)
+                J12[i-1, k-1] = 0
+                J21[i-1, k-1] = V[i].real * (V[k].real * Y_bus[i, k].real + V[k].imag * Y_bus[i, k].imag) - \
+                                V[i].imag * (V[k].imag * Y_bus[i, k].real - V[k].real * Y_bus[i, k].imag)
+                J22[i-1, k-1] = 0
+
+    # Complete Jacobian
+    J = np.block([
+        [J11, J12],
+        [J21, J22]
+    ])
+

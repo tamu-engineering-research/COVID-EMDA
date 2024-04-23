@@ -1,0 +1,48 @@
+import numpy as np
+from scipy.linalg import solve
+
+def dc_power_flow(B, P, slack_bus):
+    """
+    Perform a DC power flow calculation.
+
+    Parameters:
+    - B: Bus susceptance matrix (numpy array). Should not include the row and column for the slack bus.
+    - P: Power injection vector (numpy array). Should not include the value for the slack bus.
+    - slack_bus: Index of the slack bus (integer, zero-based).
+
+    Returns:
+    - theta: Voltage angle differences (numpy array).
+    """
+    # Remove the slack bus row and column from B matrix
+    B_mod = np.delete(B, slack_bus, axis=0)
+    B_mod = np.delete(B_mod, slack_bus, axis=1)
+
+    # Remove the slack bus from power injections
+    P_mod = np.delete(P, slack_bus)
+
+    # Solve for the voltage angles
+    theta = solve(B_mod, P_mod)
+
+    # Insert the slack bus angle (0 radians) into the result
+    theta = np.insert(theta, slack_bus, 0)
+
+    return theta
+
+# Example usage
+# Define the bus susceptance matrix (excluding shunt susceptances)
+B = np.array([
+    [ -10,  10,   0],
+    [  10, -20,  10],
+    [   0,  10, -10]
+])
+
+# Power injections at buses (generation is positive, load is negative)
+P = np.array([1.0, -1.2, 0.2])
+
+# Index of the slack bus
+slack_bus = 0
+
+# Calculate the voltage angles
+theta = dc_power_flow(B, P, slack_bus)
+
+print("Voltage angles (radians):", theta)

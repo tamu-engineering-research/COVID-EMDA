@@ -1,0 +1,47 @@
+from PIL import Image
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Open the images
+transmission_img = Image.open('/mnt/data/Transmission_line.png')
+aug_img = Image.open('/mnt/data/aug.png')
+sep_img = Image.open('/mnt/data/sep.png')
+oct_img = Image.open('/mnt/data/oct.png')
+
+# Convert wildfire images to arrays and extract red channel since the wildfire areas are marked in red
+aug_array = np.array(aug_img)[:, :, 0]
+sep_array = np.array(sep_img)[:, :, 0]
+oct_array = np.array(oct_img)[:, :, 0]
+
+# We will threshold the red channel to get a binary mask of the wildfire areas
+# Assuming a somewhat arbitrary threshold value that we may need to tweak after seeing the results
+threshold = 150
+aug_mask = aug_array > threshold
+sep_mask = sep_array > threshold
+oct_mask = oct_array > threshold
+
+# Stack the masks to create a color overlay, we'll use red for August, green for September, blue for October
+overlay = np.stack((aug_mask, sep_mask, oct_mask), axis=-1).astype(np.float32)
+
+# Prepare the transmission image for overlay
+transmission_array = np.array(transmission_img.convert('RGBA')) / 255.0
+
+# Before overlaying, we need to make sure the dimensions match
+# We will resize the wildfire masks to match the transmission line map
+aug_mask_resized = np.array(Image.fromarray(aug_mask).resize(transmission_array.shape[1::-1], Image.NEAREST))
+sep_mask_resized = np.array(Image.fromarray(sep_mask).resize(transmission_array.shape[1::-1], Image.NEAREST))
+oct_mask_resized = np.array(Image.fromarray(oct_mask).resize(transmission_array.shape[1::-1], Image.NEAREST))
+
+# Create the overlay with the resized masks
+overlay_resized = np.stack((aug_mask_resized, sep_mask_resized, oct_mask_resized), axis=-1).astype(np.float32)
+
+# Perform the overlay by adding the wildfire masks to the transmission map
+# We should normalize the overlay intensity to not exceed 1.0 after addition
+combined = transmission_array[:, :, :3] + overlay_resized * 0.5  # We're using 50% opacity for the overlay
+combined[combined > 1] = 1  # Ensure we don't go over 1.0
+
+# Plotting the combined image
+plt.figure(figsize=(10, 8))
+plt.imshow(combined)
+plt.axis('off')  # Hide axes
+plt.show()

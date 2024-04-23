@@ -1,0 +1,53 @@
+import cvxpy as cp
+import numpy as np
+
+# Number of buses and generators
+n_buses = 3
+n_gens = 2
+
+# Cost coefficients for generators (quadratic costs are ignored for DC OPF)
+c = np.array([10, 50])  # Cost per MWh
+
+# Power demand at each bus
+P_d = np.array([30, 10, 20])  # MW
+
+# Maximum and minimum generator limits
+P_max = np.array([40, 30])  # MW
+P_min = np.array([0, 0])  # MW
+
+# Generator to bus connectivity matrix
+C_gb = np.array([[1, 0], 
+                 [0, 1],
+                 [0, 0]])  # Generator i connected to bus j
+
+# Network incidence matrix
+B = np.array([[-10, 10, 0],
+              [0, -10, 10],
+              [10, 0, -10]])  # Simplified susceptance values
+
+# Decision variable for generator output
+P_g = cp.Variable(n_gens)
+
+# Power flow variable (flows on lines)
+f = cp.Variable(n_buses - 1)
+
+# Define the objective function (minimize cost of generation)
+objective = cp.Minimize(c @ P_g)
+
+# Define the constraints
+constraints = [
+    P_g >= P_min,  # Minimum generation limit
+    P_g <= P_max,  # Maximum generation limit
+    C_gb.T @ P_g - P_d == B @ f,  # Power balance constraint at each bus
+]
+
+# Problem definition
+problem = cp.Problem(objective, constraints)
+
+# Solve the problem
+problem.solve()
+
+# Print results
+print("Generator outputs (MW):", P_g.value)
+print("Line flows (MW):", f.value)
+print("Minimum cost ($):", problem.value)

@@ -1,0 +1,27 @@
+from PIL import Image
+import numpy as np
+
+# Load the image
+file_path = '/mnt/data/FIRMS_2020-09-09_2020-09-10[@-123.0,39.8,8.5z].jpg'
+image = Image.open(file_path)
+
+# Convert image to numpy array
+image_array = np.array(image)
+
+# Create a mask where the red areas are kept (R > G+B and R > 100 to avoid dark areas)
+# This is a simplistic approach and might need to be adjusted depending on the actual image content
+mask = (image_array[:, :, 0] > image_array[:, :, 1] + image_array[:, :, 2]) & (image_array[:, :, 0] > 100)
+
+# Create a new image with the same size as the original one, filled with white
+red_areas = np.zeros_like(image_array)
+# Set the red areas to the original red values
+red_areas[mask] = image_array[mask]
+
+# Convert back to an image
+red_areas_image = Image.fromarray(red_areas)
+
+# Save the image with only the red areas
+red_areas_file_path = '/mnt/data/red_areas_only.jpg'
+red_areas_image.save(red_areas_file_path)
+
+red_areas_file_path

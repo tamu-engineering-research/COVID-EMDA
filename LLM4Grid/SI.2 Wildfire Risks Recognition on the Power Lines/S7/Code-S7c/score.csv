@@ -1,0 +1,79 @@
+file_pair,score,score_clipped
+"('Code2-data\\bi34t.txt', 'Code2-data\\e hw ho.txt')",0.5602127909660339,0.5602127909660339
+"('Code2-data\\bi34t.txt', 'Code2-data\\ew wt4; t4 q;.txt')",0.7016777992248535,0.7016777992248535
+"('Code2-data\\bi34t.txt', 'Code2-data\\fk ew io.txt')",0.6220108866691589,0.6220108866691589
+"('Code2-data\\bi34t.txt', 'Code2-data\\i or oit 32.txt')",0.5642030835151672,0.5642030835151672
+"('Code2-data\\bi34t.txt', 'Code2-data\\i yop .txt')",0.5203304290771484,0.5203304290771484
+"('Code2-data\\bi34t.txt', 'Code2-data\\k qooi4oo4t .txt')",0.5364733934402466,0.5364733934402466
+"('Code2-data\\bi34t.txt', 'Code2-data\\new 8.txt')",0.5883283615112305,0.5883283615112305
+"('Code2-data\\bi34t.txt', 'Code2-data\\oto .txt')",0.5376622676849365,0.5376622676849365
+"('Code2-data\\bi34t.txt', 'Code2-data\\ri3r2  231; 1.txt')",0.5868029594421387,0.5868029594421387
+"('Code2-data\\bi34t.txt', 'Code2-data\\rinpx.txt')",0.5949313044548035,0.5949313044548035
+"('Code2-data\\bi34t.txt', 'Code2-data\\titvtovt23vot32v.txt')",0.5742359757423401,0.5742359757423401
+"('Code2-data\\bi34t.txt', 'Code2-data\\wqkh .txt')",0.5075196623802185,0.5075196623802185
+"('Code2-data\\e hw ho.txt', 'Code2-data\\ew wt4; t4 q;.txt')",0.6695734262466431,0.6695734262466431
+"('Code2-data\\e hw ho.txt', 'Code2-data\\fk ew io.txt')",0.6035865545272827,0.6035865545272827
+"('Code2-data\\e hw ho.txt', 'Code2-data\\i or oit 32.txt')",0.5555861592292786,0.5555861592292786
+"('Code2-data\\e hw ho.txt', 'Code2-data\\i yop .txt')",0.5115595459938049,0.5115595459938049
+"('Code2-data\\e hw ho.txt', 'Code2-data\\k qooi4oo4t .txt')",0.5378157496452332,0.5378157496452332
+"('Code2-data\\e hw ho.txt', 'Code2-data\\new 8.txt')",0.581289529800415,0.581289529800415
+"('Code2-data\\e hw ho.txt', 'Code2-data\\oto .txt')",0.4926240146160126,0.4926240146160126
+"('Code2-data\\e hw ho.txt', 'Code2-data\\ri3r2  231; 1.txt')",0.5860051512718201,0.5860051512718201
+"('Code2-data\\e hw ho.txt', 'Code2-data\\rinpx.txt')",0.6121038794517517,0.6121038794517517
+"('Code2-data\\e hw ho.txt', 'Code2-data\\titvtovt23vot32v.txt')",0.5847621560096741,0.5847621560096741
+"('Code2-data\\e hw ho.txt', 'Code2-data\\wqkh .txt')",0.47605830430984497,0.47605830430984497
+"('Code2-data\\ew wt4; t4 q;.txt', 'Code2-data\\fk ew io.txt')",0.5913606286048889,0.5913606286048889
+"('Code2-data\\ew wt4; t4 q;.txt', 'Code2-data\\i or oit 32.txt')",0.5837562680244446,0.5837562680244446
+"('Code2-data\\ew wt4; t4 q;.txt', 'Code2-data\\i yop .txt')",0.4865697920322418,0.4865697920322418
+"('Code2-data\\ew wt4; t4 q;.txt', 'Code2-data\\k qooi4oo4t .txt')",0.5373669862747192,0.5373669862747192
+"('Code2-data\\ew wt4; t4 q;.txt', 'Code2-data\\new 8.txt')",0.5396202206611633,0.5396202206611633
+"('Code2-data\\ew wt4; t4 q;.txt', 'Code2-data\\oto .txt')",0.5173851847648621,0.5173851847648621
+"('Code2-data\\ew wt4; t4 q;.txt', 'Code2-data\\ri3r2  231; 1.txt')",0.5381554961204529,0.5381554961204529
+"('Code2-data\\ew wt4; t4 q;.txt', 'Code2-data\\rinpx.txt')",0.6022107005119324,0.6022107005119324
+"('Code2-data\\ew wt4; t4 q;.txt', 'Code2-data\\titvtovt23vot32v.txt')",0.5630844235420227,0.5630844235420227
+"('Code2-data\\ew wt4; t4 q;.txt', 'Code2-data\\wqkh .txt')",0.48709750175476074,0.48709750175476074
+"('Code2-data\\fk ew io.txt', 'Code2-data\\i or oit 32.txt')",0.5768679976463318,0.5768679976463318
+"('Code2-data\\fk ew io.txt', 'Code2-data\\i yop .txt')",0.48962846398353577,0.48962846398353577
+"('Code2-data\\fk ew io.txt', 'Code2-data\\k qooi4oo4t .txt')",0.5339683294296265,0.5339683294296265
+"('Code2-data\\fk ew io.txt', 'Code2-data\\new 8.txt')",0.5354515910148621,0.5354515910148621
+"('Code2-data\\fk ew io.txt', 'Code2-data\\oto .txt')",0.5301973223686218,0.5301973223686218
+"('Code2-data\\fk ew io.txt', 'Code2-data\\ri3r2  231; 1.txt')",0.5433579087257385,0.5433579087257385
+"('Code2-data\\fk ew io.txt', 'Code2-data\\rinpx.txt')",0.5947911143302917,0.5947911143302917
+"('Code2-data\\fk ew io.txt', 'Code2-data\\titvtovt23vot32v.txt')",0.536085307598114,0.536085307598114
+"('Code2-data\\fk ew io.txt', 'Code2-data\\wqkh .txt')",0.49122241139411926,0.49122241139411926
+"('Code2-data\\i or oit 32.txt', 'Code2-data\\i yop .txt')",0.49808433651924133,0.49808433651924133
+"('Code2-data\\i or oit 32.txt', 'Code2-data\\k qooi4oo4t .txt')",0.5294071435928345,0.5294071435928345
+"('Code2-data\\i or oit 32.txt', 'Code2-data\\new 8.txt')",0.5616338849067688,0.5616338849067688
+"('Code2-data\\i or oit 32.txt', 'Code2-data\\oto .txt')",0.49772435426712036,0.49772435426712036
+"('Code2-data\\i or oit 32.txt', 'Code2-data\\ri3r2  231; 1.txt')",0.5519149303436279,0.5519149303436279
+"('Code2-data\\i or oit 32.txt', 'Code2-data\\rinpx.txt')",0.6109411716461182,0.6109411716461182
+"('Code2-data\\i or oit 32.txt', 'Code2-data\\titvtovt23vot32v.txt')",0.5630351305007935,0.5630351305007935
+"('Code2-data\\i or oit 32.txt', 'Code2-data\\wqkh .txt')",0.4686056971549988,0.4686056971549988
+"('Code2-data\\i yop .txt', 'Code2-data\\k qooi4oo4t .txt')",0.5276442170143127,0.5276442170143127
+"('Code2-data\\i yop .txt', 'Code2-data\\new 8.txt')",0.5469740629196167,0.5469740629196167
+"('Code2-data\\i yop .txt', 'Code2-data\\oto .txt')",0.5178068280220032,0.5178068280220032
+"('Code2-data\\i yop .txt', 'Code2-data\\ri3r2  231; 1.txt')",0.5518314838409424,0.5518314838409424
+"('Code2-data\\i yop .txt', 'Code2-data\\rinpx.txt')",0.5781355500221252,0.5781355500221252
+"('Code2-data\\i yop .txt', 'Code2-data\\titvtovt23vot32v.txt')",0.5399795174598694,0.5399795174598694
+"('Code2-data\\i yop .txt', 'Code2-data\\wqkh .txt')",0.46465328335762024,0.46465328335762024
+"('Code2-data\\k qooi4oo4t .txt', 'Code2-data\\new 8.txt')",0.5366865992546082,0.5366865992546082
+"('Code2-data\\k qooi4oo4t .txt', 'Code2-data\\oto .txt')",0.5130075812339783,0.5130075812339783
+"('Code2-data\\k qooi4oo4t .txt', 'Code2-data\\ri3r2  231; 1.txt')",0.5400082468986511,0.5400082468986511
+"('Code2-data\\k qooi4oo4t .txt', 'Code2-data\\rinpx.txt')",0.587098240852356,0.587098240852356
+"('Code2-data\\k qooi4oo4t .txt', 'Code2-data\\titvtovt23vot32v.txt')",0.5482638478279114,0.5482638478279114
+"('Code2-data\\k qooi4oo4t .txt', 'Code2-data\\wqkh .txt')",0.4715808033943176,0.4715808033943176
+"('Code2-data\\new 8.txt', 'Code2-data\\oto .txt')",0.5380045771598816,0.5380045771598816
+"('Code2-data\\new 8.txt', 'Code2-data\\ri3r2  231; 1.txt')",0.547977089881897,0.547977089881897
+"('Code2-data\\new 8.txt', 'Code2-data\\rinpx.txt')",0.5904607176780701,0.5904607176780701
+"('Code2-data\\new 8.txt', 'Code2-data\\titvtovt23vot32v.txt')",0.5540589690208435,0.5540589690208435
+"('Code2-data\\new 8.txt', 'Code2-data\\wqkh .txt')",0.48023730516433716,0.48023730516433716
+"('Code2-data\\oto .txt', 'Code2-data\\ri3r2  231; 1.txt')",0.5747344493865967,0.5747344493865967
+"('Code2-data\\oto .txt', 'Code2-data\\rinpx.txt')",0.6086281538009644,0.6086281538009644
+"('Code2-data\\oto .txt', 'Code2-data\\titvtovt23vot32v.txt')",0.577335000038147,0.577335000038147
+"('Code2-data\\oto .txt', 'Code2-data\\wqkh .txt')",0.47589853405952454,0.47589853405952454
+"('Code2-data\\ri3r2  231; 1.txt', 'Code2-data\\rinpx.txt')",0.5895307660102844,0.5895307660102844
+"('Code2-data\\ri3r2  231; 1.txt', 'Code2-data\\titvtovt23vot32v.txt')",0.5515223145484924,0.5515223145484924
+"('Code2-data\\ri3r2  231; 1.txt', 'Code2-data\\wqkh .txt')",0.4840709865093231,0.4840709865093231
+"('Code2-data\\rinpx.txt', 'Code2-data\\titvtovt23vot32v.txt')",0.5448115468025208,0.5448115468025208
+"('Code2-data\\rinpx.txt', 'Code2-data\\wqkh .txt')",0.4926129877567291,0.4926129877567291
+"('Code2-data\\titvtovt23vot32v.txt', 'Code2-data\\wqkh .txt')",0.4873273968696594,0.4873273968696594

@@ -1,0 +1,53 @@
+import cvxpy as cp
+import numpy as np
+
+# Define the number of buses and generators
+num_buses = 3
+num_gen = 2
+
+# Define the network data
+# Bus incidence matrix (simple example with 3 buses and 2 lines)
+B = np.array([
+    [-10, 10, 0],
+    [10, -20, 10],
+    [0, 10, -10]
+])
+
+# Generator connection matrix (indicates which bus each generator is connected to)
+Cg = np.array([
+    [1, 0, 0],  # Generator 1 is at bus 1
+    [0, 1, 0]   # Generator 2 is at bus 2
+])
+
+# Load demand at each bus
+Pd = np.array([0.8, 0.6, 0.3])
+
+# Cost coefficients for generators (quadratic cost function coefficients)
+a = np.array([0.02, 0.025])  # Quadratic coefficient
+b = np.array([3, 5])         # Linear coefficient
+c = np.array([100, 95])      # Constant term
+
+# Define the optimization variables
+Pg = cp.Variable(num_gen)  # Power generation for each generator
+
+# Define the objective function (minimize generation cost)
+objective = cp.Minimize(sum(a[i] * Pg[i]**2 + b[i] * Pg[i] + c[i] for i in range(num_gen)))
+
+# Define the constraints
+constraints = []
+
+# Power balance constraint
+constraints += [Cg.T @ Pg - Pd == np.zeros(num_buses)]
+
+# Generation limits
+Pg_min = np.array([0.1, 0.2])
+Pg_max = np.array([1.0, 0.9])
+constraints += [Pg >= Pg_min, Pg <= Pg_max]
+
+# Solve the problem
+prob = cp.Problem(objective, constraints)
+result = prob.solve()
+
+# Output the results
+print("Optimal generation:", Pg.value)
+print("Minimum cost:", result)

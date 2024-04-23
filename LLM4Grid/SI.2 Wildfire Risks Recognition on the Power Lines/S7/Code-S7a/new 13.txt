@@ -1,0 +1,65 @@
+from PIL import Image
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Load the wildfire images and the transmission line image
+transmission_image_path = '/mnt/data/Transmission_line.png'
+august_image_path = '/mnt/data/aug.png'
+september_image_path = '/mnt/data/sep.png'
+october_image_path = '/mnt/data/oct.png'
+
+# Open images using PIL
+transmission_img = Image.open(transmission_image_path)
+august_img = Image.open(august_image_path)
+september_img = Image.open(september_image_path)
+october_img = Image.open(october_image_path)
+
+# Since the images have different sizes, we need to normalize their sizes
+# We will resize the wildfire images to match the size of the transmission image
+transmission_img_size = transmission_img.size
+
+august_img = august_img.resize(transmission_img_size)
+september_img = september_img.resize(transmission_img_size)
+october_img = october_img.resize(transmission_img_size)
+
+# Convert PIL Images to NumPy arrays for processing
+transmission_arr = np.array(transmission_img)
+august_arr = np.array(august_img)
+september_arr = np.array(september_img)
+october_arr = np.array(october_img)
+
+# We assume that the red color in the wildfire images represents the fire.
+# Let's create masks based on the red channel being the highest value
+threshold = 150  # This is an arbitrary threshold for the red channel
+
+# Creating binary masks where the red channel is dominant
+august_mask = (august_arr[:,:,0] > threshold) & (august_arr[:,:,0] > august_arr[:,:,1]) & (august_arr[:,:,0] > august_arr[:,:,2])
+september_mask = (september_arr[:,:,0] > threshold) & (september_arr[:,:,0] > september_arr[:,:,1]) & (september_arr[:,:,0] > september_arr[:,:,2])
+october_mask = (october_arr[:,:,0] > threshold) & (october_arr[:,:,0] > october_arr[:,:,1]) & (october_arr[:,:,0] > october_arr[:,:,2])
+
+# Now let's overlay these masks on the transmission lines map in different colors
+# We'll use red for August, green for September, and blue for October
+
+# Create a color map with the masks
+overlay_arr = np.zeros(transmission_arr.shape, dtype=np.uint8)
+
+# Assigning colors to the respective masks (R,G,B)
+overlay_arr[august_mask] = [255, 0, 0]  # Red for August
+overlay_arr[september_mask] = [0, 255, 0]  # Green for September
+overlay_arr[october_mask] = [0, 0, 255]  # Blue for October
+
+# Blend the overlay with the transmission image
+result = transmission_arr.copy()
+result[overlay_arr.sum(axis=2) > 0] = overlay_arr[overlay_arr.sum(axis=2) > 0]
+
+# Convert the result to an Image and save it
+result_img = Image.fromarray(result)
+output_path = '/mnt/data/wildfire_overlay_transmission.png'
+result_img.save(output_path)
+
+# Display the resulting image
+plt.imshow(result_img)
+plt.axis('off')  # Hide axes
+plt.show()
+
+output_path

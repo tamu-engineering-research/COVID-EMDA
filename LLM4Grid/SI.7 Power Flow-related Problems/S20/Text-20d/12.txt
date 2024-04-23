@@ -1,0 +1,5 @@
+Bus Voltage Magnitudes and Angles:
+Bus 1: Voltage Magnitude = 1 pu, Angle = 0.00°
+Bus 2: Voltage Magnitude = 1 pu, Angle = -4.30°
+Bus 3: Voltage Magnitude = 1 pu, Angle = -2.86°
+Bus 4: Voltage Magnitude = 1 pu, Angle = -4.30°

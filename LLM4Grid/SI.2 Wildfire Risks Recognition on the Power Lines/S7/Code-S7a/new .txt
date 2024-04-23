@@ -1,0 +1,56 @@
+from PIL import Image
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Load the images
+august_fire = Image.open("/mnt/data/aug.png")
+september_fire = Image.open("/mnt/data/sep.png")
+october_fire = Image.open("/mnt/data/oct.png")
+transmission_lines = Image.open("/mnt/data/Transmission_line.png")
+
+# Convert images to numpy arrays for processing
+august_fire_array = np.array(august_fire)
+september_fire_array = np.array(september_fire)
+october_fire_array = np.array(october_fire)
+transmission_lines_array = np.array(transmission_lines)
+
+# Since the red areas indicate the wildfire, we will extract only the red channel.
+# We set a threshold to detect the red areas more accurately.
+# RGB value for red (255,0,0), thus red channel should be significantly higher than the other two.
+threshold = 150
+
+# Extracting the red areas which indicate the fire
+# We will create a mask for red areas in each image where the red channel is higher than our threshold
+# and the other channels (green and blue) are lower than the threshold.
+august_fire_mask = (august_fire_array[:,:,0] > threshold) & (august_fire_array[:,:,1] < threshold) & (august_fire_array[:,:,2] < threshold)
+september_fire_mask = (september_fire_array[:,:,0] > threshold) & (september_fire_array[:,:,1] < threshold) & (september_fire_array[:,:,2] < threshold)
+october_fire_mask = (october_fire_array[:,:,0] > threshold) & (october_fire_array[:,:,1] < threshold) & (october_fire_array[:,:,2] < threshold)
+
+# Now, we want to overlay these masks on the transmission lines map.
+# To do this, we'll create an overlay image that is the same size as the transmission lines image.
+# We'll initialize this image to be fully transparent (alpha = 0 everywhere)
+overlay = np.zeros((transmission_lines_array.shape[0], transmission_lines_array.shape[1], 4), dtype=np.uint8)
+
+# Assign colors to different fire masks
+# August: Red, September: Green, October: Blue
+overlay[august_fire_mask] = [255, 0, 0, 255]      # Red color with full opacity
+overlay[september_fire_mask] = [0, 255, 0, 255]   # Green color with full opacity
+overlay[october_fire_mask] = [0, 0, 255, 255]     # Blue color with full opacity
+
+# Convert overlay to an Image
+overlay_image = Image.fromarray(overlay)
+
+# Overlay the fires on the transmission lines
+combined = Image.alpha_composite(Image.fromarray(transmission_lines_array).convert("RGBA"), overlay_image)
+
+# Save the result
+combined_file_path = "/mnt/data/combined_fire_map.png"
+combined.save(combined_file_path)
+
+# Display the combined image
+plt.figure(figsize=(10, 8))
+plt.imshow(combined)
+plt.axis('off') # Hide the axis
+plt.show()
+
+combined_file_path

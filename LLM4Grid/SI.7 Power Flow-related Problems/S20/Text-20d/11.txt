@@ -1,0 +1,11 @@
+
+Bus Voltage Magnitudes and Bus Angles Results
+---------------------------------------------
+Bus Voltage Magnitudes (pu): 
+1.0, 1.0, 1.0, 1.0
+
+Bus Angles (radians):
+Bus 1 (slack bus): 0.0
+Bus 2: -0.075
+Bus 3: -0.05
+Bus 4: -0.075

@@ -1,0 +1,24 @@
+from scipy.optimize import linprog
+
+# Define the parameters for the linear programming problem
+# Variables: x1 (Gen A), x2 (Gen B), x3 (Gen C), x4 (Gen D)
+# Coefficients of the objective function (minimize total cost)
+c = [12, 15, 10, 8]  # Costs for generators A, B, C, D
+
+# Constraints:
+# Each generator must operate between its minimum and maximum capacity.
+# Equality constraint for total generation = total demand
+A_eq = [[1, 1, 1, 1]]  # Coefficient for the sum of generation
+b_eq = [520]  # Total demand: 400 MW + 80 MW + 40 MW = 520 MW
+
+# Bounds for each generator's output
+x_bounds = [(20, 150),  # Bounds for Gen A
+            (30, 200),  # Bounds for Gen B
+            (20, 150),  # Bounds for Gen C
+            (30, 400)]  # Bounds for Gen D
+
+# Solve the linear programming problem using linprog from SciPy
+result = linprog(c, A_eq=A_eq, b_eq=b_eq, bounds=x_bounds, method='highs')
+
+# Output the dispatch instructions for each generator
+result.x

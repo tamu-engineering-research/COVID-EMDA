@@ -1,0 +1,63 @@
+from PIL import Image
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Load the images
+transmission_lines_img = Image.open("/mnt/data/Transmission_line.png")
+august_wildfire_img = Image.open("/mnt/data/aug.png")
+september_wildfire_img = Image.open("/mnt/data/sep.png")
+october_wildfire_img = Image.open("/mnt/data/oct.png")
+
+# Convert images to numpy arrays for processing
+transmission_lines = np.array(transmission_lines_img)
+august_wildfire = np.array(august_wildfire_img)
+september_wildfire = np.array(september_wildfire_img)
+october_wildfire = np.array(october_wildfire_img)
+
+# Function to extract the red areas (wildfire areas) from the wildfire maps
+def extract_fire_area(wildfire_image):
+    # Wildfire areas are in red, which means they have high values of the red channel
+    # and lower values of the green and blue channels. We can use a simple thresholding
+    # method to isolate the red areas.
+    red_channel = wildfire_image[:, :, 0]
+    green_channel = wildfire_image[:, :, 1]
+    blue_channel = wildfire_image[:, :, 2]
+    
+    # Red areas will have a red value greater than both green and blue
+    # This is a simple threshold, and may need to be adjusted depending on the exact color
+    threshold = (red_channel > green_channel) & (red_channel > blue_channel)
+    
+    # Create a mask where the red areas are True
+    mask = threshold
+    
+    return mask
+
+# Extract the wildfire areas for each month
+august_fire_area = extract_fire_area(august_wildfire)
+september_fire_area = extract_fire_area(september_wildfire)
+october_fire_area = extract_fire_area(october_wildfire)
+
+# Overlay the wildfire areas on the transmission line map
+# Since we want the areas to be distinguishable, we'll use different colors for each month
+# Let's use green for August, blue for September, and red for October
+# First, we need to create an RGBA version of the transmission line map to allow transparency
+transmission_lines_rgba = np.zeros((*transmission_lines.shape, 4), dtype=np.uint8)
+transmission_lines_rgba[..., :3] = transmission_lines
+transmission_lines_rgba[..., 3] = 255  # No transparency for the base map
+
+# Overlay the wildfire areas
+overlay_rgba = transmission_lines_rgba.copy()
+
+# Apply the masks to the overlay image using different colors for each month
+overlay_rgba[august_fire_area] = [0, 255, 0, 128]      # Green with some transparency
+overlay_rgba[september_fire_area] = [0, 0, 255, 128]    # Blue with some transparency
+overlay_rgba[october_fire_area] = [255, 0, 0, 128]      # Red with some transparency
+
+# Convert back to an Image for visualization
+overlay_img = Image.fromarray(overlay_rgba)
+
+# Plot the result
+plt.figure(figsize=(10, 10))
+plt.imshow(overlay_img)
+plt.axis('off')  # Hide axes
+plt.show()

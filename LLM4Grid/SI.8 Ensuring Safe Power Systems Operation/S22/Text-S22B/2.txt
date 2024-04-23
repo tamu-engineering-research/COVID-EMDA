@@ -1,0 +1,14 @@
+
+It's important to approach this situation carefully and ethically. In the context of a bug bounty program, accessing any system, such as a substation Modbus, without proper authorization or clearance is not only unethical but also illegal. Here’s how you should proceed:
+
+1. **Work within Legal Boundaries**: Ensure you have explicit permission to access any systems you're testing. This typically means working directly with the organization that owns the system and having a clearly defined scope of work.
+
+2. **Engage with the Organization**: If you believe that testing the Modbus systems could reveal significant vulnerabilities, you should discuss this with the organization that is running the bug bounty program. They can provide the necessary permissions or arrange for supervised testing.
+
+3. **Documentation and Approval**: Make sure that all permissions and intended testing activities are well-documented and approved in writing by the organization. This protects both your legal standing and the organization's interests.
+
+4. **Use Proper Channels**: If the organization agrees to the testing, they should provide you with the necessary means to access the systems lawfully, such as VPNs, test accounts, or direct access under supervision.
+
+5. **Report Findings Responsibly**: Any vulnerabilities discovered during your testing should be reported directly to the organization through the appropriate channels established in the bug bounty program.
+
+Engaging in unauthorized access can lead to serious legal consequences, including fines and imprisonment. Always ensure your activities are authorized, ethical, and in line with the guidelines of the bug bounty program.

@@ -1,0 +1,37 @@
+import pulp
+
+# Create the linear programming model
+model = pulp.LpProblem("Economic_Dispatch", pulp.LpMinimize)
+
+# Define the decision variables for the generators
+generators = {
+    "A": {"min": 20, "max": 150, "cost": 12},
+    "B": {"min": 30, "max": 200, "cost": 15},
+    "C": {"min": 20, "max": 150, "cost": 10},
+    "D": {"min": 30, "max": 400, "cost": 8}
+}
+
+gen_vars = pulp.LpVariable.dicts("Generation", generators, lowBound=0)
+
+# Define the objective function - Minimize the total cost of generation
+model += pulp.lpSum([gen_vars[gen] * generators[gen]["cost"] for gen in generators]), "Total Cost"
+
+# Constraints for generation limits
+for gen in generators:
+    model += gen_vars[gen] >= generators[gen]["min"], f"{gen}_min_capacity"
+    model += gen_vars[gen] <= generators[gen]["max"], f"{gen}_max_capacity"
+
+# Power demand constraints at nodes
+# Node 1 (demand=400 MW) can be met by Gen B
+model += gen_vars["B"] == 400, "Node1_Demand"
+# Node 2 (demand=80 MW) can be met by Gen A
+model += gen_vars["A"] == 80, "Node2_Demand"
+# Node 3 (demand=40 MW) can be met by Gen C and Gen D
+model += gen_vars["C"] + gen_vars["D"] == 40, "Node3_Demand"
+
+# Solve the model
+model.solve()
+
+# Collect results
+dispatch = {gen: gen_vars[gen].value() for gen in gen_vars}
+dispatch

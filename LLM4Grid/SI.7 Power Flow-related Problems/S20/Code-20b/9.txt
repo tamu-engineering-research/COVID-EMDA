@@ -1,0 +1,32 @@
+import numpy as np
+
+# Define the B-matrix (imaginary part of Y-matrix) for the DC power flow analysis
+B = np.array([
+    [-30j, 10j, 10j, 10j],
+    [10j, -20j, 10j, 0],
+    [10j, 10j, -30j, 10j],
+    [10j, 0, 10j, -20j]
+]).imag
+
+# Define the net power injections (generation - load) at each bus
+P = np.array([2 - 0, 2 - 1, 4 - 4, 1 - 0])  # in pu
+
+# Slack bus index
+slack_bus_index = 0
+
+# Set the voltage angle at the slack bus to zero
+theta = np.zeros(4)  # Initial voltage angles in radians
+
+# Modify B-matrix to account for the slack bus (remove the row and column corresponding to the slack bus)
+B_reduced = np.delete(np.delete(B, slack_bus_index, axis=0), slack_bus_index, axis=1)
+
+# Solve for the voltage angles at the other buses
+theta_non_slack = np.linalg.solve(B_reduced, P[1:])  # Ignoring the slack bus for the power injections as well
+
+# Update the theta array with computed angles, except for the slack bus
+theta[1:] = theta_non_slack
+
+# Calculate the voltage magnitudes (assumed 1 pu for all buses in DC power flow analysis)
+V_mag = np.ones(4)  # Voltage magnitudes are assumed to be 1 pu in DC power flow
+
+theta, V_mag

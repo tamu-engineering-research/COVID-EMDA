@@ -1,0 +1,46 @@
+import numpy as np
+import cmath
+
+# Y-bus matrix given in the problem
+Y = np.array([
+    [-30j, 10j, 10j, 10j],
+    [10j, -20j, 10j, 0],
+    [10j, 10j, -30j, 10j],
+    [10j, 0, 10j, -20j]
+], dtype=complex)
+
+# Power generation and load demand in per unit
+P_gen = np.array([2, 2, 4, 1], dtype=float)  # Generation at each bus
+P_load = np.array([0, 1, 4, 0], dtype=float)  # Load at each bus
+P_net = P_gen - P_load  # Net power at each bus
+
+# Voltage magnitude initialization (all buses assumed to start at 1.0 per unit)
+V_mag = np.ones(4)
+
+# Assume voltage angle is zero for all buses initially
+theta = np.zeros(4)
+
+# Slack bus settings (Bus 1 as slack bus, index 0)
+theta[0] = 0  # Slack bus angle set to zero
+V_mag[0] = 1.0  # Slack bus voltage magnitude set to 1.0 pu
+
+# Update Y matrix to only solve for PQ buses (exclude slack bus for Y matrix inversion)
+Y_reduced = Y[1:, 1:]
+
+# Calculate injections (S = P + jQ, here Q is assumed zero for simplification)
+S = P_net[1:] + 1j * np.zeros(3)  # Assuming zero reactive power for now
+
+# Calculate V for PQ buses using the simplified method of solving YV=I (I = S/V)
+I = np.conj(S / V_mag[1:])
+
+# Solve for voltages at PQ buses
+V = np.linalg.inv(Y_reduced).dot(I)
+
+# Include slack bus voltage (as 1.0 angle 0)
+V_full = np.r_[1.0, V]
+
+# Calculate voltage magnitudes and angles
+V_mag = np.abs(V_full)
+theta = np.degrees(np.angle(V_full))
+
+V_mag, theta

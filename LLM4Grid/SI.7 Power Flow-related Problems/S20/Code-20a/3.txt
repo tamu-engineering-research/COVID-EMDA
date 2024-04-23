@@ -1,0 +1,56 @@
+import numpy as np
+
+# Define the Y-bus matrix
+Y = np.array([[-30j, 10j, 10j, 10j],
+              [10j, -20j, 10j, 0],
+              [10j, 10j, -30j, 10j],
+              [10j, 0, 10j, -20j]])
+
+# Power generation and load demand (in pu)
+P_gen = np.array([2, 2, 4, 1])
+P_load = np.array([0, 1, 4, 0])
+
+# Net power injection (generation - load)
+P_net = P_gen - P_load
+
+# Assume V1 magnitude and angle to be 1.0 pu and 0 degrees, respectively
+V = np.array([1+0j, 1+0j, 1+0j, 1+0j])  # Initialize voltages
+
+# Convert Y-bus matrix to admittance values
+Y_real = np.real(Y)
+Y_imag = np.imag(Y)
+
+# Iteration for Load Flow solution
+max_iter = 100
+tolerance = 1e-6
+converged = False
+
+for _ in range(max_iter):
+    V_prev = V.copy()
+
+    # Calculate current injections
+    I = np.dot(Y, V)
+
+    # Calculate power injections at each bus
+    S = V * np.conj(I)
+
+    # Calculate the mismatches for PQ buses (2, 3, 4)
+    dP = P_net[1:] - np.real(S[1:])
+
+    # Update voltage angles (Delta) for PQ buses
+    dTheta = dP / np.abs(V[1:]) / np.abs(np.imag(np.dot(np.diag(V[1:]), Y[1:, 1:])))
+    V[1:] = np.abs(V[1:]) * np.exp(1j * (np.angle(V[1:]) + dTheta))
+
+    # Check for convergence
+    if np.max(np.abs(V - V_prev)) < tolerance:
+        converged = True
+        break
+
+if not converged:
+    print("Solution did not converge")
+else:
+    # Extract magnitudes and angles for the voltages
+    V_mag = np.abs(V)
+    V_ang = np.angle(V, deg=True)
+
+V_mag, V_ang

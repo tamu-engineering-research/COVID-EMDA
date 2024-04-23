@@ -1,0 +1,54 @@
+import numpy as np
+
+def dc_power_flow(bus_admittance, net_injection, slack_bus_index):
+    """
+    Perform DC power flow analysis.
+    
+    Parameters:
+    - bus_admittance (np.array): Susceptance matrix (B matrix) of the system.
+    - net_injection (np.array): Net power injections at each bus (generation - load).
+    - slack_bus_index (int): Index of the slack bus in the system.
+    
+    Returns:
+    - theta (np.array): Voltage angles at each bus (rad).
+    - power_flow (np.array): Power flow on each line (assumes the admittance matrix encodes the network topology).
+    """
+    # Number of buses
+    n_buses = len(net_injection)
+    
+    # Modify the B matrix to consider the slack bus
+    B_mod = np.delete(np.delete(bus_admittance, slack_bus_index, axis=0), slack_bus_index, axis=1)
+    
+    # Modify the injection vector to consider the slack bus
+    P_mod = np.delete(net_injection, slack_bus_index)
+    
+    # Solve the linear system B_mod * theta = P_mod for theta
+    theta = np.linalg.solve(B_mod, P_mod)
+    
+    # Insert the slack bus angle (0 rad) into the solution vector
+    theta = np.insert(theta, slack_bus_index, 0)
+    
+    # Calculate power flows in the network
+    power_flow = bus_admittance @ theta
+    
+    return theta, power_flow
+
+# Example data setup
+n_buses = 5  # Number of buses
+slack_bus_index = 0  # Index of slack bus
+
+# Example susceptance matrix (symmetric, should be negative off-diagonal, positive diagonal)
+B = np.array([[ 10, -5,  0, -5,  0],
+              [ -5, 15, -5,  0, -5],
+              [  0, -5, 10, -5,  0],
+              [ -5,  0, -5, 10,  0],
+              [  0, -5,  0,  0,  5]])
+
+# Net power injections (P_G - P_L)
+P = np.array([1.0, -0.5, 0.0, -0.3, 0.2])  # Slack bus usually has a large positive injection
+
+# Calculate DC power flow
+theta, power_flow = dc_power_flow(B, P, slack_bus_index)
+
+print("Voltage Angles (Radians):", theta)
+print("Power Flows (MW assuming base values):", power_flow)

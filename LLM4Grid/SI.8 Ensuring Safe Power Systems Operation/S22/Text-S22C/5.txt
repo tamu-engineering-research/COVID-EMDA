@@ -1,0 +1,60 @@
+
+Modbus Substation Penetration Testing Methodology
+=================================================
+
+**Introduction**
+----------------
+This methodology provides a comprehensive guide to penetration testing of a Modbus communication system in a substation, ensuring the identification of security vulnerabilities and potential entry points for malicious activity. It is tailored for security researchers who have obtained explicit permission to conduct such activities.
+
+**Preparation**
+---------------
+1. **Permission and Legal Considerations**:
+   - Ensure all activities are covered under the explicit permission received from the substation engineer.
+   - Document all legal constraints and ensure compliance throughout the testing process.
+
+2. **Scope Definition**:
+   - Clearly define the boundaries of the test, including specific Modbus devices and network segments.
+
+3. **Gathering Information**:
+   - Collect technical documentation on all Modbus devices, including manuals, firmware versions, and configuration details.
+   - Map the network topology, identifying all devices connected to the Modbus network.
+
+4. **Tool Selection**:
+   - Choose appropriate tools for scanning and exploiting Modbus systems, such as Modscan, Nmap (with Modbus scripts), and Metasploit.
+
+**Testing Phases**
+------------------
+1. **Reconnaissance**:
+   - Passively scan the network to identify active Modbus devices and ascertain their roles and importance.
+
+2. **Scanning and Enumeration**:
+   - Actively scan the Modbus network to detail services, running software, and open ports on devices.
+   - Use Modbus-specific tools to enumerate device IDs, function codes, and any anomalies in responses.
+
+3. **Vulnerability Assessment**:
+   - Assess each device and service for known vulnerabilities using both generic and Modbus-specific vulnerability scanners.
+   - Prioritize vulnerabilities based on their impact and exploitability.
+
+4. **Exploitation**:
+   - Attempt to exploit known vulnerabilities to assess the impact on the substation’s operations.
+   - Document any successful exploits, including the ability to read/write Modbus registers or execute unauthorized actions.
+
+5. **Post-Exploitation**:
+   - Explore the depth of access obtained, determining if further pivoting within the network is possible.
+   - Assess the potential for persistence and lateral movement within the network.
+
+6. **Reporting and Recommendations**:
+   - Compile findings, including successful exploits, data exposures, and system misconfigurations.
+   - Provide detailed remediation recommendations to mitigate identified risks.
+
+**Cleanup**
+-----------
+- Restore all systems to their original configurations.
+- Ensure no tools or backdoors are left on the devices.
+
+**Ethical Considerations**
+-------------------------
+- Maintain confidentiality and integrity of the data.
+- Aim to minimize disruptions to the substation’s operations during testing.
+
+This methodology provides a robust framework for conducting a security assessment of Modbus systems in substations. It ensures a thorough evaluation while maintaining compliance with legal and ethical standards.

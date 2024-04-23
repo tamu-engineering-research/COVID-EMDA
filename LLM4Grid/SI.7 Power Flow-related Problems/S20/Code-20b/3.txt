@@ -1,0 +1,33 @@
+import numpy as np
+
+# Y-bus matrix
+Y = np.array([
+    [-30j, 10j, 10j, 10j],
+    [10j, -20j, 10j, 0],
+    [10j, 10j, -30j, 10j],
+    [10j, 0, 10j, -20j]
+])
+
+# Convert to real part for DC analysis (imaginary parts represent susceptance)
+B = np.imag(Y)
+
+# Power generation and load demand in pu (Pg - Pd)
+net_power = np.array([2-0, 2-1, 4-4, 1-0])  # P = Pg - Pd
+
+# Remove the row and column corresponding to the slack bus (bus 1)
+B_reduced = np.delete(np.delete(B, 0, axis=0), 0, axis=1)
+
+# Net power demand excluding slack bus
+net_power_reduced = net_power[1:]
+
+# Solve for voltage angles at buses 2, 3, 4 (theta2, theta3, theta4)
+theta_reduced = np.linalg.solve(B_reduced, net_power_reduced)
+
+# Insert slack bus angle theta1 = 0 at index 0
+theta = np.insert(theta_reduced, 0, 0)
+
+# Assuming voltage magnitude |V| = 1 pu for all buses
+voltage_magnitude = np.ones(len(theta))
+
+# Results
+voltage_magnitude, theta

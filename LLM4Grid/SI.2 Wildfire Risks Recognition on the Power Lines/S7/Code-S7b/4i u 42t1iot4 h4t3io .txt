@@ -1,0 +1,29 @@
+from PIL import Image
+import numpy as np
+
+# Load the image
+img_path = '/mnt/data/FIRMS_2020-09-09_2020-09-10[@-123.0,39.8,8.5z].jpg'
+img = Image.open(img_path)
+
+# Convert the image to RGBA if it is not already
+img = img.convert('RGBA')
+
+# Now we have the RGBA data for the image
+data = np.array(img)
+
+# Split into channels
+red, green, blue, alpha = data.T
+
+# Create a mask where the red areas are kept
+mask = (red > 200) & (green < 50) & (blue < 50)
+
+# Modify Alpha channel to make the non-red areas transparent
+data[:, :, 3] = (mask.T) * 255
+
+# Put the data back into a new image
+new_img = Image.fromarray(data)
+
+# Save the image
+new_img_path = '/mnt/data/FIRMS_red_areas_only.png'
+new_img.save(new_img_path)
+new_img_path

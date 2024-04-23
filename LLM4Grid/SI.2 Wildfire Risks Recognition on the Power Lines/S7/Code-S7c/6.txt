@@ -1,0 +1,29 @@
+from PIL import Image
+import numpy as np
+
+# Load the image
+img_path = '/mnt/data/FIRMS_2020-09-09_2020-09-10[@-123.0,39.8,8.5z].jpg'
+img = Image.open(img_path)
+
+# Convert the image to RGBA if it is not already
+img = img.convert("RGBA")
+
+# Data is an array containing for every pixel its [R, G, B, A] values
+data = np.array(img)
+
+# Replace white (also shades of whites)
+# with transparency
+red, green, blue, alpha = data.T
+# White areas are those where all color channels are high and the alpha is high
+white_areas = (red > 200) & (blue > 200) & (green > 200) & (alpha == 255)
+# Make all white (and similar) areas fully transparent
+data[..., :-1][white_areas.T] = (0, 0, 0, 0)
+
+# Create new image from the modified data array
+new_img = Image.fromarray(data)
+
+# Save the modified image
+output_path = '/mnt/data/FIRMS_transparent.png'
+new_img.save(output_path)
+
+output_path

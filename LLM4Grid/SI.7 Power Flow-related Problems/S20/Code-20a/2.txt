@@ -1,0 +1,35 @@
+import numpy as np
+
+# Admittance matrix Y
+Y = np.array([
+    [-30j, 10j, 10j, 10j],
+    [10j, -20j, 10j, 0],
+    [10j, 10j, -30j, 10j],
+    [10j, 0, 10j, -20j]
+])
+
+# Power generation (Pg) and load demand (Pd)
+Pg = np.array([2, 2, 4, 1])  # in pu
+Pd = np.array([0, 1, 4, 0])  # in pu
+P = Pg - Pd  # Net power injection
+
+# Number of buses
+n = Y.shape[0]
+
+# Remove slack bus equation (Bus 1)
+Y_red = Y[1:, 1:]
+P_red = P[1:]
+
+# Solve for voltage at PQ buses (ignoring V0 = 1@0º)
+V_red = np.linalg.solve(-Y_red.imag, P_red)
+
+# Construct voltage vector including slack bus
+V = np.insert(V_red, 0, 1)  # Assume slack bus voltage magnitude = 1 pu
+
+# Calculate voltage angles assuming slack bus angle = 0 rad
+theta = np.angle(np.dot(np.linalg.inv(Y), P - Y @ V))
+
+# Voltage magnitudes
+V_mag = np.abs(V)
+
+V_mag, np.degrees(theta)

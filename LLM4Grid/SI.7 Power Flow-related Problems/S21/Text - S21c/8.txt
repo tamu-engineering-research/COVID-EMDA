@@ -1,0 +1,7 @@
+The dispatch instructions for the generators to meet the total demand at minimum cost are as follows:
+
+Generator A: 20 MW
+Generator B: 30 MW
+Generator C: 70 MW
+Generator D: 400 MW
+These values indicate how much each generator should produce to satisfy the system's demand of 520 MW (400 MW + 80 MW + 40 MW) efficiently based on their respective marginal costs and capacity limits.

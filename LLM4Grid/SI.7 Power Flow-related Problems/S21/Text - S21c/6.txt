@@ -1,0 +1,7 @@
+Dispatch Instructions for Generators:
+- Generator A at Node 2: 20 MW
+- Generator B at Node 1: 30 MW
+- Generator C at Node 3: 70 MW
+- Generator D at Node 3: 400 MW
+
+This configuration minimizes the total cost while satisfying the demand at each node and the capacity constraints of each generator.

@@ -1,0 +1,35 @@
+from PIL import Image
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Load the images
+transmission_lines_img = Image.open("/mnt/data/Transmission_line.png")
+august_fire_img = Image.open("/mnt/data/aug.png")
+september_fire_img = Image.open("/mnt/data/sep.png")
+october_fire_img = Image.open("/mnt/data/oct.png")
+
+# Convert images to numpy arrays
+transmission_lines_arr = np.array(transmission_lines_img)
+august_fire_arr = np.array(august_fire_img)
+september_fire_arr = np.array(september_fire_img)
+october_fire_arr = np.array(october_fire_img)
+
+# Create masks for fire areas, assuming red color indicates fire
+august_fire_mask = (august_fire_arr[:,:,0] > 200) & (august_fire_arr[:,:,1] < 50) & (august_fire_arr[:,:,2] < 50)
+september_fire_mask = (september_fire_arr[:,:,0] > 200) & (september_fire_arr[:,:,1] < 50) & (september_fire_arr[:,:,2] < 50)
+october_fire_mask = (october_fire_arr[:,:,0] > 200) & (october_fire_arr[:,:,1] < 50) & (october_fire_arr[:,:,2] < 50)
+
+# Overlay the masks on the transmission lines map with distinguishable colors
+overlayed_arr = transmission_lines_arr.copy()
+overlayed_arr[august_fire_mask] = [255, 0, 0]      # Red for August
+overlayed_arr[september_fire_mask] = [0, 255, 0]   # Green for September
+overlayed_arr[october_fire_mask] = [0, 0, 255]     # Blue for October
+
+# Convert array back to image
+overlayed_img = Image.fromarray(overlayed_arr)
+
+# Save the overlayed image
+overlayed_img_path = "/mnt/data/overlayed_fire_map.png"
+overlayed_img.save(overlayed_img_path)
+
+overlayed_img_path

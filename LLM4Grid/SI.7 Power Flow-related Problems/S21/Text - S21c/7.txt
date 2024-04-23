@@ -1,0 +1,7 @@
+The dispatch instructions for the generators are as follows:
+
+Generator A (connected to Node 2): 20 MW
+Generator B (connected to Node 1): 30 MW
+Generator C (connected to Node 3): 100 MW
+Generator D (connected to Node 3): 400 MW
+These values ensure that each generator operates within its capacity constraints and that the total power generation meets the total demand of the network.

@@ -1,0 +1,26 @@
+from scipy.optimize import linprog
+
+# Define the cost coefficients for the generators A, B, C, D
+c = [12, 15, 10, 8]  # Cost coefficients
+
+# Inequality constraints matrix
+# Rows represent the power balance equations for each node
+# Columns represent the power output of each generator: A, B, C, D
+A = [[0, -1, 0, 0],   # Node 1
+     [1, 0, 0, 0],     # Node 2
+     [0, 0, 1, 1]]     # Node 3
+
+# Inequality constraints vector
+b = [-400, -80, -40]  # Demand at each node (negative as it is consumption)
+
+# Bounds for each generator's capacity
+x_bounds = [(20, 150),  # Generator A
+            (30, 200),  # Generator B
+            (20, 150),  # Generator C
+            (30, 400)]  # Generator D
+
+# Solve the linear programming problem
+result = linprog(c, A_eq=A, b_eq=b, bounds=x_bounds, method='highs')
+
+# Generator dispatch
+result.x

@@ -1,0 +1,40 @@
+import numpy as np
+
+# Admittance matrix
+Y = np.array([
+    [-30j, 10j, 10j, 10j],
+    [10j, -20j, 10j, 0],
+    [10j, 10j, -30j, 10j],
+    [10j, 0, 10j, -20j]
+])
+
+# Power generation (P_G) and load demand (P_D)
+P_G = np.array([2, 2, 4, 1])
+P_D = np.array([0, 1, 4, 0])
+
+# Net power injection (P_net)
+P_net = P_G - P_D
+
+# Bus admittance matrix for DC analysis (extract the imaginary parts)
+B = np.imag(Y)
+
+# DC power flow assumes zero reactance, so we use only the susceptance matrix
+# Remove the slack bus (bus 1)
+B_reduced = B[1:, 1:]
+
+# Remove slack bus power and prepare the net injection vector
+P_net_reduced = P_net[1:]
+
+# Solve for the angles
+theta_reduced = np.linalg.solve(B_reduced, P_net_reduced)
+
+# Include the angle of slack bus as 0
+theta = np.insert(theta_reduced, 0, 0)
+
+# Voltages are considered to be 1 pu in DC power flow analysis
+V = np.ones(4)
+
+# Convert angles from radians to degrees for readability
+theta_degrees = np.degrees(theta)
+
+V, theta_degrees

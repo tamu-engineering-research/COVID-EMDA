@@ -1,0 +1,28 @@
+from PIL import Image
+import numpy as np
+
+# Load the image
+img_path = '/mnt/data/FIRMS_2020-09-09_2020-09-10[@-123.0,39.8,8.5z].jpg'
+image = Image.open(img_path)
+
+# Convert image to numpy array
+img_array = np.array(image)
+
+# Define the red color threshold
+# We consider a pixel "red" if the red channel is greater than 150 and the green and blue channels are less than 100
+# This is a rough threshold and might need to be adjusted depending on the specific red shade in the image
+red_threshold = (img_array[:,:,0] > 150) & (img_array[:,:,1] < 100) & (img_array[:,:,2] < 100)
+
+# Create a new array that contains only the red area
+# Other pixels are set to be transparent (alpha=0)
+red_area = np.zeros((img_array.shape[0], img_array.shape[1], 4), dtype=np.uint8) # Create a transparent image
+red_area[red_threshold] = [255, 0, 0, 255] # Set the red areas to red with full opacity
+
+# Convert back to image
+red_area_img = Image.fromarray(red_area)
+
+# Save the image
+output_path = '/mnt/data/red_area_only.png'
+red_area_img.save(output_path)
+
+output_path

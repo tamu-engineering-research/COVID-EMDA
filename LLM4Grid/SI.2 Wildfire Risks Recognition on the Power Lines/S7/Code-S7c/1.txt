@@ -1,0 +1,32 @@
+from PIL import Image
+import numpy as np
+
+# Load the image
+image_path = '/mnt/data/FIRMS_2020-09-09_2020-09-10[@-123.0,39.8,8.5z].jpg'
+image = Image.open(image_path)
+
+# Convert image to numpy array
+image_array = np.array(image)
+
+# Mask for red areas (wildfires) - assuming that wildfires are represented by pure red color, i.e., (255, 0, 0)
+# Tolerance is set to 0 to only include pure red pixels
+red_mask = (image_array[:, :, 0] == 255) & (image_array[:, :, 1] == 0) & (image_array[:, :, 2] == 0)
+
+# Create a new array with the same shape as the original but with 4 channels (RGBA)
+transparent_image_array = np.zeros((image_array.shape[0], image_array.shape[1], 4), dtype=np.uint8)
+
+# Set the red areas to red and fully opaque
+transparent_image_array[red_mask] = [255, 0, 0, 255]
+
+# Set the rest to fully transparent
+transparent_image_array[~red_mask] = [0, 0, 0, 0]
+
+# Convert the transparent array back to an image
+transparent_image = Image.fromarray(transparent_image_array)
+
+# Save the transparent image
+transparent_image_path = image_path.replace('.jpg', '_transparent.png')
+transparent_image.save(transparent_image_path)
+
+# Output the path to the transparent image
+transparent_image_path

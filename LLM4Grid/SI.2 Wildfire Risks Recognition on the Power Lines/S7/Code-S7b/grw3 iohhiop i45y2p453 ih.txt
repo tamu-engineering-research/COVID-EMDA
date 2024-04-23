@@ -1,0 +1,30 @@
+from PIL import Image
+import numpy as np
+
+# Load the image
+img_path = '/mnt/data/FIRMS_2020-09-09_2020-09-10[@-123.0,39.8,8.5z].jpg'
+image = Image.open(img_path)
+
+# Convert the image to an numpy array
+data = np.array(image)
+
+# Identify only the red areas (255, 0, 0) from the image
+# Assuming that the red areas are pure red in the RGB channels
+red_areas = (data[:, :, 0] == 255) & (data[:, :, 1] == 0) & (data[:, :, 2] == 0)
+
+# Create a new image of the same size with a white background
+# Use RGBA to include alpha channel for transparency
+new_image_data = np.zeros((data.shape[0], data.shape[1], 4), dtype=np.uint8)
+# Set the red areas to red, and the alpha channel to 255 (opaque) for red areas
+new_image_data[..., :3] = data[..., :3]
+new_image_data[..., 3] = red_areas * 255
+
+# Convert the numpy array back to an image
+new_image = Image.fromarray(new_image_data, 'RGBA')
+
+# Save the new image
+new_img_path = '/mnt/data/red_areas_only.png'
+new_image.save(new_img_path)
+
+# Return the path to the new image
+new_img_path

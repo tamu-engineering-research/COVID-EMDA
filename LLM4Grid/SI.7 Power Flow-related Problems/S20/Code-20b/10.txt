@@ -1,0 +1,35 @@
+import numpy as np
+
+# Given y-bus matrix (susceptance matrix in DC approximation, ignoring the j and using only the imaginary parts)
+B = np.array([
+    [-30, 10, 10, 10],
+    [10, -20, 10, 0],
+    [10, 10, -30, 10],
+    [10, 0, 10, -20]
+])
+
+# Generation and load data
+P_gen = np.array([2, 2, 4, 1])  # Power generation in pu
+P_load = np.array([0, 1, 4, 0])  # Power load in pu
+
+# Net power injections
+P = P_gen - P_load  # Net injection (generation - load)
+
+# DC Power Flow assumes voltage magnitudes = 1 pu, so only angles are solved for
+# Extract the B' matrix for DC power flow, ignoring the row and column for slack bus (bus 1)
+B_prime = B[1:, 1:]
+
+# Calculate the net injections, excluding the slack bus
+P_net = P[1:]
+
+# Solve for voltage angles (theta)
+theta = np.linalg.solve(B_prime, P_net)
+
+# Include slack bus voltage angle (0 radian)
+theta_full = np.insert(theta, 0, 0.0)
+
+# Voltages magnitudes are assumed 1 pu in DC power flow
+V_magnitude = np.ones_like(theta_full)
+
+# Results
+V_magnitude, theta_full

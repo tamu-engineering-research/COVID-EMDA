@@ -1,0 +1,37 @@
+import numpy as np
+
+# Given bus admittance matrix Y
+Y = np.array([
+    [-30j, 10j, 10j, 10j],
+    [10j, -20j, 10j, 0],
+    [10j, 10j, -30j, 10j],
+    [10j, 0, 10j, -20j]
+])
+
+# Generation and demand values in per unit (pu)
+generation = np.array([2, 2, 4, 1])
+demand = np.array([0, 1, 4, 0])
+
+# Calculate net injections P_inj = P_gen - P_load
+P_inj = generation - demand
+
+# Extract the imaginary part for the B matrix (ignoring off-diagonal j)
+B = np.imag(Y)
+
+# Remove slack bus (bus 1) from B matrix and P_inj vector
+B_reduced = B[1:, 1:]
+P_inj_reduced = P_inj[1:]
+
+# Solving linear equations for voltage angles (theta)
+theta_reduced = np.linalg.solve(B_reduced, P_inj_reduced)
+
+# Insert slack bus angle theta_1 = 0 at the beginning
+theta = np.insert(theta_reduced, 0, 0.0)
+
+# Voltage magnitudes are assumed to be 1.0 per unit for all buses in DC power flow
+V_magnitude = np.ones(len(P_inj))
+
+# Convert angles from radians to degrees for easier interpretation
+theta_degrees = np.degrees(theta)
+
+(theta_degrees, V_magnitude)

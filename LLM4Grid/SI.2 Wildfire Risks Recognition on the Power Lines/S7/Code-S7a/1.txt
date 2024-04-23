@@ -1,0 +1,49 @@
+from PIL import Image
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Load the images
+transmission_line_img = Image.open("/mnt/data/Transmission_line.png")
+aug_img = Image.open("/mnt/data/aug.png")
+sep_img = Image.open("/mnt/data/sep.png")
+oct_img = Image.open("/mnt/data/oct.png")
+
+# Convert images to numpy arrays for processing
+transmission_line = np.array(transmission_line_img)
+aug = np.array(aug_img)
+sep = np.array(sep_img)
+oct = np.array(oct_img)
+
+# Define a function to extract the red areas from the wildfire maps
+def extract_red_areas(image_array):
+    # Red areas are assumed to have high red channel values and low values in blue and green channels
+    red_threshold = 150
+    green_threshold = 100
+    blue_threshold = 100
+
+    red_areas = (image_array[:, :, 0] > red_threshold) & \
+                (image_array[:, :, 1] < green_threshold) & \
+                (image_array[:, :, 2] < blue_threshold)
+
+    return red_areas
+
+# Extract the red areas from each wildfire map
+aug_red_areas = extract_red_areas(aug)
+sep_red_areas = extract_red_areas(sep)
+oct_red_areas = extract_red_areas(oct)
+
+# We will overlay these areas on the transmission line map
+# Let's create an output image that starts as a copy of the transmission line map
+output_image = transmission_line.copy()
+
+# Assign different colors for each month's wildfire area
+# August: Red, September: Green, October: Blue
+output_image[aug_red_areas] = [255, 0, 0]  # Red
+output_image[sep_red_areas] = [0, 255, 0]  # Green
+output_image[oct_red_areas] = [0, 0, 255]  # Blue
+
+# Now let's create the plot
+plt.figure(figsize=(10, 8))
+plt.imshow(output_image)
+plt.axis('off')  # Hide the axes
+plt.show()

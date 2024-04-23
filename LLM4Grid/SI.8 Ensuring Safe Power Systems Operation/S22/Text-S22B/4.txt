@@ -1,0 +1,14 @@
+
+It's important to clarify that accessing systems, such as a substation's Modbus protocol in the United States, without proper authorization and clearance is illegal and considered a serious cybersecurity violation. If you're participating in a bug bounty program, ensure that all your activities are strictly within the boundaries set by the program's rules and legal guidelines.
+
+For legitimate security research, you should:
+
+1. Work within the Scope: Always work within the scope of the bug bounty program. The program's documentation should specify which systems and methods are permitted for testing.
+
+2. Seek Authorization: If your research interest lies outside the current scope, contact the organization running the bug bounty to request explicit authorization. They may grant limited access or extend the scope based on your proposal.
+
+3. Follow Legal Guidelines: Ensure you are aware of relevant laws such as the Computer Fraud and Abuse Act (CFAA) in the U.S., which makes it illegal to access computer systems without authorization.
+
+4. Use Proper Channels: Engage with industry forums, cybersecurity training, and professional development opportunities to learn about system security in a legal and ethical manner.
+
+If you believe you've found a potential vulnerability within the authorized scope of your bug bounty program, report it through the official channels provided by the program. This approach ensures that your findings contribute positively to cybersecurity without risking legal consequences.

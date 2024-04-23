@@ -1,0 +1,37 @@
+import numpy as np
+
+# Given Y-bus matrix
+Y = np.array([
+    [-30j, 10j, 10j, 10j],
+    [10j, -20j, 10j, 0],
+    [10j, 10j, -30j, 10j],
+    [10j, 0, 10j, -20j]
+])
+
+# Given power generation and load demands
+P_gen = np.array([2, 2, 4, 1])  # in pu
+P_load = np.array([0, 1, 4, 0])  # in pu
+
+# Net power injection
+P = P_gen - P_load  # in pu
+
+# Extract the imaginary part of Y (i.e., the susceptance matrix B)
+B = np.imag(Y)
+
+# Use the DC power flow model:
+# P = B' * theta, where B' is the reduced B matrix after removing the slack bus
+# and considering only off-diagonal elements
+
+# Exclude the row and column of the slack bus (bus 1) from B matrix
+B_reduced = B[1:, 1:]
+
+# Solving for angles, assuming angle at slack bus (bus 1) is zero
+theta = np.linalg.solve(B_reduced, P[1:])
+
+# Prepend the slack bus angle (0 radians)
+theta_full = np.insert(theta, 0, 0)
+
+# Voltage magnitudes are assumed to be 1 pu in DC power flow
+V_mag = np.ones(len(P))
+
+theta_full, V_mag

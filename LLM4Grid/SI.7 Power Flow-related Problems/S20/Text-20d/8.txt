@@ -1,0 +1,5 @@
+Bus Voltage Magnitudes and Angles:
+Bus 1 (Slack): Angle = 0.0 radians, Magnitude = 1 pu
+Bus 2: Angle = -0.075 radians, Magnitude = 1 pu
+Bus 3: Angle = -0.05 radians, Magnitude = 1 pu
+Bus 4: Angle = -0.075 radians, Magnitude = 1 pu

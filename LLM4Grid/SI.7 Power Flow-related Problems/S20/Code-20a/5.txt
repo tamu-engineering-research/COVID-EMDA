@@ -1,0 +1,78 @@
+import numpy as np
+
+# Admittance matrix Y
+Y = np.array([
+    [-30j, 10j, 10j, 10j],
+    [10j, -20j, 10j, 0],
+    [10j, 10j, -30j, 10j],
+    [10j, 0, 10j, -20j]
+])
+
+# Power generation and load demand at each bus (P_gen - P_load)
+P_net = np.array([2 - 0, 2 - 1, 4 - 4, 1 - 0], dtype=float)
+
+# Number of buses
+n = len(P_net)
+
+# Set bus 1 as slack bus: Assume V1 = 1.0 ∠ 0º
+V_slack = 1.0
+theta_slack = 0.0
+
+# Assume initial guesses for voltages (all buses except slack)
+V = np.ones(n - 1)
+theta = np.zeros(n - 1)
+
+# Remove slack bus row and column from Y
+Y_reduced = Y[1:, 1:]
+
+# Iteration settings
+max_iter = 100
+tolerance = 1e-6
+
+# Newton-Raphson method for solving power flow
+for _ in range(max_iter):
+    # Calculate current injections I = YV
+    V_full = np.r_[V_slack * np.exp(1j * theta_slack), V * np.exp(1j * theta)]
+    I = Y.dot(V_full)
+
+    # Calculate power injections at each bus
+    S = V_full * np.conj(I)
+
+    # Real power mismatches (delta P)
+    delta_P = P_net - S.real
+
+    # Adjustments for only PQ buses
+    delta_P = delta_P[1:]
+
+    # Check convergence
+    if np.all(np.abs(delta_P) < tolerance):
+        break
+
+    # Jacobian matrix
+    J = np.zeros((n - 1, n - 1))
+
+    # Calculate Jacobian entries
+    for i in range(n - 1):
+        for j in range(n - 1):
+            if i == j:
+                # Diagonal elements: Partial derivative of Pi with respect to thetai
+                J[i, j] = -V[i] ** 2 * Y_reduced[i, i].imag
+            else:
+                # Off-diagonal elements: Partial derivative of Pi with respect to thetaj
+                J[i, j] = V[i] * V[j] * Y_reduced[i, j].imag
+
+    # Update variables
+    theta_update = np.linalg.solve(J, delta_P)
+    theta += theta_update
+
+    # Update voltages (only magnitudes here, angles are updated directly)
+    V = np.abs(np.r_[V_slack, V * np.exp(1j * theta)])
+
+# Construct full voltage profile
+V_full = np.r_[V_slack, V]
+theta_full = np.r_[theta_slack, theta]
+
+# Voltage magnitudes and angles for all buses
+voltage_magnitudes = np.abs(V_full)
+voltage_angles = np.angle(V_full, deg=True)
+voltage_magnitudes, voltage_angles

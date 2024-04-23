@@ -1,0 +1,38 @@
+
+Substation Modbus Penetration Testing Methodology
+
+1. Preparation Phase
+   - Gather Information: Understand Modbus implementation details, devices involved, and communication schemas.
+   - Permission and Legal Considerations: Confirm permissions and understand legal restrictions.
+   - Define Scope: Clearly outline the boundaries of the testing environment including systems, networks, and devices.
+   - Tool Selection: Choose appropriate tools like Modscan, Modbus Traffic Generator, Wireshark for communication analysis.
+
+2. Discovery Phase
+   - Network Mapping: Identify all devices communicating over Modbus.
+   - Service Identification: Pinpoint Modbus services on each device.
+   - Vulnerability Scanning: Utilize automated tools to identify known vulnerabilities.
+
+3. Attack Phase
+   - Function Code Testing: Examine each Modbus function code for improper handling or unexpected behavior.
+   - Fuzz Testing: Input random or unexpected data into the Modbus system to identify crashes or failures.
+   - Authorization Bypass: Attempt operations that should be restricted.
+   - Denial of Service: Assess system resilience against service interruptions or excessive requests.
+
+4. Post-Exploitation Phase
+   - Data Exfiltration: Check if unauthorized access could lead to data leakage.
+   - Persistence: Verify if access can be maintained through system reboots or network resets.
+   - Privilege Escalation: Evaluate if initial access could lead to higher system privileges.
+
+5. Reporting Phase
+   - Documentation: Thoroughly document findings, methodologies, and steps taken.
+   - Impact Analysis: Analyze the impact of each identified vulnerability.
+   - Remediation Recommendations: Offer solutions to mitigate vulnerabilities.
+   - Review: Present findings to stakeholders for feedback.
+
+6. Cleanup Phase
+   - Reversal of Changes: Ensure that all changes made during testing are reverted.
+   - System Restoration: Restore systems to pre-testing conditions to prevent issues.
+
+7. Follow-Up
+   - Re-Testing: After applying fixes, re-test to confirm that vulnerabilities have been resolved.
+   - Continuous Improvement: Suggest procedures for ongoing security evaluations and improvements.

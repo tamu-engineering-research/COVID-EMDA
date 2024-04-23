@@ -1,0 +1,27 @@
+import numpy as np
+
+# The imaginary part of Y matrix (Y = G + jB), B matrix
+B = np.array([
+    [-30, 10, 10, 10],
+    [10, -20, 10, 0],
+    [10, 10, -30, 10],
+    [10, 0, 10, -20]
+]) * 1j
+
+# Net power injections P = Pg - Pd (in pu)
+P = np.array([2 - 0, 2 - 1, 4 - 4, 1 - 0])
+
+# Extract the B' matrix, removing the first row and first column corresponding to the slack bus
+B_prime = B[1:, 1:].imag
+
+# Solve the linear system B' * theta = P (ignoring first entry corresponding to slack bus)
+theta = np.linalg.solve(B_prime, P[1:])
+
+# Slack bus angle is 0 by definition (theta_1 = 0)
+theta_full = np.insert(theta, 0, 0)
+
+# Voltage magnitudes for DC power flow are typically assumed to be 1 pu
+V_magnitudes = np.ones_like(theta_full)
+
+# Return bus voltage magnitudes and angles (in radians)
+(V_magnitudes, theta_full)

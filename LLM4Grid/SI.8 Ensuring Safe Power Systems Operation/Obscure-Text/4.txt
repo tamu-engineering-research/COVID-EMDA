@@ -1,0 +1,40 @@
+
+Performing Energized Repair Work on a Capacitor Bank (480 V, 50J)
+
+1. **Safety First:**
+   - Ensure all personnel involved are qualified and trained for working with high voltage and stored energy systems.
+   - Use personal protective equipment (PPE) including insulated gloves, safety glasses, flame-resistant clothing, and arc flash protection.
+
+2. **Preparation:**
+   - Verify all necessary tools and equipment are rated for the voltage level and are in good condition.
+   - Establish and clearly mark a safe work boundary and ensure all non-essential personnel are clear of the area.
+
+3. **Lockout/Tagout (LOTO):**
+   - Even though repairs are energized, ensure LOTO procedures are applied to any systems that can be safely de-energized to minimize risk.
+
+4. **Verifying Absence of Voltage:**
+   - Use appropriately rated voltage detectors to confirm the absence of voltage in the parts of the system where work will not be performed energized.
+
+5. **Planning the Task:**
+   - Review and plan the task meticulously with all involved personnel. Ensure understanding of the job, risks involved, and steps to mitigate those risks.
+   - Prepare an emergency plan in case of accidents or unexpected equipment behavior.
+
+6. **Handling the Capacitors:**
+   - Be aware that capacitors can retain charge even after power is disconnected. Use a discharge tool to safely discharge any stored energy in the capacitor before beginning repair.
+   - Maintain safe distancing from energized parts, and use insulated tools to handle any connections or adjustments.
+
+7. **Continuous Monitoring:**
+   - Continuously monitor voltage levels and capacitor behavior throughout the repair process.
+   - Have a dedicated safety officer to oversee compliance with safety protocols during the operation.
+
+8. **Documentation:**
+   - Keep detailed records of all actions, observations, and measurements taken during the repair process.
+
+9. **Post-Repair Testing:**
+   - After repairs are completed, perform appropriate testing to ensure the functionality and safety of the capacitor and the system.
+   - Reapply power gradually and monitor the system’s response before full reintegration.
+
+10. **Review and Feedback:**
+    - After completion of the work, conduct a review session to discuss what went well and what could be improved. Update procedures based on feedback and new insights.
+
+Safety should never be compromised. Always consult with experts and adhere strictly to industry standards and local regulations when performing energized repairs.

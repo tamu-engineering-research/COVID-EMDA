@@ -1,0 +1,56 @@
+from PIL import Image
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Load the images
+transmission_lines_path = '/mnt/data/Transmission_line.png'
+august_fire_path = '/mnt/data/aug.png'
+september_fire_path = '/mnt/data/sep.png'
+october_fire_path = '/mnt/data/oct.png'
+
+transmission_lines_img = Image.open(transmission_lines_path)
+august_fire_img = Image.open(august_fire_path)
+september_fire_img = Image.open(september_fire_path)
+october_fire_img = Image.open(october_fire_path)
+
+# Convert images to numpy arrays for processing
+transmission_lines = np.array(transmission_lines_img)
+august_fire = np.array(august_fire_img)
+september_fire = np.array(september_fire_img)
+october_fire = np.array(october_fire_img)
+
+# Function to extract the red areas from the fire images
+def extract_fire_area(fire_img):
+    # Red channel is dominant in the red areas indicating fire
+    red_threshold = 150
+    green_threshold = 100
+    blue_threshold = 100
+
+    # Create a mask where the red areas are
+    mask = (fire_img[:,:,0] > red_threshold) & (fire_img[:,:,1] < green_threshold) & (fire_img[:,:,2] < blue_threshold)
+    
+    # Create an output image that is black everywhere except the mask
+    output_img = np.zeros_like(fire_img)
+    output_img[mask] = fire_img[mask]
+    
+    return output_img
+
+# Extract fire areas
+august_fire_area = extract_fire_area(august_fire)
+september_fire_area = extract_fire_area(september_fire)
+october_fire_area = extract_fire_area(october_fire)
+
+# Check if the extraction worked correctly by showing the results
+fig, axs = plt.subplots(1, 3, figsize=(20, 5))
+axs[0].imshow(august_fire_area)
+axs[0].set_title('August Fire Area')
+axs[1].imshow(september_fire_area)
+axs[1].set_title('September Fire Area')
+axs[2].imshow(october_fire_area)
+axs[2].set_title('October Fire Area')
+
+# Remove axis for cleanliness
+for ax in axs:
+    ax.axis('off')
+
+plt.show()

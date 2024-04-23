@@ -1,0 +1,67 @@
+file_pair,score,score_clipped
+"('generaltext\\DC_Power_Flow_Methods (1).txt', 'generaltext\\DC_Power_Flow_Methods (2).txt')",0.5168495774269104,0.5168495774269104
+"('generaltext\\DC_Power_Flow_Methods (1).txt', 'generaltext\\DC_Power_Flow_Methods (3).txt')",0.547387957572937,0.547387957572937
+"('generaltext\\DC_Power_Flow_Methods (1).txt', 'generaltext\\DC_Power_Flow_Methods (4).txt')",0.545619785785675,0.545619785785675
+"('generaltext\\DC_Power_Flow_Methods (1).txt', 'generaltext\\DC_Power_Flow_Methods (5).txt')",0.547055184841156,0.547055184841156
+"('generaltext\\DC_Power_Flow_Methods (1).txt', 'generaltext\\DC_Power_Flow_Methods (6).txt')",0.5558554530143738,0.5558554530143738
+"('generaltext\\DC_Power_Flow_Methods (1).txt', 'generaltext\\DC_Power_Flow_Methods (7).txt')",0.5848701596260071,0.5848701596260071
+"('generaltext\\DC_Power_Flow_Methods (1).txt', 'generaltext\\DC_Power_Flow_Methods (8).txt')",0.5715880990028381,0.5715880990028381
+"('generaltext\\DC_Power_Flow_Methods (1).txt', 'generaltext\\DC_Power_Flow_Methods.txt')",0.5411951541900635,0.5411951541900635
+"('generaltext\\DC_Power_Flow_Methods (1).txt', 'generaltext\\DC_Power_Flow_Methods_Overview.txt')",0.5636654496192932,0.5636654496192932
+"('generaltext\\DC_Power_Flow_Methods (1).txt', 'generaltext\\DC_Power_Flow_Methods_Summary.txt')",0.569625735282898,0.569625735282898
+"('generaltext\\DC_Power_Flow_Methods (1).txt', 'generaltext\\gbjrcqihiqwc.txt')",0.5909860730171204,0.5909860730171204
+"('generaltext\\DC_Power_Flow_Methods (2).txt', 'generaltext\\DC_Power_Flow_Methods (3).txt')",0.571665346622467,0.571665346622467
+"('generaltext\\DC_Power_Flow_Methods (2).txt', 'generaltext\\DC_Power_Flow_Methods (4).txt')",0.5478773713111877,0.5478773713111877
+"('generaltext\\DC_Power_Flow_Methods (2).txt', 'generaltext\\DC_Power_Flow_Methods (5).txt')",0.5497158765792847,0.5497158765792847
+"('generaltext\\DC_Power_Flow_Methods (2).txt', 'generaltext\\DC_Power_Flow_Methods (6).txt')",0.555850088596344,0.555850088596344
+"('generaltext\\DC_Power_Flow_Methods (2).txt', 'generaltext\\DC_Power_Flow_Methods (7).txt')",0.6064447164535522,0.6064447164535522
+"('generaltext\\DC_Power_Flow_Methods (2).txt', 'generaltext\\DC_Power_Flow_Methods (8).txt')",0.5510621070861816,0.5510621070861816
+"('generaltext\\DC_Power_Flow_Methods (2).txt', 'generaltext\\DC_Power_Flow_Methods.txt')",0.5493872761726379,0.5493872761726379
+"('generaltext\\DC_Power_Flow_Methods (2).txt', 'generaltext\\DC_Power_Flow_Methods_Overview.txt')",0.5550997853279114,0.5550997853279114
+"('generaltext\\DC_Power_Flow_Methods (2).txt', 'generaltext\\DC_Power_Flow_Methods_Summary.txt')",0.5872371196746826,0.5872371196746826
+"('generaltext\\DC_Power_Flow_Methods (2).txt', 'generaltext\\gbjrcqihiqwc.txt')",0.6078483462333679,0.6078483462333679
+"('generaltext\\DC_Power_Flow_Methods (3).txt', 'generaltext\\DC_Power_Flow_Methods (4).txt')",0.5504793524742126,0.5504793524742126
+"('generaltext\\DC_Power_Flow_Methods (3).txt', 'generaltext\\DC_Power_Flow_Methods (5).txt')",0.5492176413536072,0.5492176413536072
+"('generaltext\\DC_Power_Flow_Methods (3).txt', 'generaltext\\DC_Power_Flow_Methods (6).txt')",0.552833080291748,0.552833080291748
+"('generaltext\\DC_Power_Flow_Methods (3).txt', 'generaltext\\DC_Power_Flow_Methods (7).txt')",0.580889880657196,0.580889880657196
+"('generaltext\\DC_Power_Flow_Methods (3).txt', 'generaltext\\DC_Power_Flow_Methods (8).txt')",0.5573856234550476,0.5573856234550476
+"('generaltext\\DC_Power_Flow_Methods (3).txt', 'generaltext\\DC_Power_Flow_Methods.txt')",0.5311715602874756,0.5311715602874756
+"('generaltext\\DC_Power_Flow_Methods (3).txt', 'generaltext\\DC_Power_Flow_Methods_Overview.txt')",0.5642668008804321,0.5642668008804321
+"('generaltext\\DC_Power_Flow_Methods (3).txt', 'generaltext\\DC_Power_Flow_Methods_Summary.txt')",0.5813517570495605,0.5813517570495605
+"('generaltext\\DC_Power_Flow_Methods (3).txt', 'generaltext\\gbjrcqihiqwc.txt')",0.5975956320762634,0.5975956320762634
+"('generaltext\\DC_Power_Flow_Methods (4).txt', 'generaltext\\DC_Power_Flow_Methods (5).txt')",0.540161669254303,0.540161669254303
+"('generaltext\\DC_Power_Flow_Methods (4).txt', 'generaltext\\DC_Power_Flow_Methods (6).txt')",0.5636890530586243,0.5636890530586243
+"('generaltext\\DC_Power_Flow_Methods (4).txt', 'generaltext\\DC_Power_Flow_Methods (7).txt')",0.6032465100288391,0.6032465100288391
+"('generaltext\\DC_Power_Flow_Methods (4).txt', 'generaltext\\DC_Power_Flow_Methods (8).txt')",0.5623442530632019,0.5623442530632019
+"('generaltext\\DC_Power_Flow_Methods (4).txt', 'generaltext\\DC_Power_Flow_Methods.txt')",0.5444598197937012,0.5444598197937012
+"('generaltext\\DC_Power_Flow_Methods (4).txt', 'generaltext\\DC_Power_Flow_Methods_Overview.txt')",0.5621916651725769,0.5621916651725769
+"('generaltext\\DC_Power_Flow_Methods (4).txt', 'generaltext\\DC_Power_Flow_Methods_Summary.txt')",0.5536873936653137,0.5536873936653137
+"('generaltext\\DC_Power_Flow_Methods (4).txt', 'generaltext\\gbjrcqihiqwc.txt')",0.5999564528465271,0.5999564528465271
+"('generaltext\\DC_Power_Flow_Methods (5).txt', 'generaltext\\DC_Power_Flow_Methods (6).txt')",0.5851781964302063,0.5851781964302063
+"('generaltext\\DC_Power_Flow_Methods (5).txt', 'generaltext\\DC_Power_Flow_Methods (7).txt')",0.6328868269920349,0.6328868269920349
+"('generaltext\\DC_Power_Flow_Methods (5).txt', 'generaltext\\DC_Power_Flow_Methods (8).txt')",0.5866644382476807,0.5866644382476807
+"('generaltext\\DC_Power_Flow_Methods (5).txt', 'generaltext\\DC_Power_Flow_Methods.txt')",0.5692671537399292,0.5692671537399292
+"('generaltext\\DC_Power_Flow_Methods (5).txt', 'generaltext\\DC_Power_Flow_Methods_Overview.txt')",0.5844516754150391,0.5844516754150391
+"('generaltext\\DC_Power_Flow_Methods (5).txt', 'generaltext\\DC_Power_Flow_Methods_Summary.txt')",0.5581228733062744,0.5581228733062744
+"('generaltext\\DC_Power_Flow_Methods (5).txt', 'generaltext\\gbjrcqihiqwc.txt')",0.6166839003562927,0.6166839003562927
+"('generaltext\\DC_Power_Flow_Methods (6).txt', 'generaltext\\DC_Power_Flow_Methods (7).txt')",0.5967008471488953,0.5967008471488953
+"('generaltext\\DC_Power_Flow_Methods (6).txt', 'generaltext\\DC_Power_Flow_Methods (8).txt')",0.5461612343788147,0.5461612343788147
+"('generaltext\\DC_Power_Flow_Methods (6).txt', 'generaltext\\DC_Power_Flow_Methods.txt')",0.5213306546211243,0.5213306546211243
+"('generaltext\\DC_Power_Flow_Methods (6).txt', 'generaltext\\DC_Power_Flow_Methods_Overview.txt')",0.5665088295936584,0.5665088295936584
+"('generaltext\\DC_Power_Flow_Methods (6).txt', 'generaltext\\DC_Power_Flow_Methods_Summary.txt')",0.5705486536026001,0.5705486536026001
+"('generaltext\\DC_Power_Flow_Methods (6).txt', 'generaltext\\gbjrcqihiqwc.txt')",0.6061596274375916,0.6061596274375916
+"('generaltext\\DC_Power_Flow_Methods (7).txt', 'generaltext\\DC_Power_Flow_Methods (8).txt')",0.5653652548789978,0.5653652548789978
+"('generaltext\\DC_Power_Flow_Methods (7).txt', 'generaltext\\DC_Power_Flow_Methods.txt')",0.5349443554878235,0.5349443554878235
+"('generaltext\\DC_Power_Flow_Methods (7).txt', 'generaltext\\DC_Power_Flow_Methods_Overview.txt')",0.562639594078064,0.562639594078064
+"('generaltext\\DC_Power_Flow_Methods (7).txt', 'generaltext\\DC_Power_Flow_Methods_Summary.txt')",0.581578254699707,0.581578254699707
+"('generaltext\\DC_Power_Flow_Methods (7).txt', 'generaltext\\gbjrcqihiqwc.txt')",0.6041423678398132,0.6041423678398132
+"('generaltext\\DC_Power_Flow_Methods (8).txt', 'generaltext\\DC_Power_Flow_Methods.txt')",0.5310202836990356,0.5310202836990356
+"('generaltext\\DC_Power_Flow_Methods (8).txt', 'generaltext\\DC_Power_Flow_Methods_Overview.txt')",0.5514420866966248,0.5514420866966248
+"('generaltext\\DC_Power_Flow_Methods (8).txt', 'generaltext\\DC_Power_Flow_Methods_Summary.txt')",0.582699716091156,0.582699716091156
+"('generaltext\\DC_Power_Flow_Methods (8).txt', 'generaltext\\gbjrcqihiqwc.txt')",0.6031489968299866,0.6031489968299866
+"('generaltext\\DC_Power_Flow_Methods.txt', 'generaltext\\DC_Power_Flow_Methods_Overview.txt')",0.5755899548530579,0.5755899548530579
+"('generaltext\\DC_Power_Flow_Methods.txt', 'generaltext\\DC_Power_Flow_Methods_Summary.txt')",0.5909692645072937,0.5909692645072937
+"('generaltext\\DC_Power_Flow_Methods.txt', 'generaltext\\gbjrcqihiqwc.txt')",0.6104959845542908,0.6104959845542908
+"('generaltext\\DC_Power_Flow_Methods_Overview.txt', 'generaltext\\DC_Power_Flow_Methods_Summary.txt')",0.5759917497634888,0.5759917497634888
+"('generaltext\\DC_Power_Flow_Methods_Overview.txt', 'generaltext\\gbjrcqihiqwc.txt')",0.5998198390007019,0.5998198390007019
+"('generaltext\\DC_Power_Flow_Methods_Summary.txt', 'generaltext\\gbjrcqihiqwc.txt')",0.6299925446510315,0.6299925446510315

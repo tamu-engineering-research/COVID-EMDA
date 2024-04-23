@@ -1,0 +1,35 @@
+from scipy.optimize import linprog
+
+# Cost function: Minimize the total cost of generation
+c = [12, 15, 10, 8]  # Marginal costs of Generators A, B, C, D
+
+# Inequality constraints
+# - Power generation limits for each generator
+A_bounds = [
+    [-1, 0, 0, 0],  # Generator A
+    [0, -1, 0, 0],  # Generator B
+    [0, 0, -1, 0],  # Generator C
+    [0, 0, 0, -1]   # Generator D
+]
+
+# Maximum capacities
+b_bounds_upper = [-20, -30, -20, -30]  # Minimum capacities as negative for inequality
+b_bounds_lower = [150, 200, 150, 400]  # Maximum capacities, direct values
+
+# Equality constraints
+# - Power balance equations for each node
+A_eq = [
+    [0, 1, 0, 0],  # Power balance at Node 1
+    [1, 0, 0, 0],  # Power balance at Node 2
+    [0, 0, 1, 1]   # Power balance at Node 3
+]
+b_eq = [400, 80, 40]  # Demand at Nodes 1, 2, 3
+
+# Combined A matrix and b vector
+A = A_bounds + [[-x for x in row] for row in A_bounds]  # To handle both upper and lower bounds
+b = b_bounds_upper + b_bounds_lower
+
+# Solve linear programming problem
+result = linprog(c, A_ub=A, b_ub=b, A_eq=A_eq, b_eq=b_eq, method='highs')
+
+result.x  # Output the optimal dispatch for each generator (A, B, C, D)

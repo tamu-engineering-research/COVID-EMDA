@@ -1,0 +1,7 @@
+Optimal Dispatch Instructions:
+Generator A at Node 2: 20 MW
+Generator B at Node 1: 30 MW
+Generator C at Node 3: 70 MW
+Generator D at Node 3: 400 MW
+
+This configuration ensures that the demand across the nodes is met exactly and the operational cost is minimized given the constraints on each generator's capacity and cost.

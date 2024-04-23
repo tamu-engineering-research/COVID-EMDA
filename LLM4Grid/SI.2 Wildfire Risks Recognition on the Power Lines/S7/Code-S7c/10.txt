@@ -1,0 +1,29 @@
+from PIL import Image
+import numpy as np
+
+# Load the image
+img_path = '/mnt/data/FIRMS_2020-09-09_2020-09-10[@-123.0,39.8,8.5z].jpg'
+img = Image.open(img_path)
+
+# Convert image to RGBA (if not already in this mode)
+img = img.convert("RGBA")
+
+# Retrieve the data of the image as a numpy array
+data = np.array(img)
+
+# Set the white (also light colors if you wish to remove them as well) pixels to transparent
+# Define what we consider "white" (also consider very light greys)
+white = np.array([230, 230, 230, 255])  # White with full opacity
+mask = np.all(data >= white, axis=-1)
+
+# Change all pixels that are white (now including light greys) to transparent
+data[mask] = [0, 0, 0, 0]
+
+# Create a new image from the modified data
+new_img = Image.fromarray(data)
+
+# Save the new image with transparency
+output_path = '/mnt/data/FIRMS_2020-09-09_2020-09-10_transparent.png'
+new_img.save(output_path)
+
+output_path

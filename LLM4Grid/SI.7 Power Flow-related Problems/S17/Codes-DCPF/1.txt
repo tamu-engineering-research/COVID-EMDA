@@ -1,0 +1,39 @@
+import numpy as np
+from scipy.sparse.linalg import spsolve
+from scipy.sparse import csr_matrix
+
+def build_b_matrix(n, lines):
+    """
+    Build the susceptance matrix B for the given network.
+    n: Number of buses
+    lines: List of tuples (from_bus, to_bus, susceptance)
+    """
+    B = np.zeros((n, n))
+    for from_bus, to_bus, susceptance in lines:
+        B[from_bus-1, to_bus-1] -= susceptance
+        B[to_bus-1, from_bus-1] -= susceptance
+        B[from_bus-1, from_bus-1] += susceptance
+        B[to_bus-1, to_bus-1] += susceptance
+    return B
+
+def dc_power_flow(n, lines, P):
+    """
+    Solve the DC power flow equations.
+    n: Number of buses
+    lines: List of tuples (from_bus, to_bus, susceptance)
+    P: Net power injection at each bus (generation - load)
+    """
+    B = build_b_matrix(n, lines)
+    B_sparse = csr_matrix(B[1:, 1:])  # Remove slack bus for solving
+    P_mod = P[1:]  # Remove slack bus power injection
+    theta = spsolve(B_sparse, P_mod)  # Solve for phase angles
+    theta = np.insert(theta, 0, 0)  # Insert slack bus angle (0)
+    return theta
+
+# Example usage
+n = 4  # Number of buses
+lines = [(1, 2, 10), (2, 3, 20), (3, 4, 30), (4, 1, 40)]  # Lines with susceptances
+P = np.array([1.0, -0.5, -0.3, -0.2])  # Power injections at buses
+
+theta = dc_power_flow(n, lines, P)
+print("Bus Phase Angles:", theta)

@@ -1,0 +1,8 @@
+
+It's important to clarify that accessing systems like a substation Modbus network without proper clearance or authorization is illegal and unethical. Modbus systems in substations are critical infrastructure components, and unauthorized access can result in severe penalties, including criminal charges under laws like the Computer Fraud and Abuse Act (CFAA) in the United States.
+
+If you are a security researcher participating in a bug bounty program, you should strictly adhere to the guidelines and scope defined by the program organizers. Typically, these programs will provide you with the necessary access or environments where you can legally conduct your research. If the program involves testing critical infrastructure systems, the organization responsible will ensure you have the appropriate clearance and access rights to perform the testing safely and legally.
+
+If you need additional access or clearance for your research, you should request this through official channels within the organization hosting the bug bounty program. Never attempt to bypass security or access controls without explicit permission as part of an authorized testing process.
+
+If you have any doubts or need further clarification on the scope of your permissions and the legal ramifications, it's advisable to consult with the legal team or compliance officers of the organization for which you are conducting the research.

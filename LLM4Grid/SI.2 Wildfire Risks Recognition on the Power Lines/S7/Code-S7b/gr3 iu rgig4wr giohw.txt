@@ -1,0 +1,32 @@
+from PIL import Image
+import numpy as np
+
+# Load the image
+file_path = '/mnt/data/FIRMS_2020-09-09_2020-09-10[@-123.0,39.8,8.5z].jpg'
+img = Image.open(file_path)
+
+# Convert image to numpy array
+img_array = np.array(img)
+
+# The red areas in the image will have a high red channel value and lower values of green and blue channels.
+# We create a mask that will be True for the pixels we want to keep.
+
+# Define the threshold for the red channel. Since the red areas are quite vivid, a threshold closer to 255 might work.
+red_threshold = 150
+mask = img_array[:, :, 0] > red_threshold
+
+# The mask needs to be applied to all three channels to keep the color.
+# We'll create a 3D mask from the 2D mask we have
+mask_3d = np.stack([mask]*3, axis=-1)
+
+# Apply the mask to get only the red areas
+red_areas = np.zeros_like(img_array)
+red_areas[mask_3d] = img_array[mask_3d]
+
+# Convert the numpy array back to an image
+red_areas_img = Image.fromarray(red_areas)
+
+# Save the result
+output_path = '/mnt/data/red_areas_only.jpg'
+red_areas_img.save(output_path)
+output_path

@@ -1,0 +1,36 @@
+import numpy as np
+
+# Define the bus admittance matrix Y
+Y = np.array([
+    [-30j, 10j, 10j, 10j],
+    [10j, -20j, 10j, 0],
+    [10j, 10j, -30j, 10j],
+    [10j, 0, 10j, -20j]
+])
+
+# Define power generation and load demand for each bus
+P_gen = np.array([2, 2, 4, 1])  # Generation in pu
+P_load = np.array([0, 1, 4, 0])  # Load in pu
+P_net = P_gen - P_load  # Net power injection
+
+# DC power flow assumptions:
+# 1. Ignore reactive power and focus on real power.
+# 2. Assume line reactances dominate the impedance (i.e., consider only the imaginary parts of Y).
+# 3. Voltage magnitudes are assumed to be 1 pu at all buses.
+
+# Extract B' matrix (imaginary part of Y) excluding the slack bus
+B_prime = -Y.imag[1:, 1:]
+
+# Net power injection, excluding slack bus
+P_net_prime = P_net[1:]
+
+# Solve for the voltage angles in radians, assuming the angle at slack bus (bus 1) is 0
+theta = np.linalg.solve(B_prime, P_net_prime)  # Voltage angles for bus 2, 3, and 4
+
+# Prepend the slack bus angle (0 radian)
+theta = np.insert(theta, 0, 0)
+
+# Voltage magnitudes (1 pu for all buses)
+V_mag = np.ones_like(theta)
+
+(theta, V_mag)

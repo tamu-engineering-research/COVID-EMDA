@@ -1,0 +1,35 @@
+import numpy as np
+
+# Admittance matrix Y for the system (ignoring j since DC approximation only considers real parts)
+Y = np.array([
+    [-30j, 10j, 10j, 10j],
+    [10j, -20j, 10j, 0],
+    [10j, 10j, -30j, 10j],
+    [10j, 0, 10j, -20j]
+])
+
+# Net power injections P (generation - demand)
+P = np.array([2 - 0, 2 - 1, 4 - 4, 1 - 0])  # pu
+
+# Extract the conductance matrix B by taking the imaginary part and ignoring diagonal
+B = np.imag(Y)
+np.fill_diagonal(B, 0)
+
+# Since bus 1 is the slack bus, we need to solve for the other buses
+# Create reduced matrix B' by removing the row and column of the slack bus
+B_reduced = B[1:, 1:]
+
+# Inverse of B'
+B_inv = np.linalg.inv(B_reduced)
+
+# Calculate voltage angles (delta) in radians
+delta = np.dot(B_inv, P[1:])
+
+# Insert the slack bus angle (zero) at the beginning
+delta_full = np.insert(delta, 0, 0)
+
+# Calculate voltage magnitudes (assume all are 1 pu in DC power flow)
+V_mag = np.ones(4)
+
+# Results
+V_mag, delta_full

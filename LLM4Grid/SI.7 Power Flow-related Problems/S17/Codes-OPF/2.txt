@@ -1,0 +1,78 @@
+import pyomo.environ as pyo
+
+def dc_opf(network):
+    model = pyo.ConcreteModel()
+
+    # Sets
+    buses = network['buses']
+    generators = network['generators']
+    lines = network['lines']
+
+    # Parameters
+    demand = {bus: data['demand'] for bus, data in buses.items()}
+    cost = {gen: data['cost'] for gen, data in generators.items()}
+    capacity = {gen: data['capacity'] for gen, data in generators.items()}
+    susceptance = {line: data['susceptance'] for line, data in lines.items()}
+    f_bus = {line: data['from_bus'] for line, data in lines.items()}
+    t_bus = {line: data['to_bus'] for line, data in lines.items()}
+    line_limit = {line: data['limit'] for line, data in lines.items()}
+
+    # Variables
+    model.theta = pyo.Var(buses, within=pyo.Reals)
+    model.pg = pyo.Var(generators, within=pyo.NonNegativeReals)
+
+    # Objective
+    def objective_rule(m):
+        return sum(cost[g] * m.pg[g] for g in generators)
+    model.cost = pyo.Objective(rule=objective_rule, sense=pyo.minimize)
+
+    # Constraints
+
+    # Power balance constraint
+    def power_balance_rule(m, b):
+        return (sum(m.pg[g] for g in generators if generators[g]['bus'] == b) -
+                demand[b] - 
+                sum(susceptance[l] * (m.theta[f_bus[l]] - m.theta[t_bus[l]]) for l in lines if f_bus[l] == b) +
+                sum(susceptance[l] * (m.theta[t_bus[l]] - m.theta[f_bus[l]]) for l in lines if t_bus[l] == b) == 0)
+    model.balance = pyo.Constraint(buses, rule=power_balance_rule)
+
+    # Generation capacity constraints
+    def generation_limits_rule(m, g):
+        return m.pg[g] <= capacity[g]
+    model.gen_limits = pyo.Constraint(generators, rule=generation_limits_rule)
+
+    # Line flow constraints
+    def line_flow_rule(m, l):
+        return (susceptance[l] * (m.theta[f_bus[l]] - m.theta[t_bus[l]]) <= line_limit[l])
+    model.line_flow = pyo.Constraint(lines, rule=line_flow_rule)
+
+    def line_flow_negative_rule(m, l):
+        return (susceptance[l] * (m.theta[f_bus[l]] - m.theta[t_bus[l]]) >= -line_limit[l])
+    model.line_flow_negative = pyo.Constraint(lines, rule=line_flow_negative_rule)
+
+    # Solve the model
+    solver = pyo.SolverFactory('glpk')
+    result = solver.solve(model)
+
+    # Extract results
+    theta_sol = {bus: pyo.value(model.theta[bus]) for bus in buses}
+    pg_sol = {gen: pyo.value(model.pg[gen]) for gen in generators}
+    return theta_sol, pg_sol, model.cost()
+
+# Example network data
+network = {
+    'buses': {
+        'Bus1': {'demand': 200},
+        'Bus2': {'demand': 100},
+    },
+    'generators': {
+        'Gen1': {'bus': 'Bus1', 'cost': 20, 'capacity': 500},
+        'Gen2': {'bus': 'Bus2', 'cost': 25, 'capacity': 500},
+    },
+    'lines': {
+        'Line1': {'from_bus': 'Bus1', 'to_bus': 'Bus2', 'susceptance': 0.01, 'limit': 100},
+    }
+}
+
+theta_sol, pg_sol, total_cost = dc_opf(network)
+print("Voltage Angles:", theta_sol)

@@ -1,0 +1,27 @@
+from PIL import Image
+import numpy as np
+
+# Load the image
+image_path = '/mnt/data/FIRMS_2020-09-09_2020-09-10[@-123.0,39.8,8.5z].jpg'
+image = Image.open(image_path)
+
+# Convert image to RGBA (if not already in this mode)
+image = image.convert('RGBA')
+
+# Extract the data
+data = np.array(image)
+
+# Replace white (also any pixels that are all white) with transparent
+# Setting the white area (255,255,255) to transparency (0 in the alpha channel)
+red, green, blue, alpha = data.T
+white_areas = (red == 255) & (green == 255) & (blue == 255)
+data[..., :-1][white_areas.T] = (255, 255, 255)
+data[..., -1][white_areas.T] = 0
+
+# Create a new image with the modified data
+transparent_image = Image.fromarray(data)
+
+# Save the transparent image
+output_path = '/mnt/data/transparent_wildfire_map.png'
+transparent_image.save(output_path)
+output_path

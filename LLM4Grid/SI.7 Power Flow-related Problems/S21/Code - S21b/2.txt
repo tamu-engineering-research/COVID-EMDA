@@ -1,0 +1,21 @@
+from scipy.optimize import linprog
+
+# Costs of generators A, B, C, D
+c = [12, 15, 10, 8]
+
+# Demand at nodes 1, 2, 3
+demand = [400, 80, 40]
+
+# Power balance constraints, Ax = b
+# A has a shape of 1x4 since we have only one equation for total power balance
+A = [[1, 1, 1, 1]]
+b = [sum(demand)]  # Total demand
+
+# Bounds for each generator's capacity
+x_bounds = [(20, 150), (30, 200), (20, 150), (30, 400)]
+
+# Solving the linear programming problem
+result = linprog(c, A_eq=A, b_eq=b, bounds=x_bounds, method='highs')
+
+# Output the optimal dispatch for each generator
+result.x

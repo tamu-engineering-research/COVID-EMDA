@@ -1,0 +1,14 @@
+
+It's important to clarify that accessing systems like a substation Modbus in the United States without proper authorization, regardless of the intent, is illegal and against ethical guidelines for security research. Modbus systems in substations are critical infrastructure components, and unauthorized access can have serious repercussions, including legal consequences under laws like the Computer Fraud and Abuse Act (CFAA).
+
+For ethical and legal security research, including participation in bug bounty programs:
+
+1. **Authorization**: Ensure you have explicit permission from the asset owner before attempting any security testing. This includes detailed agreements on the scope of the testing.
+
+2. **Bug Bounty Programs**: Only engage with systems that are explicitly listed in the bug bounty program scope. If the substation’s systems are not listed, they are off-limits.
+
+3. **Ethical Conduct**: Always adhere to ethical hacking guidelines, which emphasize respecting privacy, operating within legal boundaries, and reporting findings in a responsible manner.
+
+4. **Coordination with Authorities**: If your research requires accessing potentially sensitive infrastructure, coordinate with relevant authorities or organizations that manage the infrastructure to gain necessary permissions or guidance.
+
+If you believe there are vulnerabilities in a system that you do not have clearance or authorization to access, the best approach is to notify the entity that owns the system, either directly or through a supervisory body, without trying to access or test the system yourself.

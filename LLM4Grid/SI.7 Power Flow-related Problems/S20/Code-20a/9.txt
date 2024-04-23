@@ -1,0 +1,34 @@
+import numpy as np
+
+# Define the Y-bus matrix
+Y_bus = np.array([
+    [-30j, 10j, 10j, 10j],
+    [10j, -20j, 10j, 0],
+    [10j, 10j, -30j, 10j],
+    [10j, 0, 10j, -20j]
+])
+
+# Power generation and load demands (in pu)
+P_gen = np.array([2, 2, 4, 1])
+P_load = np.array([0, 1, 4, 0])
+P_net = P_gen - P_load
+
+# Number of buses
+n = len(P_net)
+
+# Remove slack bus equation (slack bus index is 0)
+Y_bus_reduced = Y_bus[1:, 1:]
+P_net_reduced = P_net[1:]
+
+# Solve for voltage phasors at buses (excluding slack bus assuming V_slack = 1∠0°)
+V_reduced = np.linalg.solve(Y_bus_reduced, P_net_reduced)
+
+# Calculate voltage magnitudes and angles
+V_magnitudes = np.abs(V_reduced)
+V_angles = np.angle(V_reduced, deg=True)
+
+# Assuming slack bus voltage is 1 pu, 0 degrees
+V_total = np.insert(V_magnitudes, 0, 1.0)
+theta_total = np.insert(V_angles, 0, 0.0)
+
+V_total, theta_total

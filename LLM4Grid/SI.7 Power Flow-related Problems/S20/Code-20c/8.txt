@@ -1,0 +1,37 @@
+import numpy as np
+
+# Bus admittance matrix Y
+Y = np.array([
+    [-30j, 10j, 10j, 10j],
+    [10j, -20j, 10j, 0],
+    [10j, 10j, -30j, 10j],
+    [10j, 0, 10j, -20j]
+])
+
+# Power generation (P_gen) and load demand (P_load) in per unit (pu)
+P_gen = np.array([2, 2, 4, 1])
+P_load = np.array([0, 1, 4, 0])
+P_net = P_gen - P_load
+
+# Extracting the imaginary part (susceptance B matrix)
+B = np.imag(Y)
+
+# Slack bus (bus 1) considerations, we use index 0 for bus 1 in Python's 0-indexing
+# Eliminating the slack bus row and column from B matrix
+B_reduced = B[1:, 1:]
+
+# DC Power Flow Equations: P = B' * theta, solving for theta
+# P_reduced corresponding to non-slack buses
+P_reduced = P_net[1:]
+
+# Solve the linear system B_reduced * theta_reduced = P_reduced
+theta_reduced = np.linalg.solve(B_reduced, P_reduced)
+
+# Slack bus angle is 0 by definition
+theta = np.insert(theta_reduced, 0, 0)
+
+# Bus voltage magnitudes (1 pu for all buses in DC power flow)
+V_magnitude = np.ones_like(theta)
+
+theta_degrees = np.degrees(theta)  # Convert radians to degrees for angles
+theta_degrees, V_magnitude

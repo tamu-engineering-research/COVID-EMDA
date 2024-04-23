@@ -1,0 +1,60 @@
+from PIL import Image
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Load the images
+aug_img = Image.open("/mnt/data/aug.png")
+sep_img = Image.open("/mnt/data/sep.png")
+oct_img = Image.open("/mnt/data/oct.png")
+trans_img = Image.open("/mnt/data/Transmission_line.png")
+
+# Convert images to numpy arrays
+aug_np = np.array(aug_img)
+sep_np = np.array(sep_img)
+oct_np = np.array(oct_img)
+trans_np = np.array(trans_img)
+
+# Function to extract red areas indicating wildfires
+def extract_fire_area(image_array):
+    # Assuming fire areas are indicated by pure red: (255, 0, 0) in the RGBA image
+    red_mask = (image_array[:, :, 0] == 255) & (image_array[:, :, 1] == 0) & (image_array[:, :, 2] == 0)
+    # Creating an alpha channel of 255 for the mask and zero otherwise
+    alpha_channel = np.zeros_like(image_array[:, :, 0])
+    alpha_channel[red_mask] = 255
+    # Stacking the mask to create an RGBA image
+    fire_area = np.stack((image_array[:, :, 0], image_array[:, :, 1], image_array[:, :, 2], alpha_channel), axis=-1)
+    return fire_area
+
+# Extract the fire areas from each image
+aug_fire_area = extract_fire_area(aug_np)
+sep_fire_area = extract_fire_area(sep_np)
+oct_fire_area = extract_fire_area(oct_np)
+
+# Function to overlay fire areas onto the transmission lines map
+def overlay_fire(transmission_map, fire_map, color):
+    # Create a copy of the transmission map to overlay the fire map on
+    overlay_img = transmission_map.copy()
+    # Find where the fire map is not transparent (alpha channel is not 0)
+    overlay_mask = fire_map[:, :, 3] != 0
+    # Change the color of the overlay image where there is fire to the specified color
+    overlay_img[overlay_mask] = color
+    return overlay_img
+
+# Define colors for each month's fire overlay (in RGBA)
+aug_color = [255, 0, 0, 128] # Semi-transparent red
+sep_color = [0, 255, 0, 128] # Semi-transparent green
+oct_color = [0, 0, 255, 128] # Semi-transparent blue
+
+# Overlay each fire area on the transmission map with the respective colors
+trans_with_aug = overlay_fire(trans_np, aug_fire_area, aug_color)
+trans_with_sep = overlay_fire(trans_with_aug, sep_fire_area, sep_color)
+final_overlay = overlay_fire(trans_with_sep, oct_fire_area, oct_color)
+
+# Convert the final overlay to an Image object
+final_image = Image.fromarray(final_overlay)
+
+# Save the final image
+final_image_path = "/mnt/data/wildfire_overlay_on_transmission.png"
+final_image.save(final_image_path)
+
+final_image_path

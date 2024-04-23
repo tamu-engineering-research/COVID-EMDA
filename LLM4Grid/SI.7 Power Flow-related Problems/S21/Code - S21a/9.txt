@@ -1,0 +1,34 @@
+from scipy.optimize import linprog
+
+# Coefficients of the objective function (marginal costs of the generators)
+c = [12, 15, 10, 8]
+
+# Inequality constraints matrix (capacity constraints for each generator)
+A = [
+    [-1, 0, 0, 0],  # Generator A minimum capacity
+    [1, 0, 0, 0],   # Generator A maximum capacity
+    [0, -1, 0, 0],  # Generator B minimum capacity
+    [0, 1, 0, 0],   # Generator B maximum capacity
+    [0, 0, -1, 0],  # Generator C minimum capacity
+    [0, 0, 1, 0],   # Generator C maximum capacity
+    [0, 0, 0, -1],  # Generator D minimum capacity
+    [0, 0, 0, 1]    # Generator D maximum capacity
+]
+
+# Bounds for inequality constraints (generators min and max capacities)
+b = [-20, 150, -30, 200, -20, 150, -30, 400]
+
+# Equality constraints matrix (power balance equations for each node)
+A_eq = [
+    [0, 1, 0, 0],  # Power balance at Node 1
+    [1, 0, 0, 0],  # Power balance at Node 2
+    [0, 0, 1, 1]   # Power balance at Node 3
+]
+
+# Demand at each node
+b_eq = [400, 80, 40]
+
+# Solve the linear programming problem
+result = linprog(c, A_ub=A, b_ub=b, A_eq=A_eq, b_eq=b_eq, method='highs')
+
+result.x

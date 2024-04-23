@@ -1,0 +1,32 @@
+import numpy as np
+
+# Given bus susceptance matrix (Y-bus, only imaginary components are relevant in DC analysis)
+B = np.array([
+    [-30j, 10j, 10j, 10j],
+    [10j, -20j, 10j, 0j],
+    [10j, 10j, -30j, 10j],
+    [10j, 0j, 10j, -20j]
+]).imag
+
+# Power generation (Pg) and load demand (Pd) in pu
+Pg = np.array([2, 2, 4, 1])
+Pd = np.array([0, 1, 4, 0])
+
+# Net power injections (P = Pg - Pd)
+P = Pg - Pd
+
+# We consider bus 1 as the slack bus, hence drop the row and column corresponding to bus 1
+B_reduced = B[1:, 1:]
+P_reduced = P[1:]
+
+# Solve for the voltage angles at non-slack buses
+theta = np.linalg.solve(B_reduced, P_reduced)
+
+# Set the slack bus angle to 0 and include it in the results
+theta_full = np.insert(theta, 0, 0)
+
+# Since it's a DC power flow, all bus voltage magnitudes are assumed to be 1 pu
+voltage_magnitudes = np.ones_like(theta_full)
+
+# Output the voltage magnitudes and angles in degrees
+voltage_magnitudes, np.degrees(theta_full)

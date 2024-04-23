@@ -1,0 +1,59 @@
+import pulp as pl
+
+# Example Data
+# Buses
+buses = [1, 2, 3]
+
+# Generators (bus, max output, cost)
+generators = {
+    1: (100, 20),  # Generator at bus 1, 100 MW max, $20/MWh
+    3: (80, 25)    # Generator at bus 3, 80 MW max, $25/MWh
+}
+
+# Demand at each bus
+demand = {
+    1: 30,  # 30 MW demand at bus 1
+    2: 50,  # 50 MW demand at bus 2
+    3: 20   # 20 MW demand at bus 3
+}
+
+# Transmission lines (from bus, to bus, max flow)
+lines = [
+    (1, 2, 40),
+    (2, 3, 40)
+]
+
+# Set up the problem
+problem = pl.LpProblem("DC_OPF", pl.LpMinimize)
+
+# Decision variables: generation at each generator
+generation = pl.LpVariable.dicts("Generation", [g for g in generators], 0)
+
+# Objective: Minimize total generation cost
+problem += pl.lpSum([generation[g] * generators[g][1] for g in generators])
+
+# Constraint: Generation must meet demand
+for b in buses:
+    gen_sum = pl.lpSum([generation[g] for g in generators if g == b])
+    demand_sum = demand[b] if b in demand else 0
+    problem += (gen_sum == demand_sum, f"Power_balance_bus_{b}")
+
+# Constraint: Line flow limits
+# Flow on line = generation at from_bus - demand at from_bus - flow to to_bus (simplified)
+flows = {}
+for (f, t, limit) in lines:
+    flow = pl.LpVariable(f"Flow_{f}_{t}", -limit, limit)
+    flows[(f, t)] = flow
+    problem += (flow == generation[f] - demand[f] - generation[t] + demand[t], f"Flow_conservation_{f}_{t}")
+    problem += (flow <= limit, f"Max_flow_{f}_{t}")
+    problem += (flow >= -limit, f"Min_flow_{f}_{t}")
+
+# Solve the problem
+problem.solve()
+
+# Output results
+print("Status:", pl.LpStatus[problem.status])
+for v in problem.variables():
+    print(v.name, "=", v.varValue)
+
+print("Total Cost: $", pl.value(problem.objective))

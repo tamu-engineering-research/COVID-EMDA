@@ -1,0 +1,49 @@
+from scipy.optimize import linprog
+
+# Parameters
+demand = [400, 80, 40]  # Demand at nodes 1, 2, 3
+total_demand = sum(demand)
+
+# Generator parameters: Min capacity, Max capacity, Marginal Cost
+gen_params = [
+    (20, 150, 12),  # Gen A
+    (30, 200, 15),  # Gen B
+    (20, 150, 10),  # Gen C
+    (30, 400, 8)    # Gen D
+]
+
+# Coefficients for the objective function (marginal costs)
+c = [param[2] for param in gen_params]
+
+# Inequality constraints
+# Ax <= b
+# -x_min <= -x
+# x <= x_max
+A = [
+    [-1, 0, 0, 0],   # Gen A min
+    [1, 0, 0, 0],    # Gen A max
+    [0, -1, 0, 0],   # Gen B min
+    [0, 1, 0, 0],    # Gen B max
+    [0, 0, -1, 0],   # Gen C min
+    [0, 0, 1, 0],    # Gen C max
+    [0, 0, 0, -1],   # Gen D min
+    [0, 0, 0, 1]     # Gen D max
+]
+b = [
+    -gen_params[0][0], gen_params[0][1],
+    -gen_params[1][0], gen_params[1][1],
+    -gen_params[2][0], gen_params[2][1],
+    -gen_params[3][0], gen_params[3][1]
+]
+
+# Equality constraints
+# Ax = b
+A_eq = [[1, 0, 1, 1]]  # Total power generated must meet total demand
+b_eq = [total_demand]
+
+# Bounds for each generator output (implicitly defined in A and b already)
+
+# Solve the linear programming problem
+result = linprog(c, A_ub=A, b_ub=b, A_eq=A_eq, b_eq=b_eq, method='highs')
+
+result.x  # Dispatch levels for each generator

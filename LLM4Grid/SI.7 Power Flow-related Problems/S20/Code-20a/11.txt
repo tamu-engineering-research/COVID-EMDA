@@ -1,0 +1,40 @@
+import numpy as np
+
+# Define the Y-bus matrix (admittance matrix)
+Y = np.array([
+    [-30j, 10j, 10j, 10j],
+    [10j, -20j, 10j, 0],
+    [10j, 10j, -30j, 10j],
+    [10j, 0, 10j, -20j]
+])
+
+# Define the power generation and load demands (in pu)
+P_gen = np.array([2, 2, 4, 1])
+P_load = np.array([0, 1, 4, 0])
+
+# Net power injection at each bus (generation - load)
+P_net = P_gen - P_load
+
+# Bus 1 is the slack bus, its voltage is usually set to 1∠0 degree (per unit)
+V_slack = 1 + 0j  # Slack bus voltage magnitude and angle
+
+# The slack bus does not need power balance equations
+# Remove the row and column corresponding to the slack bus in the Y-bus matrix
+Y_reduced = Y[1:, 1:]  # Remove first row and column
+
+# Solve for the voltages at other buses
+# We ignore reactive power calculations and focus only on active power
+# P = V * conj(I) and I = Y * V => P = V * conj(Y * V)
+# Here we approximate that V is purely real for simplicity
+# Therefore, P ≈ real(V) * imag(Y * V)
+# So, V = inv(imag(Y)) * P
+V_remaining = np.linalg.solve(np.imag(Y_reduced), P_net[1:])
+
+# Insert the slack bus voltage back to the voltage vector
+V_full = np.insert(V_remaining, 0, V_slack)
+
+# Calculate angles and magnitudes
+V_magnitudes = np.abs(V_full)
+V_angles = np.angle(V_full, deg=True)
+
+V_magnitudes, V_angles

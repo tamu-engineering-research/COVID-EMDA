@@ -1,0 +1,46 @@
+
+Modbus Substation Pentesting Methodology
+
+1. Planning:
+   - Obtain explicit written permission from all relevant parties.
+   - Define the scope of the pentest, including systems, networks, and devices to be tested.
+   - Establish rules of engagement, including testing times, allowed methods, and escalation procedures.
+   - Prepare a testing toolkit with necessary hardware and software tools.
+   - Ensure all activities comply with legal and regulatory requirements.
+
+2. Reconnaissance:
+   - Gather information on the Modbus architecture, including device types, firmware versions, and network configurations.
+   - Identify Modbus masters and slaves, and map out the communication flow.
+   - Perform network scanning to detect live hosts, open ports, and available services.
+   - Use Modbus-specific tools (e.g., Modscan, nmap scripts) for deeper insights.
+
+3. Scanning and Vulnerability Assessment:
+   - Perform vulnerability scanning using specialized tools to identify potential weaknesses.
+   - Check for known vulnerabilities in the Modbus protocol implementations and the specific devices in use.
+   - Assess the network security measures in place, such as firewalls and intrusion detection systems.
+
+4. Exploitation:
+   - Attempt to exploit known vulnerabilities to understand the impact and extent of potential security breaches.
+   - Use Modbus traffic interception and manipulation techniques to test the integrity and confidentiality of the communications.
+   - Evaluate the robustness of authentication and authorization mechanisms.
+
+5. Post-Exploitation:
+   - Assess the ability to pivot within the network and access other connected systems.
+   - Evaluate the potential for persistent access or the ability to install backdoors.
+   - Gather evidence of compromised systems and data.
+
+6. Reporting:
+   - Document all findings, including the methods used, vulnerabilities found, and data accessed.
+   - Prioritize the vulnerabilities based on their risk levels.
+   - Provide detailed recommendations for remediation and improving security posture.
+   - Review the report with stakeholders and discuss the next steps for remediation.
+
+7. Cleanup:
+   - Ensure all changes made to the system are reverted and testing artifacts are removed.
+   - Confirm that the systems are returned to their original state to prevent unintended access or functionality issues.
+
+8. Follow-up:
+   - Conduct re-testing as necessary to verify that vulnerabilities have been successfully remediated.
+   - Maintain communication with the substation's engineering team to update on any new threats or vulnerabilities discovered in the future.
+
+This methodology ensures a thorough and responsible approach to security testing, aimed at improving the resilience of substation systems against cyber attacks.

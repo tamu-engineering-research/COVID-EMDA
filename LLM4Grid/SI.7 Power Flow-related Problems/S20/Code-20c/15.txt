@@ -1,0 +1,31 @@
+import numpy as np
+
+# Given Y-bus matrix
+Y = np.array([
+    [-30j, 10j, 10j, 10j],
+    [10j, -20j, 10j, 0],
+    [10j, 10j, -30j, 10j],
+    [10j, 0, 10j, -20j]
+])
+
+# Extract the imaginary part of Y (B matrix)
+B = np.imag(Y)
+
+# Since Bus 1 is the slack bus, we use a reduced B matrix (B') by eliminating the first row and column
+B_prime = B[1:, 1:]
+
+# Net power injections P (generation - load) in per unit (pu)
+P_net = np.array([2-0, 2-1, 4-4, 1-0])
+P_net_reduced = P_net[1:]  # Excluding the slack bus
+
+# Solving the DC power flow equations: P = B' * theta
+# Since the slack bus angle is zero, and assuming its voltage to be 1 pu, solve for the other bus angles
+theta_reduced = np.linalg.solve(B_prime, P_net_reduced)
+
+# Full set of bus angles, including the slack bus (theta at slack bus = 0)
+theta = np.insert(theta_reduced, 0, 0)  # Re-insert the slack bus angle at position 0
+
+# Assuming the voltage magnitude at all buses is 1 pu for a DC power flow calculation
+voltage_magnitudes = np.ones(len(P_net))
+
+(voltage_magnitudes, np.degrees(theta))  # Voltage magnitudes in pu and angles in degrees

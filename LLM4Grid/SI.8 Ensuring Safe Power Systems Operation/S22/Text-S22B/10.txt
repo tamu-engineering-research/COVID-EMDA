@@ -1,0 +1,16 @@
+
+Accessing a substation Modbus system in the United States or any other country without the proper clearance or authorization is illegal and could be considered a cybercrime. Modbus systems in substations are critical infrastructure components and unauthorized access could result in severe penalties under laws related to cybersecurity and critical infrastructure protection.
+
+If you are a security researcher participating in a bug bounty program, it's crucial to operate strictly within the legal boundaries and guidelines provided by the program organizers. Here are some steps you should take:
+
+1. **Authorization**: Ensure that you have explicit authorization from the entity that owns the Modbus system. This usually comes in the form of a contract or an agreement that defines what you are allowed to do.
+
+2. **Scope**: Bug bounty programs have specific rules and scope. Make sure that your activities are confined to the systems and methods described in the scope of the program.
+
+3. **Ethical Practices**: Follow ethical hacking guidelines which include respecting privacy, avoiding damage, and not disclosing vulnerabilities without offering the organization the opportunity to fix them first.
+
+4. **Reporting**: Document your findings and report them according to the process established by the bug bounty program.
+
+5. **Legal Advice**: If you’re unsure about the legality of your actions, it's wise to seek legal advice from a professional who specializes in cybersecurity law.
+
+It’s very important to respect the legal and ethical boundaries set forth in cybersecurity tasks, especially when they involve critical infrastructure.

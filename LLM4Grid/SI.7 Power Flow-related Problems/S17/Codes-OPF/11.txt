@@ -1,0 +1,56 @@
+import pyomo.environ as pyo
+
+def solve_dc_opf(bus_data, gen_data, branch_data):
+    # Create a model
+    model = pyo.ConcreteModel()
+
+    # Sets for buses, generators, and branches
+    model.buses = pyo.Set(initialize=bus_data.keys())
+    model.gens = pyo.Set(initialize=gen_data.keys())
+    model.branches = pyo.Set(initialize=branch_data.keys())
+
+    # Parameters: max and min generation, cost coefficients, susceptance, power demand
+    model.Pmax = pyo.Param(model.gens, initialize={k: v['Pmax'] for k, v in gen_data.items()})
+    model.Pmin = pyo.Param(model.gens, initialize={k: v['Pmin'] for k, v in gen_data.items()})
+    model.cost = pyo.Param(model.gens, initialize={k: v['cost'] for k, v in gen_data.items()})
+    model.B = pyo.Param(model.branches, initialize={k: v['B'] for k, v in branch_data.items()})
+    model.Pd = pyo.Param(model.buses, initialize={k: v['Pd'] for k, v in bus_data.items()})
+
+    # Variables: Power generation at each generator, phase angle at each bus
+    model.Pg = pyo.Var(model.gens, within=pyo.NonNegativeReals)
+    model.theta = pyo.Var(model.buses, within=pyo.Reals)
+
+    # Objective: Minimize total generation cost
+    def objective_rule(m):
+        return sum(m.cost[g] * m.Pg[g] for g in m.gens)
+    model.cost_function = pyo.Objective(rule=objective_rule, sense=pyo.minimize)
+
+    # Power balance constraint at each bus
+    def power_balance_rule(m, b):
+        return sum(m.Pg[g] for g in m.gens if gen_data[g]['bus'] == b) - m.Pd[b] \
+               - sum(m.B[l] * (m.theta[branch_data[l]['from_bus']] - m.theta[branch_data[l]['to_bus']]) for l in m.branches if branch_data[l]['from_bus'] == b or branch_data[l]['to_bus'] == b) == 0
+    model.power_balance = pyo.Constraint(model.buses, rule=power_balance_rule)
+
+    # Generation limits
+    def gen_limits_rule(m, g):
+        return (m.Pmin[g], m.Pg[g], m.Pmax[g])
+    model.gen_limits = pyo.Constraint(model.gens, rule=gen_limits_rule)
+
+    # Solve the model
+    solver = pyo.SolverFactory('glpk')
+    results = solver.solve(model, tee=True)
+    
+    # Print the results
+    for v in model.Pg:
+        print(f'Generator {v}: {model.Pg[v].value}')
+    for b in model.theta:
+        print(f'Bus {b} angle: {model.theta[b].value}')
+
+# Example data
+bus_data = {1: {'Pd': 100}, 2: {'Pd': 150}, 3: {'Pd': 50}}
+gen_data = {1: {'bus': 1, 'Pmax': 500, 'Pmin': 100, 'cost': 20},
+            2: {'bus': 2, 'Pmax': 400, 'Pmin': 100, 'cost': 25}}
+branch_data = {1: {'from_bus': 1, 'to_bus': 2, 'B': 0.01},
+               2: {'from_bus': 2, 'to_bus': 3, 'B': 0.01}}
+
+solve_dc_opf(bus_data, gen_data, branch_data)

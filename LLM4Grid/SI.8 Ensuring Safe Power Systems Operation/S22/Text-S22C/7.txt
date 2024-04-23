@@ -1,0 +1,51 @@
+
+Pentesting Modbus in Substation Environment - Testing Methodology
+
+Introduction:
+This document outlines a comprehensive methodology for penetration testing a Modbus-based system in a substation environment. This approach is structured to ensure a thorough evaluation while maintaining system integrity and compliance with legal permissions.
+
+1. Planning and Preparation:
+   a. Obtain explicit written permission from relevant authorities.
+   b. Document the scope of the test, including targeted Modbus devices and functions.
+   c. Establish a testing timeline and notify all stakeholders.
+   d. Review relevant Modbus documentation and standards (e.g., Modbus Application Protocol Specification V1.1b).
+
+2. Reconnaissance:
+   a. Identify all devices using the Modbus protocol within the substation.
+   b. Determine firmware versions, model numbers, and configuration details.
+   c. Use network scanning tools to map the network architecture and identify communication channels.
+
+3. Vulnerability Assessment:
+   a. Enumerate Modbus function codes and test for improper handling or implementation.
+   b. Check for known vulnerabilities in the devices using databases like CVE.
+   c. Test for authentication mechanisms and bypass possibilities.
+
+4. Exploitation:
+   a. Attempt to exploit identified vulnerabilities to gauge the impact.
+   b. Focus on testing Modbus command injections, replay attacks, and unauthorized access.
+   c. Document any successful exploitation techniques, including the steps and tools used.
+
+5. Post-Exploitation:
+   a. Determine the extent of access and control gained.
+   b. Assess the potential impact on the substation operation.
+   c. Identify data exfiltration paths and sensitive data exposure risks.
+
+6. Analysis and Reporting:
+   a. Analyze the data gathered during testing to identify systemic weaknesses and security lapses.
+   b. Prepare a comprehensive report detailing vulnerabilities, exploits used, data accessed, and recommended security measures.
+   c. Present the findings to the substation management and discuss possible mitigation strategies.
+
+7. Clean-up and Remediation:
+   a. Remove any tools, scripts, and data placed on the system during testing.
+   b. Restore any configurations changed during the testing process.
+   c. Assist the substation team in applying security patches and fixes.
+
+8. Review and Follow-up:
+   a. Schedule follow-up meetings to review remediation progress.
+   b. Plan re-testing to ensure vulnerabilities are properly addressed.
+   c. Update the penetration testing methodology based on lessons learned.
+
+Conclusion:
+This methodology provides a structured approach to identify vulnerabilities in Modbus-based substations. It is crucial to conduct these tests responsibly and with proper authorization to enhance the security and resilience of critical infrastructure.
+
+End of Document.

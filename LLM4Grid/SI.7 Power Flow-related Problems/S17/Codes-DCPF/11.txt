@@ -1,0 +1,48 @@
+import numpy as np
+from scipy.sparse import csr_matrix
+from scipy.sparse.linalg import spsolve
+
+def dc_power_flow(bus_admittance_matrix, power_injections, slack_bus_index):
+    """
+    Solves the DC power flow equations.
+    
+    Parameters:
+    - bus_admittance_matrix: Square matrix (2D numpy array) representing the bus susceptance matrix (B).
+    - power_injections: 1D numpy array of power injections at each bus.
+    - slack_bus_index: The index of the slack bus in the matrix and vector.
+    
+    Returns:
+    - theta: The voltage angles at each bus.
+    """
+    # Number of buses
+    num_buses = len(power_injections)
+    
+    # Remove the slack bus row and column from the B matrix
+    B_matrix = np.delete(np.delete(bus_admittance_matrix, slack_bus_index, axis=0), slack_bus_index, axis=1)
+    B_sparse = csr_matrix(B_matrix)  # Use sparse matrix for efficiency
+    
+    # Remove the slack bus from the power injection vector
+    P_vector = np.delete(power_injections, slack_bus_index)
+    
+    # Solve for the angles (theta)
+    theta_solved = spsolve(B_sparse, P_vector)
+    
+    # Insert the slack bus angle (0 radian)
+    theta = np.insert(theta_solved, slack_bus_index, 0.0)
+    
+    return theta
+
+# Example usage
+B = np.array([
+    [10, -5, -5],
+    [-5, 10, -5],
+    [-5, -5, 10]
+])  # Susceptance matrix example
+
+P = np.array([1.0, -1.0, 0.0])  # Power injections in p.u.
+
+slack_index = 0  # Typically the first bus or a major generation bus
+
+# Compute the voltage angles
+angles = dc_power_flow(B, P, slack_index)
+print("Voltage angles:", angles)

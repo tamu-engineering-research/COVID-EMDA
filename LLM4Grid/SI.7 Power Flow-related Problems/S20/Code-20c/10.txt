@@ -1,0 +1,32 @@
+import numpy as np
+
+# Define the Y-bus matrix
+Y = np.array([
+    [-30j, 10j, 10j, 10j],
+    [10j, -20j, 10j, 0],
+    [10j, 10j, -30j, 10j],
+    [10j, 0, 10j, -20j]
+])
+
+# Extract the B matrix (imaginary part of Y)
+B = np.imag(Y)
+
+# Power generation and load demand at each bus
+P_gen = np.array([2, 2, 4, 1])
+P_load = np.array([0, 1, 4, 0])
+P_net = P_gen - P_load
+
+# Assuming bus 1 as the slack bus, remove the row and column corresponding to bus 1
+B_reduced = B[1:, 1:]
+
+# Solve for the bus angle differences using DC power flow equations: P = B' * theta
+theta = np.linalg.solve(B_reduced, P_net[1:])
+
+# Add the angle of the slack bus (0 radians) at the start
+theta_full = np.insert(theta, 0, 0)
+
+# The voltage magnitude in a DC power flow is typically assumed to be 1 pu for all buses
+V_mag = np.ones(len(theta_full))
+
+# Return the voltage magnitudes and bus angles
+V_mag, theta_full

@@ -1,0 +1,45 @@
+import numpy as np
+
+# Define the Y-bus matrix
+Y = np.array([[-30j, 10j, 10j, 10j],
+              [10j, -20j, 10j, 0],
+              [10j, 10j, -30j, 10j],
+              [10j, 0, 10j, -20j]])
+
+# Power generation (Pg) and load (Pd) at each bus
+Pg = np.array([2, 2, 4, 1])  # Generation in pu
+Pd = np.array([0, 1, 4, 0])  # Demand in pu
+
+# Net injection (P_net = Pg - Pd)
+P_net = Pg - Pd
+
+# Number of buses
+n = len(P_net)
+
+# Slack bus index (0-based)
+slack_bus_index = 0
+
+# Solve for voltages, assuming V[0] = 1 + 0j (slack bus)
+V = np.zeros(n, dtype=complex)
+V[slack_bus_index] = 1 + 0j  # Slack bus voltage magnitude and angle
+
+# Formulate the reduced Y-bus matrix by removing the row and column of the slack bus
+Y_red = np.delete(np.delete(Y, slack_bus_index, axis=0), slack_bus_index, axis=1)
+
+# Form the net power injection vector without the slack bus
+P_net_red = np.delete(P_net, slack_bus_index)
+
+# Solve for the voltages at other buses
+# Current injections (I) are calculated by I = P_net / V (approximated since V is mostly unknown)
+# But since YV = I, we can rearrange to V = Y^-1 * I, excluding the slack bus
+I_red = P_net_red * 1j  # Use 1j for V in the calculation, considering the approximate phase difference
+V_red = np.linalg.solve(Y_red, I_red)
+
+# Reinsert the slack bus voltage back into the solution vector
+V[1:] = V_red
+
+# Calculate the voltage magnitudes and angles
+V_mag = np.abs(V)
+V_angle = np.degrees(np.angle(V))
+
+(V_mag, V_angle)

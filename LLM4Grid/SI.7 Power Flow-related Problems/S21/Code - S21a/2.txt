@@ -1,0 +1,44 @@
+from scipy.optimize import linprog
+
+# Define the coefficients of the objective function (minimizing cost)
+c = [12, 15, 10, 8]  # costs per MWh for generators A, B, C, D
+
+# Inequality constraints
+# A_ub is coefficients for the inequality constraints (generator capacities)
+A_ub = [
+    [-1, 0, 0, 0],  # Generator A capacity min
+    [1, 0, 0, 0],   # Generator A capacity max
+    [0, -1, 0, 0],  # Generator B capacity min
+    [0, 1, 0, 0],   # Generator B capacity max
+    [0, 0, -1, 0],  # Generator C capacity min
+    [0, 0, 1, 0],   # Generator C capacity max
+    [0, 0, 0, -1],  # Generator D capacity min
+    [0, 0, 0, 1]    # Generator D capacity max
+]
+
+# b_ub is the bounds for the inequality constraints
+b_ub = [
+    -20, 150,  # bounds for Generator A
+    -30, 200,  # bounds for Generator B
+    -20, 150,  # bounds for Generator C
+    -30, 400   # bounds for Generator D
+]
+
+# Equality constraints
+# A_eq is coefficients for the equality constraints (power demand)
+A_eq = [
+    [0, 1, 0, 0],  # Power demand at Node 1 from Generator B
+    [1, 0, 0, 0],  # Power demand at Node 2 from Generator A
+    [0, 0, 1, 1]   # Power demand at Node 3 from Generators C and D
+]
+
+# b_eq is the exact amounts required to satisfy the power demand
+b_eq = [400, 80, 40]  # Demands at Nodes 1, 2, and 3 respectively
+
+# Bounds for each variable (generator output)
+bounds = [(20, 150), (30, 200), (20, 150), (30, 400)]
+
+# Perform linear optimization to find the minimum cost
+result = linprog(c, A_ub=A_ub, b_ub=b_ub, A_eq=A_eq, b_eq=b_eq, bounds=bounds, method='highs')
+
+result.x  # Dispatch levels for generators A, B, C, D

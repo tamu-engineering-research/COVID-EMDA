@@ -1,0 +1,29 @@
+import numpy as np
+
+# Admittance matrix Y (excluding the imaginary unit j for the DC approximation)
+Y = np.array([
+    [-30, 10, 10, 10],
+    [10, -20, 10, 0],
+    [10, 10, -30, 10],
+    [10, 0, 10, -20]
+])
+
+# Power injections at the buses (generation - load)
+P = np.array([2, 2-1, 4-4, 1])
+
+# Extract the B matrix for DC power flow (only off-diagonal elements, and negatives)
+B = -np.diag(np.diag(Y))
+
+# Remove the row and column corresponding to the slack bus (bus 1)
+B_reduced = B[1:, 1:]
+
+# Solve for voltage angles at buses 2, 3, 4
+theta = np.linalg.solve(B_reduced, P[1:])
+
+# Including slack bus angle as 0
+theta_full = np.insert(theta, 0, 0.0)
+
+# Voltage magnitudes are assumed 1 pu in DC power flow
+V_mag = np.ones_like(theta_full)
+
+theta_full, V_mag

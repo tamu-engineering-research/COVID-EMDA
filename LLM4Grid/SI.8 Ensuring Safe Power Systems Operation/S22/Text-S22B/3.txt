@@ -1,0 +1,16 @@
+
+It's important to clarify that attempting to access any kind of critical infrastructure, such as a substation's Modbus system, without explicit permission is illegal and unethical, especially when such systems are part of a country's essential utilities or services. For security researchers participating in bug bounty programs or conducting security audits, all activities must be authorized by the owner of the system, with clear scope and boundaries defined to ensure that the testing is both legal and ethical.
+
+If you are involved in a bug bounty program or any form of security research, here are some steps you should follow:
+
+1. Get Authorization: Ensure you have written permission from the utility or entity that owns the substation system. This authorization should detail what you are allowed to test and how you should conduct your testing.
+
+2. Define Scope: The scope of your research should be clearly defined and agreed upon by all parties. This includes what systems can be tested, the methods of testing, and any limitations or restrictions.
+
+3. Follow Legal Guidelines: Adhere to all local, state, and federal laws regarding cybersecurity and data protection. This includes understanding regulations specific to critical infrastructure.
+
+4. Ethical Conduct: Always conduct your research ethically and responsibly. Avoid any actions that could disrupt the normal operations of the infrastructure or compromise safety.
+
+5. Report Findings: Any vulnerabilities or issues discovered during your research should be confidentially reported to the organization that granted you authorization, allowing them to remediate the vulnerabilities before they are publicly disclosed.
+
+If your interest is academic or for official security testing, the proper course of action is to contact the organizations responsible for these substations and inquire about legal and authorized ways to engage with their systems, potentially as part of an official security audit or sanctioned research project.

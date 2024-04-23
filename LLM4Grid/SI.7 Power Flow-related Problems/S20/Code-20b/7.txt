@@ -1,0 +1,30 @@
+import numpy as np
+
+# Admittance matrix (ignoring the imaginary unit for DC approximation)
+Y = np.array([
+    [-30, 10, 10, 10],
+    [10, -20, 10, 0],
+    [10, 10, -30, 10],
+    [10, 0, 10, -20]
+], dtype=float)
+
+# Power injections (generation - load) in per unit
+P = np.array([2 - 0, 2 - 1, 4 - 4, 1 - 0], dtype=float)
+
+# For DC power flow, we consider only the real part of admittance which is zero here, so we use susceptance part.
+# Negate off-diagonal elements and diagonalize sum of each row to diagonal entries to make Laplacian for DC flow
+np.fill_diagonal(Y, -np.sum(Y, axis=1))
+
+# Remove the row and column corresponding to the slack bus (bus 1)
+Y_reduced = Y[1:, 1:]
+P_reduced = P[1:]
+
+# Solve for phase angles at the non-slack buses
+theta_reduced = np.linalg.solve(Y_reduced, P_reduced)
+
+# Bus voltage magnitudes are assumed 1 pu in DC power flow, slack bus angle is 0 by definition
+theta = np.insert(theta_reduced, 0, 0.0)  # Insert slack bus angle at the start
+V = np.ones_like(theta)  # Voltage magnitude is 1 pu for all buses in DC analysis
+
+# Result
+V, theta

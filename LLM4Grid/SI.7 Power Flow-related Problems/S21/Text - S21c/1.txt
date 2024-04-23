@@ -1,0 +1,5 @@
+Generator Dispatch Instructions:
+Generator A: 20.0 MW
+Generator B: 30.0 MW
+Generator C: 70.0 MW
+Generator D: 400.0 MW

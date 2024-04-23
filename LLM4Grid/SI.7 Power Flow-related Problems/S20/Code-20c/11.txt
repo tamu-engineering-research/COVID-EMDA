@@ -1,0 +1,38 @@
+import numpy as np
+
+# Given Y-bus matrix (in complex form where jB elements are provided)
+Y = np.array([
+    [-30j, 10j, 10j, 10j],
+    [10j, -20j, 10j, 0],
+    [10j, 10j, -30j, 10j],
+    [10j, 0, 10j, -20j]
+])
+
+# Power generation and load demand in pu (net injections)
+P_gen = np.array([2, 2, 4, 1])
+P_load = np.array([0, 1, 4, 0])
+P_net = P_gen - P_load  # Net power injection at each bus
+
+# Extract the imaginary part of the Y-bus matrix to get B matrix
+B = np.imag(Y)
+
+# Remove slack bus (bus 1) related rows and columns from B to get B' (reduced B matrix)
+B_reduced = B[1:, 1:]
+
+# Solve for voltage angles (theta) in radians relative to the slack bus
+# B' * theta = P (ignoring the slack bus for P and theta)
+theta = np.linalg.solve(B_reduced, P_net[1:])
+
+# Include the slack bus angle, theta_slack = 0
+theta_full = np.insert(theta, 0, 0)
+
+# The voltage magnitudes in a DC power flow are assumed to be 1.0 pu
+voltage_magnitudes = np.ones(len(P_gen))
+
+# Prepare results
+theta_degrees = np.degrees(theta_full)  # Convert radians to degrees
+results = {
+    "Bus Voltage Magnitudes (pu)": voltage_magnitudes,
+    "Bus Voltage Angles (degrees)": theta_degrees
+}
+results

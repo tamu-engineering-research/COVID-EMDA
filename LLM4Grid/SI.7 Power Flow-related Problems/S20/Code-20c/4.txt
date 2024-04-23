@@ -1,0 +1,30 @@
+import numpy as np
+
+# Given data
+Y = np.array([
+    [-30j, 10j, 10j, 10j],
+    [10j, -20j, 10j, 0],
+    [10j, 10j, -30j, 10j],
+    [10j, 0, 10j, -20j]
+])
+P_gen = np.array([2, 2, 4, 1])  # in pu
+P_load = np.array([0, 1, 4, 0])  # in pu
+P = P_gen - P_load  # net power injection
+
+# Extract the imaginary part (B matrix)
+B = np.imag(Y)
+
+# Since bus 1 is slack, we ignore the first row and column in B matrix for B'
+B_reduced = B[1:, 1:]
+
+# Solve for theta (voltage angles in radians) using DC power flow assumptions: P = B' * theta
+theta = np.linalg.solve(B_reduced, P[1:])
+
+# Slack bus angle is zero
+theta_full = np.insert(theta, 0, 0.0)
+
+# Voltage magnitude is assumed 1.0 p.u. in DC power flow
+voltage_magnitude = np.ones_like(theta_full)
+
+# Return results
+theta_full, voltage_magnitude

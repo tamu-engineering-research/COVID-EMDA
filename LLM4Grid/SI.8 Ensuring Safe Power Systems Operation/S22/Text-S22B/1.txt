@@ -1,0 +1,16 @@
+
+It's important to approach this question within the bounds of legal and ethical considerations, especially given the sensitive nature of accessing systems like a substation Modbus in the United States.
+
+If you are participating in a bug bounty program, the organization involved should provide you with all the necessary permissions and access needed to legally test their systems. If you don't have enough clearance or access, you should:
+
+1. Contact the Organization: Directly reach out to the organization sponsoring the bug bounty for guidance. Explain your needs and the limitations you're facing. They may provide you with the necessary access in a controlled and legal manner.
+
+2. Follow the Rules: Ensure that all your actions comply with the rules of the bug bounty program. Unauthorized access, even if well-intentioned, can lead to legal consequences and ethical violations.
+
+3. Use Provided Interfaces: Work within the confines of the interfaces and access points provided to you. Attempting to bypass these can be illegal.
+
+4. Request Additional Information: If you need more information about the system to effectively participate in the bug bounty, request this from the organizers. They can provide documentation, system details, and more without requiring you to access the system directly.
+
+5. Training and Simulation: If practical, use simulated environments or training setups provided by the organization or available publicly to enhance your understanding of the systems like Modbus without accessing live systems.
+
+If you're unsure about the legality of any actions, it's always best to seek legal advice. Staying within the legal frameworks not only ensures the integrity of your research but also protects you and the systems you aim to improve.

@@ -1,0 +1,92 @@
+file_pair,score,score_clipped
+"('Prompt-generated-text\\Bus_Voltages_and_Angles.txt', 'Prompt-generated-text\\Bus_Voltage_Data.txt')",1.247870922088623,1.0
+"('Prompt-generated-text\\Bus_Voltages_and_Angles.txt', 'Prompt-generated-text\\Bus_Voltage_Magnitudes_and_Angles (1).txt')",1.3224678039550781,1.0
+"('Prompt-generated-text\\Bus_Voltages_and_Angles.txt', 'Prompt-generated-text\\Bus_Voltage_Magnitudes_and_Angles (2).txt')",1.2763596773147583,1.0
+"('Prompt-generated-text\\Bus_Voltages_and_Angles.txt', 'Prompt-generated-text\\Bus_Voltage_Magnitudes_and_Angles (3).txt')",1.333022952079773,1.0
+"('Prompt-generated-text\\Bus_Voltages_and_Angles.txt', 'Prompt-generated-text\\Bus_Voltage_Magnitudes_and_Angles (4).txt')",1.2713305950164795,1.0
+"('Prompt-generated-text\\Bus_Voltages_and_Angles.txt', 'Prompt-generated-text\\Bus_Voltage_Magnitudes_and_Angles (5).txt')",1.2676353454589844,1.0
+"('Prompt-generated-text\\Bus_Voltages_and_Angles.txt', 'Prompt-generated-text\\Bus_Voltage_Magnitudes_and_Angles.txt')",1.3857005834579468,1.0
+"('Prompt-generated-text\\Bus_Voltages_and_Angles.txt', 'Prompt-generated-text\\DC_Power_Flow_Results.txt')",1.132502794265747,1.0
+"('Prompt-generated-text\\Bus_Voltages_and_Angles.txt', 'Prompt-generated-text\\jbkji ttj4ktl  t.txt')",1.3181071281433105,1.0
+"('Prompt-generated-text\\Bus_Voltages_and_Angles.txt', 'Prompt-generated-text\\jfbirejbgbjkgr.txt')",1.2964239120483398,1.0
+"('Prompt-generated-text\\Bus_Voltages_and_Angles.txt', 'Prompt-generated-text\\jhfjkj 4 kj .txt')",1.4354543685913086,1.0
+"('Prompt-generated-text\\Bus_Voltages_and_Angles.txt', 'Prompt-generated-text\\qwej j t4kjtlt4k .txt')",1.35772705078125,1.0
+"('Prompt-generated-text\\Bus_Voltages_and_Angles.txt', 'Prompt-generated-text\\uvyuiut4v .txt')",1.089235544204712,1.0
+"('Prompt-generated-text\\Bus_Voltage_Data.txt', 'Prompt-generated-text\\Bus_Voltage_Magnitudes_and_Angles (1).txt')",1.3244833946228027,1.0
+"('Prompt-generated-text\\Bus_Voltage_Data.txt', 'Prompt-generated-text\\Bus_Voltage_Magnitudes_and_Angles (2).txt')",1.2801768779754639,1.0
+"('Prompt-generated-text\\Bus_Voltage_Data.txt', 'Prompt-generated-text\\Bus_Voltage_Magnitudes_and_Angles (3).txt')",1.3179030418395996,1.0
+"('Prompt-generated-text\\Bus_Voltage_Data.txt', 'Prompt-generated-text\\Bus_Voltage_Magnitudes_and_Angles (4).txt')",1.2965888977050781,1.0
+"('Prompt-generated-text\\Bus_Voltage_Data.txt', 'Prompt-generated-text\\Bus_Voltage_Magnitudes_and_Angles (5).txt')",1.2762467861175537,1.0
+"('Prompt-generated-text\\Bus_Voltage_Data.txt', 'Prompt-generated-text\\Bus_Voltage_Magnitudes_and_Angles.txt')",1.4106961488723755,1.0
+"('Prompt-generated-text\\Bus_Voltage_Data.txt', 'Prompt-generated-text\\DC_Power_Flow_Results.txt')",1.1387288570404053,1.0
+"('Prompt-generated-text\\Bus_Voltage_Data.txt', 'Prompt-generated-text\\jbkji ttj4ktl  t.txt')",1.3160072565078735,1.0
+"('Prompt-generated-text\\Bus_Voltage_Data.txt', 'Prompt-generated-text\\jfbirejbgbjkgr.txt')",1.3121756315231323,1.0
+"('Prompt-generated-text\\Bus_Voltage_Data.txt', 'Prompt-generated-text\\jhfjkj 4 kj .txt')",1.4398176670074463,1.0
+"('Prompt-generated-text\\Bus_Voltage_Data.txt', 'Prompt-generated-text\\qwej j t4kjtlt4k .txt')",1.3754857778549194,1.0
+"('Prompt-generated-text\\Bus_Voltage_Data.txt', 'Prompt-generated-text\\uvyuiut4v .txt')",1.0961153507232666,1.0
+"('Prompt-generated-text\\Bus_Voltage_Magnitudes_and_Angles (1).txt', 'Prompt-generated-text\\Bus_Voltage_Magnitudes_and_Angles (2).txt')",1.3097217082977295,1.0
+"('Prompt-generated-text\\Bus_Voltage_Magnitudes_and_Angles (1).txt', 'Prompt-generated-text\\Bus_Voltage_Magnitudes_and_Angles (3).txt')",1.3510074615478516,1.0
+"('Prompt-generated-text\\Bus_Voltage_Magnitudes_and_Angles (1).txt', 'Prompt-generated-text\\Bus_Voltage_Magnitudes_and_Angles (4).txt')",1.3123133182525635,1.0
+"('Prompt-generated-text\\Bus_Voltage_Magnitudes_and_Angles (1).txt', 'Prompt-generated-text\\Bus_Voltage_Magnitudes_and_Angles (5).txt')",1.3069944381713867,1.0
+"('Prompt-generated-text\\Bus_Voltage_Magnitudes_and_Angles (1).txt', 'Prompt-generated-text\\Bus_Voltage_Magnitudes_and_Angles.txt')",1.4059890508651733,1.0
+"('Prompt-generated-text\\Bus_Voltage_Magnitudes_and_Angles (1).txt', 'Prompt-generated-text\\DC_Power_Flow_Results.txt')",1.1724333763122559,1.0
+"('Prompt-generated-text\\Bus_Voltage_Magnitudes_and_Angles (1).txt', 'Prompt-generated-text\\jbkji ttj4ktl  t.txt')",1.312859058380127,1.0
+"('Prompt-generated-text\\Bus_Voltage_Magnitudes_and_Angles (1).txt', 'Prompt-generated-text\\jfbirejbgbjkgr.txt')",1.3105883598327637,1.0
+"('Prompt-generated-text\\Bus_Voltage_Magnitudes_and_Angles (1).txt', 'Prompt-generated-text\\jhfjkj 4 kj .txt')",1.4558606147766113,1.0
+"('Prompt-generated-text\\Bus_Voltage_Magnitudes_and_Angles (1).txt', 'Prompt-generated-text\\qwej j t4kjtlt4k .txt')",1.3921773433685303,1.0
+"('Prompt-generated-text\\Bus_Voltage_Magnitudes_and_Angles (1).txt', 'Prompt-generated-text\\uvyuiut4v .txt')",1.1430473327636719,1.0
+"('Prompt-generated-text\\Bus_Voltage_Magnitudes_and_Angles (2).txt', 'Prompt-generated-text\\Bus_Voltage_Magnitudes_and_Angles (3).txt')",1.3290106058120728,1.0
+"('Prompt-generated-text\\Bus_Voltage_Magnitudes_and_Angles (2).txt', 'Prompt-generated-text\\Bus_Voltage_Magnitudes_and_Angles (4).txt')",1.2671691179275513,1.0
+"('Prompt-generated-text\\Bus_Voltage_Magnitudes_and_Angles (2).txt', 'Prompt-generated-text\\Bus_Voltage_Magnitudes_and_Angles (5).txt')",1.2456395626068115,1.0
+"('Prompt-generated-text\\Bus_Voltage_Magnitudes_and_Angles (2).txt', 'Prompt-generated-text\\Bus_Voltage_Magnitudes_and_Angles.txt')",1.3939104080200195,1.0
+"('Prompt-generated-text\\Bus_Voltage_Magnitudes_and_Angles (2).txt', 'Prompt-generated-text\\DC_Power_Flow_Results.txt')",1.1561367511749268,1.0
+"('Prompt-generated-text\\Bus_Voltage_Magnitudes_and_Angles (2).txt', 'Prompt-generated-text\\jbkji ttj4ktl  t.txt')",1.3319487571716309,1.0
+"('Prompt-generated-text\\Bus_Voltage_Magnitudes_and_Angles (2).txt', 'Prompt-generated-text\\jfbirejbgbjkgr.txt')",1.3055095672607422,1.0
+"('Prompt-generated-text\\Bus_Voltage_Magnitudes_and_Angles (2).txt', 'Prompt-generated-text\\jhfjkj 4 kj .txt')",1.3954143524169922,1.0
+"('Prompt-generated-text\\Bus_Voltage_Magnitudes_and_Angles (2).txt', 'Prompt-generated-text\\qwej j t4kjtlt4k .txt')",1.3642314672470093,1.0
+"('Prompt-generated-text\\Bus_Voltage_Magnitudes_and_Angles (2).txt', 'Prompt-generated-text\\uvyuiut4v .txt')",1.101543664932251,1.0
+"('Prompt-generated-text\\Bus_Voltage_Magnitudes_and_Angles (3).txt', 'Prompt-generated-text\\Bus_Voltage_Magnitudes_and_Angles (4).txt')",1.3099567890167236,1.0
+"('Prompt-generated-text\\Bus_Voltage_Magnitudes_and_Angles (3).txt', 'Prompt-generated-text\\Bus_Voltage_Magnitudes_and_Angles (5).txt')",1.292609691619873,1.0
+"('Prompt-generated-text\\Bus_Voltage_Magnitudes_and_Angles (3).txt', 'Prompt-generated-text\\Bus_Voltage_Magnitudes_and_Angles.txt')",1.4270904064178467,1.0
+"('Prompt-generated-text\\Bus_Voltage_Magnitudes_and_Angles (3).txt', 'Prompt-generated-text\\DC_Power_Flow_Results.txt')",1.1607165336608887,1.0
+"('Prompt-generated-text\\Bus_Voltage_Magnitudes_and_Angles (3).txt', 'Prompt-generated-text\\jbkji ttj4ktl  t.txt')",1.3413331508636475,1.0
+"('Prompt-generated-text\\Bus_Voltage_Magnitudes_and_Angles (3).txt', 'Prompt-generated-text\\jfbirejbgbjkgr.txt')",1.334075927734375,1.0
+"('Prompt-generated-text\\Bus_Voltage_Magnitudes_and_Angles (3).txt', 'Prompt-generated-text\\jhfjkj 4 kj .txt')",1.4520213603973389,1.0
+"('Prompt-generated-text\\Bus_Voltage_Magnitudes_and_Angles (3).txt', 'Prompt-generated-text\\qwej j t4kjtlt4k .txt')",1.3909144401550293,1.0
+"('Prompt-generated-text\\Bus_Voltage_Magnitudes_and_Angles (3).txt', 'Prompt-generated-text\\uvyuiut4v .txt')",1.1257317066192627,1.0
+"('Prompt-generated-text\\Bus_Voltage_Magnitudes_and_Angles (4).txt', 'Prompt-generated-text\\Bus_Voltage_Magnitudes_and_Angles (5).txt')",1.2756288051605225,1.0
+"('Prompt-generated-text\\Bus_Voltage_Magnitudes_and_Angles (4).txt', 'Prompt-generated-text\\Bus_Voltage_Magnitudes_and_Angles.txt')",1.3983381986618042,1.0
+"('Prompt-generated-text\\Bus_Voltage_Magnitudes_and_Angles (4).txt', 'Prompt-generated-text\\DC_Power_Flow_Results.txt')",1.1605231761932373,1.0
+"('Prompt-generated-text\\Bus_Voltage_Magnitudes_and_Angles (4).txt', 'Prompt-generated-text\\jbkji ttj4ktl  t.txt')",1.3531146049499512,1.0
+"('Prompt-generated-text\\Bus_Voltage_Magnitudes_and_Angles (4).txt', 'Prompt-generated-text\\jfbirejbgbjkgr.txt')",1.293921947479248,1.0
+"('Prompt-generated-text\\Bus_Voltage_Magnitudes_and_Angles (4).txt', 'Prompt-generated-text\\jhfjkj 4 kj .txt')",1.4294826984405518,1.0
+"('Prompt-generated-text\\Bus_Voltage_Magnitudes_and_Angles (4).txt', 'Prompt-generated-text\\qwej j t4kjtlt4k .txt')",1.3786767721176147,1.0
+"('Prompt-generated-text\\Bus_Voltage_Magnitudes_and_Angles (4).txt', 'Prompt-generated-text\\uvyuiut4v .txt')",1.1216695308685303,1.0
+"('Prompt-generated-text\\Bus_Voltage_Magnitudes_and_Angles (5).txt', 'Prompt-generated-text\\Bus_Voltage_Magnitudes_and_Angles.txt')",1.3887090682983398,1.0
+"('Prompt-generated-text\\Bus_Voltage_Magnitudes_and_Angles (5).txt', 'Prompt-generated-text\\DC_Power_Flow_Results.txt')",1.1573703289031982,1.0
+"('Prompt-generated-text\\Bus_Voltage_Magnitudes_and_Angles (5).txt', 'Prompt-generated-text\\jbkji ttj4ktl  t.txt')",1.3270609378814697,1.0
+"('Prompt-generated-text\\Bus_Voltage_Magnitudes_and_Angles (5).txt', 'Prompt-generated-text\\jfbirejbgbjkgr.txt')",1.2956054210662842,1.0
+"('Prompt-generated-text\\Bus_Voltage_Magnitudes_and_Angles (5).txt', 'Prompt-generated-text\\jhfjkj 4 kj .txt')",1.3902416229248047,1.0
+"('Prompt-generated-text\\Bus_Voltage_Magnitudes_and_Angles (5).txt', 'Prompt-generated-text\\qwej j t4kjtlt4k .txt')",1.3626842498779297,1.0
+"('Prompt-generated-text\\Bus_Voltage_Magnitudes_and_Angles (5).txt', 'Prompt-generated-text\\uvyuiut4v .txt')",1.1018617153167725,1.0
+"('Prompt-generated-text\\Bus_Voltage_Magnitudes_and_Angles.txt', 'Prompt-generated-text\\DC_Power_Flow_Results.txt')",1.1654553413391113,1.0
+"('Prompt-generated-text\\Bus_Voltage_Magnitudes_and_Angles.txt', 'Prompt-generated-text\\jbkji ttj4ktl  t.txt')",1.3203935623168945,1.0
+"('Prompt-generated-text\\Bus_Voltage_Magnitudes_and_Angles.txt', 'Prompt-generated-text\\jfbirejbgbjkgr.txt')",1.3064467906951904,1.0
+"('Prompt-generated-text\\Bus_Voltage_Magnitudes_and_Angles.txt', 'Prompt-generated-text\\jhfjkj 4 kj .txt')",1.4315440654754639,1.0
+"('Prompt-generated-text\\Bus_Voltage_Magnitudes_and_Angles.txt', 'Prompt-generated-text\\qwej j t4kjtlt4k .txt')",1.3752728700637817,1.0
+"('Prompt-generated-text\\Bus_Voltage_Magnitudes_and_Angles.txt', 'Prompt-generated-text\\uvyuiut4v .txt')",1.1288505792617798,1.0
+"('Prompt-generated-text\\DC_Power_Flow_Results.txt', 'Prompt-generated-text\\jbkji ttj4ktl  t.txt')",1.3040108680725098,1.0
+"('Prompt-generated-text\\DC_Power_Flow_Results.txt', 'Prompt-generated-text\\jfbirejbgbjkgr.txt')",1.2809995412826538,1.0
+"('Prompt-generated-text\\DC_Power_Flow_Results.txt', 'Prompt-generated-text\\jhfjkj 4 kj .txt')",1.40804123878479,1.0
+"('Prompt-generated-text\\DC_Power_Flow_Results.txt', 'Prompt-generated-text\\qwej j t4kjtlt4k .txt')",1.3343206644058228,1.0
+"('Prompt-generated-text\\DC_Power_Flow_Results.txt', 'Prompt-generated-text\\uvyuiut4v .txt')",1.087237000465393,1.0
+"('Prompt-generated-text\\jbkji ttj4ktl  t.txt', 'Prompt-generated-text\\jfbirejbgbjkgr.txt')",1.305586576461792,1.0
+"('Prompt-generated-text\\jbkji ttj4ktl  t.txt', 'Prompt-generated-text\\jhfjkj 4 kj .txt')",1.437065839767456,1.0
+"('Prompt-generated-text\\jbkji ttj4ktl  t.txt', 'Prompt-generated-text\\qwej j t4kjtlt4k .txt')",1.3840616941452026,1.0
+"('Prompt-generated-text\\jbkji ttj4ktl  t.txt', 'Prompt-generated-text\\uvyuiut4v .txt')",1.126765251159668,1.0
+"('Prompt-generated-text\\jfbirejbgbjkgr.txt', 'Prompt-generated-text\\jhfjkj 4 kj .txt')",1.4606831073760986,1.0
+"('Prompt-generated-text\\jfbirejbgbjkgr.txt', 'Prompt-generated-text\\qwej j t4kjtlt4k .txt')",1.3921377658843994,1.0
+"('Prompt-generated-text\\jfbirejbgbjkgr.txt', 'Prompt-generated-text\\uvyuiut4v .txt')",1.1345493793487549,1.0
+"('Prompt-generated-text\\jhfjkj 4 kj .txt', 'Prompt-generated-text\\qwej j t4kjtlt4k .txt')",1.3990204334259033,1.0
+"('Prompt-generated-text\\jhfjkj 4 kj .txt', 'Prompt-generated-text\\uvyuiut4v .txt')",1.1502609252929688,1.0
+"('Prompt-generated-text\\qwej j t4kjtlt4k .txt', 'Prompt-generated-text\\uvyuiut4v .txt')",1.1077221632003784,1.0

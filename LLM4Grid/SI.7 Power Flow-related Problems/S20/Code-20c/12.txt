@@ -1,0 +1,35 @@
+import numpy as np
+
+# Admittance matrix Y
+Y = np.array([
+    [-30j, 10j, 10j, 10j],
+    [10j, -20j, 10j, 0],
+    [10j, 10j, -30j, 10j],
+    [10j, 0, 10j, -20j]
+])
+
+# Extract B matrix (imaginary part of Y)
+B = np.imag(Y)
+
+# Power generation and load demands
+P_gen = np.array([2, 2, 4, 1])  # in pu
+P_load = np.array([0, 1, 4, 0])  # in pu
+
+# Net power injections P = P_gen - P_load
+P = P_gen - P_load
+
+# Select the submatrix of B (exclude the slack bus row and column, bus 1 here)
+B_reduced = B[1:, 1:]
+
+# Solve for bus angle differences theta (in radians)
+theta = np.linalg.solve(B_reduced, P[1:])
+
+# Set slack bus angle to 0 for reference (concatenating it at the beginning)
+theta_full = np.insert(theta, 0, 0)
+
+# Voltage magnitude is assumed unity in DC power flow
+V_mag = np.ones(len(theta_full))
+
+# Display results
+theta_degrees = np.degrees(theta_full)  # Convert to degrees for readability
+theta_degrees, V_mag

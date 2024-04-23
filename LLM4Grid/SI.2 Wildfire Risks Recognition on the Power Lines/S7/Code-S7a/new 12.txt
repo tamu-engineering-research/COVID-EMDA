@@ -1,0 +1,74 @@
+from PIL import Image
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Load the images
+aug_image_path = '/mnt/data/aug.png'
+sep_image_path = '/mnt/data/sep.png'
+oct_image_path = '/mnt/data/oct.png'
+transmission_line_path = '/mnt/data/Transmission_line.png'
+
+# Open the images
+aug_img = Image.open(aug_image_path)
+sep_img = Image.open(sep_image_path)
+oct_img = Image.open(oct_image_path)
+transmission_line_img = Image.open(transmission_line_path)
+
+# We will use the numpy arrays of these images for processing
+aug_np = np.array(aug_img)
+sep_np = np.array(sep_img)
+oct_np = np.array(oct_img)
+transmission_line_np = np.array(transmission_line_img)
+
+# We need to make sure that the images are the same size before we can overlay them.
+# Let's check their sizes:
+aug_size = aug_np.shape
+sep_size = sep_np.shape
+oct_size = oct_np.shape
+transmission_line_size = transmission_line_np.shape
+
+aug_size, sep_size, oct_size, transmission_line_size
+
+# Define a function to resize images to the transmission line image size and extract red areas
+
+def resize_and_extract_red(image_np, base_size):
+    # Resize image to base_size
+    image_resized = Image.fromarray(image_np).resize((base_size[1], base_size[0]), Image.ANTIALIAS)
+    image_resized_np = np.array(image_resized)
+    
+    # Extract red areas (assuming red areas represent wildfires in the provided images)
+    # Red areas are where the red channel is dominant
+    red_threshold = 150 # Threshold to identify red areas
+    not_red_threshold = 100 # Threshold below which other colors indicate not red
+    is_red = (image_resized_np[:,:,0] > red_threshold) & \
+             (image_resized_np[:,:,1] < not_red_threshold) & \
+             (image_resized_np[:,:,2] < not_red_threshold)
+    
+    # Create a mask where red areas are True and others are False
+    mask = np.zeros_like(image_resized_np[:,:,0])
+    mask[is_red] = 1
+    
+    return mask
+
+# Extract red areas from resized images
+aug_mask = resize_and_extract_red(aug_np, transmission_line_size)
+sep_mask = resize_and_extract_red(sep_np, transmission_line_size)
+oct_mask = resize_and_extract_red(oct_np, transmission_line_size)
+
+# Now we will overlay these masks on top of the transmission line image.
+# Prepare the transmission line image by removing the alpha channel if it exists
+transmission_line_np_rgb = transmission_line_np[:,:,:3]
+
+# Overlay the wildfire masks on the transmission line image with distinguishable colors
+# We will use Red for August, Green for September, and Blue for October.
+overlay_image = transmission_line_np_rgb.copy()
+overlay_image[aug_mask == 1] = [255, 0, 0] # Red color for August
+overlay_image[sep_mask == 1] = [0, 255, 0] # Green color for September
+overlay_image[oct_mask == 1] = [0, 0, 255] # Blue color for October
+
+# Plot the result
+plt.figure(figsize=(10, 15))
+plt.imshow(overlay_image)
+plt.axis('off')  # Turn off axis numbers and ticks
+plt.show()
+

@@ -1,0 +1,7 @@
+Optimal Dispatch Instructions:
+Generator A: 20 MW
+Generator B: 30 MW
+Generator C: 70 MW
+Generator D: 400 MW
+
+Total Cost: $4590 per hour.

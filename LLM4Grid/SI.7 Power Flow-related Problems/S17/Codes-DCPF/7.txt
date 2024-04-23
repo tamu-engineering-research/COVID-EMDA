@@ -1,0 +1,44 @@
+import numpy as np
+
+def dc_power_flow(buses, lines, P):
+    """
+    Performs DC power flow analysis.
+    
+    Args:
+    - buses (int): Number of buses in the system.
+    - lines (list of tuples): Each tuple contains (from_bus, to_bus, susceptance).
+    - P (list): Net power injections at buses (generation - load). Length must be equal to buses.
+    
+    Returns:
+    - theta (array): Voltage angles at each bus.
+    """
+    # Initialize the bus admittance matrix (B matrix)
+    B = np.zeros((buses, buses))
+    
+    # Fill the off-diagonal elements of the B matrix
+    for from_bus, to_bus, susceptance in lines:
+        B[from_bus][to_bus] -= susceptance
+        B[to_bus][from_bus] -= susceptance
+        B[from_bus][from_bus] += susceptance
+        B[to_bus][to_bus] += susceptance
+    
+    # Remove the slack bus equation (typically bus 0)
+    B_reduced = B[1:, 1:]
+    P_reduced = np.array(P[1:])
+    
+    # Solve the linear system for voltage angles
+    theta_reduced = np.linalg.solve(B_reduced, P_reduced)
+    
+    # Full theta including slack bus (angle=0 at the slack bus)
+    theta = np.zeros(buses)
+    theta[1:] = theta_reduced
+    
+    return theta
+
+# Example usage:
+buses = 4  # Number of buses
+lines = [(0, 1, 0.1), (1, 2, 0.1), (2, 3, 0.1), (0, 3, 0.1)]  # (from_bus, to_bus, susceptance)
+P = [1.0, -0.5, -0.5, 0.0]  # Power injections (G - L)
+
+theta = dc_power_flow(buses, lines, P)
+print("Voltage angles (radians):", theta)

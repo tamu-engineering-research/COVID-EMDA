@@ -1,0 +1,5 @@
+Generator Dispatch Instructions:
+- Generator A (connected to Node 2): 20 MW
+- Generator B (connected to Node 1): 30 MW
+- Generator C (connected to Node 3): 70 MW
+- Generator D (connected to Node 3): 400 MW

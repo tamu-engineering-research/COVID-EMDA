@@ -1,0 +1,67 @@
+import numpy as np
+
+def dc_power_flow(bus_data, line_data):
+    """
+    Solves the DC Power Flow for a given power system network.
+    
+    Args:
+    bus_data (numpy array): Array containing bus data, where each row represents a bus and the columns are:
+        - Bus ID
+        - Type (1 = slack, 2 = PQ bus, 3 = PV bus)
+        - Net power injection at the bus (P)
+    
+    line_data (numpy array): Array containing line data, where each row represents a line and the columns are:
+        - From bus ID
+        - To bus ID
+        - Susceptance (B)
+
+    Returns:
+    numpy array: Phase angles at each bus (in radians).
+    """
+    # Number of buses
+    n = len(bus_data)
+    
+    # Initialize the bus admittance matrix (B matrix)
+    B = np.zeros((n, n))
+    
+    # Populate the B matrix based on line data
+    for line in line_data:
+        i, j, b = int(line[0]), int(line[1]), line[2]
+        B[i-1, i-1] += b
+        B[j-1, j-1] += b
+        B[i-1, j-1] -= b
+        B[j-1, i-1] -= b
+    
+    # Initialize the power injection vector
+    P = bus_data[:, 2]
+    
+    # Determine the slack bus index
+    slack_index = np.where(bus_data[:, 1] == 1)[0][0]
+    
+    # Modify B matrix to handle the slack bus by making its row and column effectively zero
+    B[:, slack_index] = B[slack_index, :] = 0
+    B[slack_index, slack_index] = 1
+    
+    # Solve for the angles
+    theta = np.linalg.solve(B, P)
+    
+    # Set slack bus angle to zero
+    theta[slack_index] = 0
+    
+    return theta
+
+# Example usage:
+bus_data = np.array([
+    [1, 1, 0],   # Bus 1: Slack bus
+    [2, 2, -100], # Bus 2: PQ bus with -100 MW power injection
+    [3, 2, 150]   # Bus 3: PQ bus with 150 MW power generation
+])
+
+line_data = np.array([
+    [1, 2, 0.1], # Line from Bus 1 to Bus 2 with susceptance 0.1
+    [2, 3, 0.1], # Line from Bus 2 to Bus 3 with susceptance 0.1
+    [1, 3, 0.1]  # Line from Bus 1 to Bus 3 with susceptance 0.1
+])
+
+theta = dc_power_flow(bus_data, line_data)
+print("Voltage angles in radians:", theta)

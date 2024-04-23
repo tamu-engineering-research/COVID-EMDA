@@ -1,0 +1,30 @@
+import numpy as np
+
+# Bus admittance matrix (complex)
+Y = np.array([
+    [-30j, 10j, 10j, 10j],
+    [10j, -20j, 10j, 0],
+    [10j, 10j, -30j, 10j],
+    [10j, 0, 10j, -20j]
+])
+
+# Extract B matrix (imaginary part of Y)
+B = np.imag(Y)
+
+# Net power injections (generation - load) in pu
+P_net = np.array([2, 2, 4, 1]) - np.array([0, 1, 4, 0])
+
+# Remove the row and column corresponding to the slack bus (bus 1)
+B_reduced = B[1:, 1:]
+P_net_reduced = P_net[1:]
+
+# Solving for bus angles (theta), theta1 (slack bus) is assumed 0
+theta_reduced = np.linalg.solve(B_reduced, P_net_reduced)
+
+# Include slack bus angle at the beginning (0 degrees)
+theta = np.insert(theta_reduced, 0, 0)
+
+# Voltage magnitudes are assumed 1 p.u. in DC power flow
+V_magnitudes = np.ones(len(P_net))
+
+V_magnitudes, theta

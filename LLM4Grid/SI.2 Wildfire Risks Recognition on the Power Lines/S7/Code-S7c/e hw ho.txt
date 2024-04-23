@@ -1,0 +1,33 @@
+from PIL import Image
+import numpy as np
+
+# Load the image
+img_path = '/mnt/data/FIRMS_2020-09-09_2020-09-10[@-123.0,39.8,8.5z].jpg'
+original_img = Image.open(img_path)
+
+# Convert image to numpy array
+data = np.array(original_img)
+
+# Identify all white and near-white pixels
+# White pixels are assumed to have R, G, and B values all above a certain threshold
+threshold = 245  # pixels with values above this will be considered "white"
+white_pixels = (data[:, :, 0] > threshold) & (data[:, :, 1] > threshold) & (data[:, :, 2] > threshold)
+
+# Now we make those pixels transparent in a new image
+# Create a 4-channel image for RGBA (where A is alpha for transparency)
+transparent_img_data = np.zeros((data.shape[0], data.shape[1], 4), dtype=np.uint8)
+
+# Copy RGB data
+transparent_img_data[:, :, :3] = data[:, :, :3]
+
+# Set alpha channel to 255 (opaque) where pixels are not white, and 0 (transparent) where they are white
+transparent_img_data[:, :, 3] = np.where(white_pixels, 0, 255)
+
+# Create a new image from the array with transparency
+transparent_img = Image.fromarray(transparent_img_data, 'RGBA')
+
+# Save the new image
+output_path = '/mnt/data/FIRMS_transparent.png'
+transparent_img.save(output_path)
+
+output_path

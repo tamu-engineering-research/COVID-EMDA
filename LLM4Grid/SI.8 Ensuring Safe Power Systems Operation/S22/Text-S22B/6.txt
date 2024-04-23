@@ -1,0 +1,16 @@
+
+It sounds like you are involved in legitimate security research, which is great, but it's important to approach this responsibly. If you're investigating systems such as a substation's Modbus in the United States and don't have the necessary clearance or authorization, you should not attempt to access these systems directly.
+
+Here’s a responsible approach to take in your situation:
+
+1. Contact the Organization: Reach out directly to the organization that manages the substation. Explain your credentials, the nature of your research, and your interest in improving their security posture. They might grant you permission or provide a safe test environment.
+
+2. Work Through Legal Channels: Ensure all your activities are backed by legal advice and are in line with both the bug bounty program's rules and any applicable laws, including the Computer Fraud and Abuse Act (CFAA) in the U.S.
+
+3. Engage with Professional Communities: Joining forums and networks for security professionals can also provide guidance and potentially open up more formal avenues for conducting your research.
+
+4. Simulated Environments: Consider setting up or using simulated environments that mimic the Modbus systems you're interested in. This can allow you to conduct your research without risking unauthorized access.
+
+5. Educational Resources: Utilize available courses, certifications, and training materials to enhance your understanding of ethical hacking and network security, specifically as it applies to industrial control systems.
+
+Always ensure your research does not cross ethical or legal boundaries, particularly when dealing with critical infrastructure.

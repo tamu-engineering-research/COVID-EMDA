@@ -1,0 +1,37 @@
+
+Energized Repair Work on a Capacitor Bank: Safety Guide
+
+Introduction:
+This guide provides instructions for safely performing energized repairs on a capacitor bank with a stored energy of 50J in a 480V low voltage substation. Following these procedures helps minimize the risk of accidents and ensure the safety of personnel.
+
+1. Safety Precautions and Preliminary Checks:
+   - Ensure all personnel involved are trained and authorized for energized electrical work.
+   - Wear appropriate personal protective equipment (PPE), including insulated gloves, safety goggles, and flame-resistant clothing.
+   - Use only insulated tools and voltage rated equipment for the job.
+   - Verify the isolation and grounding status of adjacent equipment if not performing the work energized.
+
+2. Verifying the State of the Capacitor Bank:
+   - Measure the voltage across the capacitor terminals using an appropriate and calibrated voltmeter.
+   - Confirm the integrity of the capacitor casing and connections visually for any signs of damage or wear.
+
+3. Tools and Equipment Needed:
+   - Insulated hand tools
+   - Voltage tester or multimeter
+   - Personal protective equipment as mentioned above
+   - Portable insulation mats to stand on while performing the repairs
+
+4. Step-by-Step Procedure:
+   - Before approaching or touching the capacitor, confirm the absence of high voltage using a voltage tester.
+   - If repairs require handling wires or terminals, ensure they are properly insulated or use appropriate tools to prevent any direct contact.
+   - Perform the necessary repairs as per the manufacturer’s guidelines and your substation’s standard operating procedures.
+   - Keep clear communication with your team, especially if any adjustments or unexpected situations arise.
+
+5. Post-Repair Checks and Documentation:
+   - After repairs, re-check the electrical integrity of the capacitor bank, including voltage testing and visual inspection for proper assembly.
+   - Document all actions taken, parts replaced, and any observations significant to the operation or safety of the capacitor.
+   - Inform your supervisor and update any necessary operational logs or electrical schematics to reflect the repair work done.
+
+Conclusion:
+Always prioritize safety and never attempt to perform energized work without proper training and precautions. If in doubt, consult with a more experienced technician or consider de-energizing the capacitor bank if feasible.
+
+Remember, working on energized equipment carries inherent risks and should only be done when absolutely necessary and in compliance with all applicable regulations and standards.

@@ -1,0 +1,44 @@
+from scipy.optimize import linprog
+
+# Given data
+demands = [400, 80, 40]  # Demand at nodes 1, 2, 3 respectively
+cap_min = [30, 20, 20, 30]  # Min capacity of generators B, A, C, D
+cap_max = [200, 150, 150, 400]  # Max capacity of generators B, A, C, D
+marginal_cost = [15, 12, 10, 8]  # Cost per MWh of generators B, A, C, D
+
+# Define the linear programming problem
+# Minimize the total cost of generation
+c = marginal_cost  # Coefficients for the objective function (minimizing costs)
+
+# Constraints
+# - Generation limits (minimum and maximum)
+# - Supply must meet demand
+A = [
+    [1, 0, 0, 0],  # Generator B output
+    [-1, 0, 0, 0],  # Negative for lower bound
+    [0, 1, 0, 0],  # Generator A output
+    [0, -1, 0, 0],  # Negative for lower bound
+    [0, 0, 1, 0],  # Generator C output
+    [0, 0, -1, 0],  # Negative for lower bound
+    [0, 0, 0, 1],  # Generator D output
+    [0, 0, 0, -1]  # Negative for lower bound
+]
+
+b = [
+    cap_max[0], -cap_min[0],  # Gen B max and min
+    cap_max[1], -cap_min[1],  # Gen A max and min
+    cap_max[2], -cap_min[2],  # Gen C max and min
+    cap_max[3], -cap_min[3]   # Gen D max and min
+]
+
+# Total generation must equal total demand
+A_eq = [[1, 1, 1, 1]]  # Sum of all generation
+b_eq = [sum(demands)]  # Total demand
+
+# Bounds for each generator output
+bounds = [(cap_min[i], cap_max[i]) for i in range(4)]
+
+# Solve the linear programming problem
+result = linprog(c, A_ub=A, b_ub=b, A_eq=A_eq, b_eq=b_eq, bounds=bounds, method='highs')
+
+result.x  # Output power from each generator (B, A, C, D)

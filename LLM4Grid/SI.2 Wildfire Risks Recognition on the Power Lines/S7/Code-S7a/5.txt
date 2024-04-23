@@ -1,0 +1,66 @@
+from PIL import Image
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Open the transmission lines map and the wildfire images for August, September, and October
+transmission_map_path = '/mnt/data/Transmission_line.png'
+august_fire_path = '/mnt/data/aug.png'
+september_fire_path = '/mnt/data/sep.png'
+october_fire_path = '/mnt/data/oct.png'
+
+# Load the images
+transmission_map = Image.open(transmission_map_path)
+august_fire = Image.open(august_fire_path)
+september_fire = Image.open(september_fire_path)
+october_fire = Image.open(october_fire_path)
+
+# We will need to convert the images to the same size to overlay them properly
+# The reference will be the transmission map size
+transmission_map_size = transmission_map.size
+
+# Resize the wildfire maps to match the transmission map size
+august_fire_resized = august_fire.resize(transmission_map_size)
+september_fire_resized = september_fire.resize(transmission_map_size)
+october_fire_resized = october_fire.resize(transmission_map_size)
+
+# Convert images to arrays for processing
+transmission_map_arr = np.array(transmission_map)
+august_fire_arr = np.array(august_fire_resized)
+september_fire_arr = np.array(september_fire_resized)
+october_fire_arr = np.array(october_fire_resized)
+
+# The wildfires are marked in red on the wildfire maps. 
+# We can identify them by looking for pixels that are predominantly red compared to green and blue.
+
+# We'll define a function to extract just the red areas which are likely to be the wildfires
+def extract_red_areas(image_array):
+    # The red color is dominant in the wildfires, which means it has higher intensity compared to green and blue
+    red_areas = (image_array[:, :, 0] > image_array[:, :, 1]) & (image_array[:, :, 0] > image_array[:, :, 2])
+    # Now we will create a mask that is True for areas we want to keep (red areas)
+    mask = np.zeros_like(image_array[:, :, 0])
+    mask[red_areas] = 1
+    return mask
+
+# Extract red areas which are considered wildfire areas
+august_fire_mask = extract_red_areas(august_fire_arr)
+september_fire_mask = extract_red_areas(september_fire_arr)
+october_fire_mask = extract_red_areas(october_fire_arr)
+
+# Plot the transmission map
+plt.figure(figsize=(12, 8))
+plt.imshow(transmission_map_arr)
+
+# Overlay the wildfire masks on the transmission map using different colors
+# August in red, September in green, October in blue
+plt.imshow(august_fire_mask, cmap='Reds', alpha=0.5)
+plt.imshow(september_fire_mask, cmap='Greens', alpha=0.5)
+plt.imshow(october_fire_mask, cmap='Blues', alpha=0.5)
+
+# Remove the axis as they are not relevant for the overlay image
+plt.axis('off')
+
+# Save the combined image
+output_path = '/mnt/data/combined_wildfire_transmission_map.png'
+plt.savefig(output_path, bbox_inches='tight')
+
+output_path

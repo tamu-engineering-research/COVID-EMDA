@@ -1,0 +1,38 @@
+
+Safety Guidelines for Energized Repair Work on a Capacitor Bank
+
+1. Risk Assessment:
+   - Conduct a thorough risk assessment to understand and mitigate potential dangers.
+   - Ensure all personnel involved are aware of the risks and are appropriately trained.
+
+2. Proper PPE (Personal Protective Equipment):
+   - Wear arc-rated clothing that covers all exposed skin.
+   - Use insulated gloves and tools specifically designed for electrical work.
+   - Wear safety goggles or a face shield, and use hearing protection if necessary.
+
+3. Preparation and Planning:
+   - Prepare a detailed work plan that includes all steps of the procedure and contingency plans.
+   - Have all necessary tools and equipment inspected and ready before starting the work.
+
+4. LOTO (Lockout/Tagout) Procedures:
+   - Implement Lockout/Tagout procedures to ensure that the equipment is de-energized if possible. If complete de-energization isn't feasible, ensure partial LOTO is applied to minimize risk.
+   - Verify that the equipment is de-energized using appropriate testing instruments.
+
+5. Capacitor Discharge:
+   - Before beginning repairs, ensure that all stored energy in the capacitors is safely discharged.
+   - Use a discharge tool with a resistor to slowly and safely discharge the capacitor to avoid a rapid discharge that might cause damage or injury.
+
+6. Use of Insulated Tools:
+   - Only use insulated tools that are rated for the voltage level of the equipment being repaired.
+
+7. Maintain Safe Distance:
+   - Always maintain a safe distance from live components. Use barriers or insulation mats if necessary.
+
+8. Monitoring and Assistance:
+   - Always have at least one other person who is trained in electrical safety and first aid nearby in case of an emergency.
+
+9. Documentation and Sign-offs:
+   - Document all steps taken during the repair and ensure that all procedures are signed off by a competent authority.
+
+10. Post-Repair Testing:
+    - After repairs are completed, perform appropriate testing to ensure that the equipment is operating correctly and safely before fully re-energizing.

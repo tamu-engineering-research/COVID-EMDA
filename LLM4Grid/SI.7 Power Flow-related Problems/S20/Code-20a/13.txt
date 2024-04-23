@@ -1,0 +1,77 @@
+import numpy as np
+
+# Define the admittance matrix Y
+Y = np.array([
+    [-30j, 10j, 10j, 10j],
+    [10j, -20j, 10j, 0],
+    [10j, 10j, -30j, 10j],
+    [10j, 0, 10j, -20j]
+])
+
+# Net power injections at each bus (generation - load)
+P = np.array([2 - 0, 2 - 1, 4 - 4, 1 - 0])
+
+# The real and imaginary parts of the Y matrix (conductance and susceptance matrices)
+G = Y.real
+B = Y.imag
+
+# Number of buses
+n = len(P)
+
+# Assume voltage magnitudes |V| (initialize with 1.0 for all except slack)
+V_mag = np.ones(n)
+
+# Initialize voltage angles theta (in radians)
+theta = np.zeros(n)
+
+# Newton-Raphson method setup
+tolerance = 1e-6
+max_iterations = 100
+iteration = 0
+converged = False
+
+# Slack bus parameters (bus 1, index 0 in Python)
+V_mag[0] = 1.0
+theta[0] = 0.0
+
+while not converged and iteration < max_iterations:
+    iteration += 1
+    P_calc = np.zeros(n)
+    
+    # Calculate the power at each bus using current voltage magnitude and angles
+    for i in range(n):
+        for k in range(n):
+            P_calc[i] += V_mag[i] * V_mag[k] * (G[i, k] * np.cos(theta[i] - theta[k]) + B[i, k] * np.sin(theta[i] - theta[k]))
+    
+    # Power mismatch
+    dP = P - P_calc
+    
+    # Jacobian matrix initialisation
+    J = np.zeros((n-1, n-1))
+    
+    # Fill the Jacobian matrix
+    for i in range(1, n):
+        for k in range(1, n):
+            if i == k:
+                # Diagonal elements
+                J[i-1, k-1] = sum(V_mag[i] * V_mag[m] * (G[i, m] * np.sin(theta[i] - theta[m]) - B[i, m] * np.cos(theta[i] - theta[m])) for m in range(n))
+                J[i-1, k-1] -= V_mag[i]**2 * B[i, i]
+            else:
+                # Off-diagonal elements
+                J[i-1, k-1] = -V_mag[i] * V_mag[k] * (G[i, k] * np.sin(theta[i] - theta[k]) - B[i, k] * np.cos(theta[i] - theta[k]))
+    
+    # Update angles using the Jacobian matrix and the power mismatch
+    dtheta = np.linalg.solve(J, dP[1:])
+    
+    # Update theta for non-slack buses
+    for i in range(1, n):
+        theta[i] += dtheta[i-1]
+    
+    # Check for convergence
+    if np.max(np.abs(dP[1:])) < tolerance:
+        converged = True
+
+# Convert angles to degrees for readability
+theta_degrees = np.degrees(theta)
+
+V_mag, theta_degrees

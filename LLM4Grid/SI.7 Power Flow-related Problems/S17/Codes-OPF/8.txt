@@ -1,0 +1,72 @@
+import pyomo.environ as pyo
+
+def solve_DCOPF(buses, generators, loads, lines):
+    model = pyo.ConcreteModel()
+
+    # Sets
+    model.BUSES = pyo.Set(initialize=buses)
+    model.GENS = pyo.Set(initialize=generators.keys())
+    model.LINES = pyo.Set(initialize=lines.keys())
+
+    # Parameters
+    model.demand = pyo.Param(model.BUSES, initialize=loads)
+    model.gen_cost = pyo.Param(model.GENS, initialize={k: generators[k]['cost'] for k in generators})
+    model.gen_cap = pyo.Param(model.GENS, initialize={k: generators[k]['capacity'] for k in generators})
+    model.line_cap = pyo.Param(model.LINES, initialize={k: lines[k]['capacity'] for k in lines})
+    model.reactance = pyo.Param(model.LINES, initialize={k: lines[k]['reactance'] for k in lines})
+    model.from_bus = pyo.Param(model.LINES, initialize={k: lines[k]['from'] for k in lines})
+    model.to_bus = pyo.Param(model.LINES, initialize={k: lines[k]['to'] for k in lines})
+
+    # Variables
+    model.generation = pyo.Var(model.GENS, within=pyo.NonNegativeReals)
+    model.theta = pyo.Var(model.BUSES)  # Voltage angle in radians
+    model.flow = pyo.Var(model.LINES)
+
+    # Objective: Minimize generation cost
+    def obj_rule(m):
+        return sum(m.gen_cost[g] * m.generation[g] for g in m.GENS)
+    model.cost = pyo.Objective(rule=obj_rule, sense=pyo.minimize)
+
+    # Constraints
+    def power_balance_rule(m, b):
+        return (sum(m.generation[g] for g in m.GENS if generators[g]['bus'] == b) -
+                m.demand[b] -
+                sum(m.flow[l] for l in m.LINES if lines[l]['from'] == b) +
+                sum(m.flow[l] for l in m.LINES if lines[l]['to'] == b) == 0)
+    model.power_balance = pyo.Constraint(model.BUSES, rule=power_balance_rule)
+
+    def flow_rule(m, l):
+        return (m.flow[l] == (m.theta[model.from_bus[l]] - m.theta[model.to_bus[l]]) / m.reactance[l])
+    model.define_flow = pyo.Constraint(model.LINES, rule=flow_rule)
+
+    def flow_limit_rule(m, l):
+        return abs(m.flow[l]) <= m.line_cap[l]
+    model.flow_limits = pyo.Constraint(model.LINES, rule=flow_limit_rule)
+
+    # Solve
+    solver = pyo.SolverFactory('cbc')
+    results = solver.solve(model, tee=True)
+
+    # Output results
+    print("\nGeneration (MW):")
+    for g in model.GENS:
+        print(f"Generator {g}: {model.generation[g].value()} MW")
+
+    print("\nFlows (MW):")
+    for l in model.LINES:
+        print(f"Line {l} Flow: {model.flow[l].value()} MW")
+
+    print("\nVoltage Angles (Radians):")
+    for b in model.BUSES:
+        print(f"Bus {b}: {model.theta[b].value()} rad")
+
+# Example data
+buses = ['Bus1', 'Bus2', 'Bus3']
+generators = {'Gen1': {'bus': 'Bus1', 'cost': 20, 'capacity': 100},
+              'Gen2': {'bus': 'Bus3', 'cost': 25, 'capacity': 100}}
+loads = {'Bus1': 30, 'Bus2': 70, 'Bus3': 50}
+lines = {'Line1': {'from': 'Bus1', 'to': 'Bus2', 'reactance': 0.1, 'capacity': 50},
+         'Line2': {'from': 'Bus2', 'to': 'Bus3', 'reactance': 0.1, 'capacity': 50}}
+
+# Solve the DCOPF problem
+solve_DCOPF(buses, generators, loads, lines)

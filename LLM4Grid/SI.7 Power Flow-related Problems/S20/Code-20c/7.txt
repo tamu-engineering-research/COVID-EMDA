@@ -1,0 +1,31 @@
+import numpy as np
+
+# Define the y-bus matrix (jB since it's a reactance matrix)
+Y = np.array([
+    [-30j, 10j, 10j, 10j],
+    [10j, -20j, 10j, 0j],
+    [10j, 10j, -30j, 10j],
+    [10j, 0j, 10j, -20j]
+])
+
+# Extract the B matrix (imaginary part)
+B = np.imag(Y)
+
+# Net power injections P = Pg - Pd
+P = np.array([2-0, 2-1, 4-4, 1-0])  # in pu
+
+# Remove the slack bus (bus 1, index 0)
+P_reduced = P[1:]
+B_reduced = B[1:, 1:]
+
+# Solve the DC power flow equations, P = B' * theta
+# Here theta is the voltage angle in radians, theta_slack = 0
+theta_reduced = np.linalg.solve(B_reduced, P_reduced)
+
+# Including the slack bus angle
+theta = np.insert(theta_reduced, 0, 0.0)  # Slack bus angle is 0
+
+# Bus voltage magnitudes in a DC power flow are assumed to be 1 pu
+voltage_magnitudes = np.ones_like(theta)
+
+theta, voltage_magnitudes

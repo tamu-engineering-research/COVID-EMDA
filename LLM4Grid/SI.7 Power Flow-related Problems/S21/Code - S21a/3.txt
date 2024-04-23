@@ -1,0 +1,32 @@
+from scipy.optimize import linprog
+
+# Coefficients of the objective function (minimize cost)
+c = [12, 15, 10, 8]  # Cost per MW for generators A, B, C, D
+
+# Coefficients for inequality constraints (generator capacities)
+A = [
+    [-1, 0, 0, 0],  # Generator A min capacity
+    [1, 0, 0, 0],   # Generator A max capacity
+    [0, -1, 0, 0],  # Generator B min capacity
+    [0, 1, 0, 0],   # Generator B max capacity
+    [0, 0, -1, 0],  # Generator C min capacity
+    [0, 0, 1, 0],   # Generator C max capacity
+    [0, 0, 0, -1],  # Generator D min capacity
+    [0, 0, 0, 1]    # Generator D max capacity
+]
+
+b = [-20, 150, -30, 200, -20, 150, -30, 400]  # Bounds on generator capacities
+
+# Coefficients for equality constraints (demand at each node)
+A_eq = [
+    [0, 0, 1, 1],   # Power generation at Node 3 must meet its demand (C+D)
+    [1, 0, 0, 0],   # Power generation at Node 2 must meet its demand (A)
+    [0, 1, 0, 0]    # Power generation at Node 1 must meet its demand (B)
+]
+
+b_eq = [40 + 40, 80, 400]  # Demands at Node 3, 2, and 1 respectively
+
+# Solving the linear programming problem
+res = linprog(c, A_ub=A, b_ub=b, A_eq=A_eq, b_eq=b_eq, method='highs')
+
+res.x

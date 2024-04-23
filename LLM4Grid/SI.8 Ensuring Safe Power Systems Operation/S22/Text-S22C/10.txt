@@ -1,0 +1,47 @@
+
+Pentesting Substation Modbus: Testing Methodology
+================================================
+
+Introduction
+------------
+This document outlines a detailed methodology for penetration testing a substation Modbus system, under explicit permission from the responsible authorities. This testing aims to identify vulnerabilities that could be exploited by malicious actors and recommend mitigations.
+
+Preparation Phase
+-----------------
+1. **Obtain Authorization**: Ensure all permissions are documented and signed by the substation engineer and any relevant stakeholders.
+2. **Scope Definition**: Clearly define the boundaries of the test, including the Modbus systems, devices, and network segments to be tested.
+3. **Gather Information**: Collect all necessary information about the Modbus environment, including network diagrams, device specifications, and existing security measures.
+4. **Tool Selection**: Choose appropriate tools for testing. Common tools include Modscan, ModbusPal, and specialized penetration testing frameworks like Metasploit.
+
+Discovery Phase
+---------------
+1. **Network Scanning**: Use network scanning tools to identify active devices on the network that communicate using Modbus protocols.
+2. **Port Scanning**: Identify open ports on devices using tools like Nmap. Focus on ports 502 (Modbus TCP) and any other vendor-specific ports.
+3. **Service Identification**: Determine the types of services running over open ports and confirm they are related to Modbus operations.
+
+Vulnerability Assessment
+------------------------
+1. **Sniffing**: Monitor network traffic for unencrypted data transmissions that could leak sensitive information.
+2. **Spoofing and ARP Poisoning**: Test the ability to spoof device identities on the network to intercept or manipulate Modbus communications.
+3. **Brute Forcing**: Attempt to brute force login credentials to Modbus devices, if applicable.
+4. **Fuzz Testing**: Input unexpected or random data into the Modbus system to check for crashes, hangs, or unexpected behavior.
+
+Exploitation
+------------
+1. **Exploit Known Vulnerabilities**: Utilize known exploits against identified vulnerabilities, such as buffer overflows or command injections in Modbus devices.
+2. **Simulate DoS Attacks**: Test the resilience of the Modbus system against Denial of Service attacks by overwhelming the network with excessive requests.
+
+Post-Exploitation
+-----------------
+1. **Pivot Testing**: Once access is gained, attempt to pivot to other connected systems and networks to assess the depth of potential intrusion.
+2. **Data Exfiltration**: Test the potential for data exfiltration from compromised Modbus devices.
+
+Reporting
+---------
+1. **Documentation**: Document all findings, including exploited vulnerabilities, the data exposed, and the potential impact.
+2. **Risk Analysis**: Provide a detailed risk analysis and prioritization based on the findings.
+3. **Recommendations**: Offer specific recommendations to mitigate identified risks, improve security posture, and protect against future attacks.
+
+Conclusion
+----------
+This methodology provides a systematic approach to identifying and mitigating vulnerabilities in a substation's Modbus system. It is crucial to conduct these tests regularly and follow up with continuous monitoring and improvement of security measures.

@@ -1,0 +1,5 @@
+Dispatch Instructions for Generators:
+- Generator A: 20 MW
+- Generator B: 30 MW
+- Generator C: 70 MW
+- Generator D: 400 MW

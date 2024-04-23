@@ -1,0 +1,28 @@
+# Define the function to make image background transparent
+def make_background_transparent(img):
+    # Convert the image to RGBA if it is not already
+    img = img.convert("RGBA")
+    
+    # Get the data of the image
+    data = np.array(img)
+    
+    # Identify non-white pixels
+    non_white_pixels = (data[..., :3] != [255, 255, 255]).any(axis=-1)
+    
+    # Replace all non-white pixel's alpha values with 255 (not transparent)
+    # and white pixel's alpha values with 0 (transparent)
+    data[..., 3] = np.where(non_white_pixels, 255, 0)
+    
+    # Convert back to an image
+    new_img = Image.fromarray(data, mode="RGBA")
+    
+    return new_img
+
+# Make the background transparent
+transparent_img = make_background_transparent(img)
+
+# Save the new image with transparent background
+output_path = '/mnt/data/FIRMS_transparent.png'
+transparent_img.save(output_path)
+
+output_path

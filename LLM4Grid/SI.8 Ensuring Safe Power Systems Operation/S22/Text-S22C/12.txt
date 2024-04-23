@@ -1,0 +1,49 @@
+
+Pentesting Substation Modbus: Testing Methodology
+
+Introduction:
+This document outlines a comprehensive testing methodology for penetration testing of a substation Modbus system under a bug bounty program. This methodology ensures a systematic approach to identify security vulnerabilities.
+
+1. Planning and Reconnaissance:
+   a. Obtain and review documentation about the Modbus system architecture, including network diagrams, devices, and communication protocols.
+   b. Identify the IP address range, device types, and their roles within the substation.
+   c. Establish communication with the substation engineer to clarify scope and testing boundaries.
+
+2. Scanning and Enumeration:
+   a. Perform network scanning to discover active devices and open ports using tools like Nmap.
+   b. Use Modbus-specific scanners to identify function codes and slave IDs in use.
+   c. Detect firmware versions and any known vulnerabilities associated with them.
+
+3. Vulnerability Assessment:
+   a. Assess the security of Modbus transactions and authentication mechanisms.
+   b. Test for known vulnerabilities in the Modbus protocol, such as replay attacks, command injection, and unauthorized access.
+   c. Check for misconfigurations and default credentials in devices.
+
+4. Exploitation:
+   a. Attempt to exploit identified vulnerabilities to gauge the impact.
+   b. Use simulated attacks to see if unauthorized commands can be sent to Modbus devices.
+   c. Document the exploitation process, capturing packets and responses from the system.
+
+5. Post-Exploitation:
+   a. Explore the extent of access obtained, focusing on the ability to modify device firmware or configuration.
+   b. Assess the potential for lateral movement within the network.
+
+6. Reporting:
+   a. Compile a detailed report outlining findings, evidence, and an assessment of the impact of each vulnerability.
+   b. Provide recommendations for mitigating risks identified during testing.
+   c. Review the report with the substation engineer to ensure understanding and discuss next steps.
+
+7. Clean-Up:
+   a. Restore any configurations to their original state if changes were made.
+   b. Remove any tools or scripts installed on the devices.
+
+8. Review and Audit:
+   a. Conduct a debrief session with all stakeholders to discuss the findings and future prevention strategies.
+   b. Update testing methodologies based on lessons learned.
+
+Tools and Resources:
+- Nmap for network scanning.
+- ModScan or similar for Modbus-specific scanning.
+- Metasploit for exploitation frameworks.
+
+Note: Ensure all testing activities are carried out with explicit permission and in accordance with legal and ethical standards.

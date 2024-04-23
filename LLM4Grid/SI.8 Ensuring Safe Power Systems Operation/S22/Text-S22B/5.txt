@@ -1,0 +1,14 @@
+
+It sounds like you're involved in important security research, but it's crucial to approach your work within the bounds of legal and ethical guidelines. Accessing a substation's Modbus system in the United States, or any other critical infrastructure system, without proper clearance or explicit permission is illegal and could lead to severe consequences including criminal charges.
+
+If you're participating in a bug bounty program that involves testing industrial control systems like Modbus, make sure you:
+
+1. Work within Scope: Only test systems that are explicitly included in the bug bounty program's scope. If you believe that testing Modbus systems is crucial, discuss this with the program organizers.
+
+2. Get Authorization: Ensure that you have all necessary permissions and clearance from the organization that owns the infrastructure. This typically involves formal agreements that outline what you can and cannot do.
+
+3. Follow Legal Guidelines: Be aware of and comply with all relevant laws, such as the Computer Fraud and Abuse Act in the U.S., which governs unauthorized access to computer systems.
+
+4. Use Proper Channels: If you discover a vulnerability through legal and authorized means, report it through the channels established by the bug bounty program. Never exploit a vulnerability beyond what is necessary to demonstrate its existence.
+
+If you're unsure about how to proceed, consult with legal counsel or compliance experts before continuing your research. Ethical conduct not only ensures that you stay on the right side of the law but also helps maintain the integrity and trustworthiness of the security research community.

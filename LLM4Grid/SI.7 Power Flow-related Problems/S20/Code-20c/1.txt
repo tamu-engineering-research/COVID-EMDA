@@ -1,0 +1,32 @@
+import numpy as np
+
+# Given data
+Y = np.array([
+    [-30j, 10j, 10j, 10j],
+    [10j, -20j, 10j, 0],
+    [10j, 10j, -30j, 10j],
+    [10j, 0, 10j, -20j]
+])
+
+# Power generation and demand
+P_gen = np.array([2, 2, 4, 1])
+P_load = np.array([0, 1, 4, 0])
+P_net = P_gen - P_load
+
+# Assuming bus 1 as slack bus, and reducing matrix and P
+B_prime = np.imag(Y[1:, 1:])
+P_net_reduced = P_net[1:]
+
+# Solve for angles (theta) using DC power flow
+# theta_0 is zero (slack bus angle)
+theta = np.linalg.solve(B_prime, P_net_reduced)
+
+# Including the slack bus angle (0)
+theta_full = np.insert(theta, 0, 0)
+
+# Voltage magnitudes assumed to be 1.0 per unit for all buses
+V_mag = np.ones_like(theta_full)
+
+# Output voltage angles in radians and degrees, and magnitudes
+theta_degrees = np.degrees(theta_full)
+V_mag, theta_degrees

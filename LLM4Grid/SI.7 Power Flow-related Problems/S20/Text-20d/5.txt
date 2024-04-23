@@ -1,0 +1,5 @@
+Bus Voltage Magnitudes and Angles:
+Bus 1 (Slack Bus): Voltage = 1.0 pu, Angle = 0.00 degrees
+Bus 2: Voltage = 1.0 pu, Angle = -4.30 degrees
+Bus 3: Voltage = 1.0 pu, Angle = -2.86 degrees
+Bus 4: Voltage = 1.0 pu, Angle = -4.30 degrees

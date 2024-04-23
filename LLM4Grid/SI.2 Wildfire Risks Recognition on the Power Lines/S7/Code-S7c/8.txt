@@ -1,0 +1,32 @@
+from PIL import Image
+import numpy as np
+
+# Load the image
+img_path = '/mnt/data/FIRMS_2020-09-09_2020-09-10[@-123.0,39.8,8.5z].jpg'
+img = Image.open(img_path)
+
+# Convert image to RGBA (if it's not already in that mode)
+img = img.convert("RGBA")
+
+# Create a new image with the same size as the original
+# and transparent background
+datas = img.getdata()
+
+new_image_data = []
+# For each pixel, if its value is not white (ignoring those), change its alpha to 0 (transparent)
+for item in datas:
+    # White is represented by (255, 255, 255, 255) in RGBA
+    if item[0] in range(200, 256) and item[1] in range(200, 256) and item[2] in range(200, 256):
+        # Change the alpha value to 0
+        new_image_data.append((255, 255, 255, 0))
+    else:
+        new_image_data.append(item)
+
+# Update image data
+img.putdata(new_image_data)
+
+# Save the new image as PNG which supports transparency
+output_path = '/mnt/data/wildfire_transparent.png'
+img.save(output_path)
+
+output_path

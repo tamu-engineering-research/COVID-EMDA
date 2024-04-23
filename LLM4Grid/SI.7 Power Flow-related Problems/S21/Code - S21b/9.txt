@@ -1,0 +1,24 @@
+from scipy.optimize import linprog
+
+# Total demand at the nodes
+L1 = 400  # Node 1
+L2 = 80   # Node 2
+L3 = 40   # Node 3
+
+# Coefficients for the objective function (marginal costs)
+c = [12, 15, 10, 8]  # Corresponds to Generator A, B, C, D
+
+# Bounds for each generator's capacity (min, max)
+bounds = [(20, 150),  # Generator A
+          (30, 200),  # Generator B
+          (20, 150),  # Generator C
+          (30, 400)]  # Generator D
+
+# The equality constraint ensures the total generation meets total demand
+A_eq = [[1, 1, 1, 1]]  # Coefficient matrix for generators A, B, C, D
+b_eq = [L1 + L2 + L3]  # Total demand across all nodes
+
+# Solve the linear programming problem
+result = linprog(c, A_eq=A_eq, b_eq=b_eq, bounds=bounds, method='highs')
+
+result.x  # The optimal dispatch for each generator

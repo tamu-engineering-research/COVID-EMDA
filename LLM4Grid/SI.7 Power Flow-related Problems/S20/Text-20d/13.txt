@@ -1,0 +1,5 @@
+Bus Voltage Magnitudes and Bus Angles
+Bus 1: Voltage = 1.0 p.u., Angle = 0.000 radians
+Bus 2: Voltage = 1.0 p.u., Angle = -0.075 radians
+Bus 3: Voltage = 1.0 p.u., Angle = -0.050 radians
+Bus 4: Voltage = 1.0 p.u., Angle = -0.075 radians

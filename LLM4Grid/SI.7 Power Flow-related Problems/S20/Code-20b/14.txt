@@ -1,0 +1,31 @@
+import numpy as np
+
+# Define the Y-bus matrix (assuming the input is susceptance matrix in a DC power flow model)
+Y = np.array([
+    [-30j, 10j, 10j, 10j],
+    [10j, -20j, 10j, 0],
+    [10j, 10j, -30j, 10j],
+    [10j, 0, 10j, -20j]
+], dtype=complex)
+
+# Convert to B matrix (imaginary parts since it's susceptance in DC analysis)
+B = np.imag(Y)
+
+# Net power injections (generation - load)
+P = np.array([2 - 0, 2 - 1, 4 - 4, 1 - 0])  # P in pu
+
+# Slack bus is bus 1, so we remove row and column corresponding to slack bus from B matrix
+B_reduced = B[1:, 1:]
+
+# Solve for voltage angles at buses 2, 3, 4 (with bus 1 angle = 0)
+delta = np.linalg.solve(B_reduced, P[1:])  # Bus angle differences in radians
+
+# Adding slack bus angle (0 rad)
+bus_angles = np.insert(delta, 0, 0)
+
+# Calculate voltage magnitudes (assumed to be 1 pu for all buses in DC approximation)
+V_mag = np.ones(len(bus_angles))
+
+bus_angles_deg = np.degrees(bus_angles)  # Convert to degrees
+
+bus_angles_deg, V_mag

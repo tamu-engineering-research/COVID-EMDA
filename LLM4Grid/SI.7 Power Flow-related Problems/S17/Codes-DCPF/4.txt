@@ -1,0 +1,71 @@
+import numpy as np
+from scipy.sparse import csr_matrix
+from scipy.sparse.linalg import spsolve
+
+def create_b_matrix(branch_data, num_buses):
+    """
+    Create the susceptance matrix (B) for the power system.
+    
+    :param branch_data: Array with each row containing [from_bus, to_bus, reactance]
+    :param num_buses: Total number of buses in the system
+    :return: B matrix in CSR format
+    """
+    # Initialize the B matrix with zeros
+    B = csr_matrix((num_buses, num_buses), dtype=float)
+    
+    for from_bus, to_bus, reactance in branch_data:
+        # Convert bus indices to zero-based for Python
+        from_idx = from_bus - 1
+        to_idx = to_bus - 1
+        
+        # Calculate susceptance
+        susceptance = 1 / reactance
+        
+        # Update the B matrix
+        B[from_idx, from_idx] += susceptance
+        B[to_idx, to_idx] += susceptance
+        B[from_idx, to_idx] -= susceptance
+        B[to_idx, from_idx] -= susceptance
+    
+    return B
+
+def solve_dc_power_flow(B, P_specified, slack_bus):
+    """
+    Solve the DC power flow equations.
+    
+    :param B: Susceptance matrix
+    :param P_specified: Specified real power injections (negative for loads) at all buses except slack
+    :param slack_bus: Index of the slack bus (zero-based)
+    :return: Vector of voltage angles at each bus
+    """
+    # Remove slack bus row and column from B matrix
+    B_reduced = B[np.ix_(range(B.shape[0]) != slack_bus, range(B.shape[1]) != slack_bus)]
+    
+    # Solve for the voltage angles
+    theta = spsolve(B_reduced, P_specified)
+    
+    # Insert the slack bus angle (0) into the solution
+    theta_full = np.insert(theta, slack_bus, 0)
+    
+    return theta_full
+
+# Example usage
+num_buses = 5
+branch_data = np.array([
+    [1, 2, 0.2],
+    [1, 3, 0.1],
+    [2, 4, 0.3],
+    [2, 5, 0.25],
+    [3, 4, 0.2],
+    [4, 5, 0.15]
+])
+slack_bus = 0  # Bus 1 as slack
+P_specified = np.array([-0.5, 0.2, -0.1, 0.3])  # Power at buses 2, 3, 4, 5
+
+# Create B matrix
+B = create_b_matrix(branch_data, num_buses)
+
+# Solve DC power flow
+theta = solve_dc_power_flow(B, P_specified, slack_bus)
+
+print("Voltage angles (radians):", theta)

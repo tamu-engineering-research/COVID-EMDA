@@ -1,0 +1,35 @@
+import numpy as np
+
+# Given Y-bus matrix (complex admittance matrix)
+Y = np.array([
+    [-30j, 10j, 10j, 10j],
+    [10j, -20j, 10j, 0],
+    [10j, 10j, -30j, 10j],
+    [10j, 0, 10j, -20j]
+])
+
+# Power generation (Pg) and load demand (Pd) at the buses
+Pg = np.array([2, 2, 4, 1])  # pu
+Pd = np.array([0, 1, 4, 0])  # pu
+
+# Net power injection into the buses P = Pg - Pd
+P = Pg - Pd  # pu
+
+# Extract the imaginary part of Y (B matrix)
+B = np.imag(Y)
+
+# Since Bus 1 is the slack bus, we remove the row and column corresponding to Bus 1
+B_reduced = B[1:, 1:]
+
+# DC Power Flow assumption: P = B' * theta
+# Solving for theta (bus angles) relative to the slack bus (theta_slack = 0)
+theta = np.linalg.solve(B_reduced, P[1:])
+
+# Append the angle for the slack bus (which is 0 by definition)
+theta = np.insert(theta, 0, 0)
+
+# Voltage magnitude is assumed to be 1.0 pu for all buses in DC power flow
+V_magnitude = np.ones(len(P))
+
+# Display the results: bus voltage magnitudes and bus angles (in radians)
+V_magnitude, theta

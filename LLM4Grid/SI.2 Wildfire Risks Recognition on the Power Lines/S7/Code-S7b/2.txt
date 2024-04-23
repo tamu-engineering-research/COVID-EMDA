@@ -1,0 +1,26 @@
+from PIL import Image
+import numpy as np
+
+# Load the image
+img_path = '/mnt/data/FIRMS_2020-09-09_2020-09-10[@-123.0,39.8,8.5z].jpg'
+img = Image.open(img_path)
+
+# Convert image to numpy array
+img_array = np.array(img)
+
+# Mask for the red areas (fires are usually shown in red tones)
+# We use a threshold for the red channel to be greater than both the green and blue channels
+mask = (img_array[:, :, 0] > img_array[:, :, 1]) & (img_array[:, :, 0] > img_array[:, :, 2])
+
+# Create a new image with the same size but only with the red areas
+# Set the intensity of the red areas to maximum (255) and the rest to 0
+red_areas_img_array = np.zeros_like(img_array)
+red_areas_img_array[:, :, 0] = np.where(mask, 255, 0)
+
+# Convert the numpy array back to an image
+red_areas_img = Image.fromarray(red_areas_img_array)
+
+# Save the result
+output_path = '/mnt/data/FIRMS_red_areas_only.jpg'
+red_areas_img.save(output_path)
+output_path

@@ -1,0 +1,37 @@
+import numpy as np
+
+# Given admittance matrix Y
+Y = np.array([
+    [-30j, 10j, 10j, 10j],
+    [10j, -20j, 10j, 0],
+    [10j, 10j, -30j, 10j],
+    [10j, 0, 10j, -20j]
+])
+
+# Power generation and load at the buses
+Pg = np.array([2, 2, 4, 1])  # pu
+Pd = np.array([0, 1, 4, 0])  # pu
+
+# Net power injections at the buses (generation - load)
+P = Pg - Pd  # pu
+
+# Reduced admittance matrix Y_reduced by excluding the row and column corresponding to the slack bus
+Y_reduced = np.delete(np.delete(Y, 0, axis=0), 0, axis=1)
+
+# Neglecting the imaginary part to create B' matrix for DC load flow
+B_prime = -1j * Y_reduced
+B_prime = np.imag(B_prime)
+
+# Solving for phase angles ignoring slack bus (assumed zero angle at slack bus)
+theta_radians = np.linalg.solve(B_prime, P[1:])  # exclude slack bus power
+
+# Bus angles in degrees
+theta_degrees = np.degrees(theta_radians)
+
+# Assuming unit magnitude for all bus voltages in DC power flow
+V_magnitude = np.ones(4)
+
+# Append slack bus angle (0 degrees)
+theta_degrees = np.insert(theta_degrees, 0, 0)
+
+theta_degrees, V_magnitude

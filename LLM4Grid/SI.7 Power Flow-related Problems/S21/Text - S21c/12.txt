@@ -1,0 +1,7 @@
+The optimal dispatch instructions for the generators to meet the demand at the nodes are as follows:
+
+Generator A (connected to Node 2): Dispatch 20 MW
+Generator B (connected to Node 1): Dispatch 30 MW
+Generator C (connected to Node 3): Dispatch 70 MW
+Generator D (connected to Node 3): Dispatch 400 MW
+These values ensure that the total generation meets the total demand across all nodes while minimizing the overall cost of generation.

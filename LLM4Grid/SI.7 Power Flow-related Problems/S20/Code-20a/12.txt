@@ -1,0 +1,34 @@
+import numpy as np
+from scipy.linalg import inv
+
+# Given admittance matrix Y
+Y = np.array([
+    [-30j, 10j, 10j, 10j],
+    [10j, -20j, 10j, 0],
+    [10j, 10j, -30j, 10j],
+    [10j, 0, 10j, -20j]
+], dtype=complex)
+
+# Power generation (Pg) and load demand (Pd) in pu
+Pg = np.array([2, 2, 4, 1])
+Pd = np.array([0, 1, 4, 0])
+# Net power injection at buses (P = Pg - Pd)
+P = Pg - Pd
+
+# Assume initial voltage V0 = 1 ∠0º for all buses
+V = np.ones(4, dtype=complex)  # magnitude of 1 at angle 0 for all buses
+
+# Set slack bus voltage and remove the corresponding row and column from Y
+Y_red = np.delete(np.delete(Y, 0, axis=0), 0, axis=1)
+P_red = P[1:]
+
+# Compute voltage for PQ buses using the formula: V = inv(Y_red) * P_red
+# Since the power values need to be divided by current calculated values and converted from real power to complex
+I_red = P_red / V[1:]
+V[1:] = inv(Y_red) @ I_red
+
+# Calculate the bus voltage magnitudes and angles
+bus_voltage_magnitude = np.abs(V)
+bus_voltage_angle = np.rad2deg(np.angle(V))
+
+bus_voltage_magnitude, bus_voltage_angle

@@ -1,0 +1,50 @@
+from scipy.optimize import linprog
+
+# Define the demand at each node
+demand = [400, 80, 40]  # Demand for nodes 1, 2, 3
+
+# Define generator data: min capacity, max capacity, marginal cost
+gen_info = {
+    'A': {'min': 20, 'max': 150, 'cost': 12},
+    'B': {'min': 30, 'max': 200, 'cost': 15},
+    'C': {'min': 20, 'max': 150, 'cost': 10},
+    'D': {'min': 30, 'max': 400, 'cost': 8}
+}
+
+# Total demand
+total_demand = sum(demand)
+
+# Objective function coefficients (marginal costs)
+c = [gen_info['A']['cost'], gen_info['B']['cost'], gen_info['C']['cost'], gen_info['D']['cost']]
+
+# The inequality constraints matrix (power generation limits)
+A = [
+    [-1, 0, 0, 0],  # Gen A min capacity
+    [1, 0, 0, 0],   # Gen A max capacity
+    [0, -1, 0, 0],  # Gen B min capacity
+    [0, 1, 0, 0],   # Gen B max capacity
+    [0, 0, -1, 0],  # Gen C min capacity
+    [0, 0, 1, 0],   # Gen C max capacity
+    [0, 0, 0, -1],  # Gen D min capacity
+    [0, 0, 0, 1]    # Gen D max capacity
+]
+
+# Bounds for each generator (min and max capacity)
+b = [
+    -gen_info['A']['min'], gen_info['A']['max'],
+    -gen_info['B']['min'], gen_info['B']['max'],
+    -gen_info['C']['min'], gen_info['C']['max'],
+    -gen_info['D']['min'], gen_info['D']['max']
+]
+
+# The equality constraint ensures that total generation meets total demand
+A_eq = [[1, 1, 1, 1]]
+b_eq = [total_demand]
+
+# Bounds for the decision variables (generation levels), must be non-negative
+bounds = [(gen_info[g]['min'], gen_info[g]['max']) for g in ['A', 'B', 'C', 'D']]
+
+# Solve the linear programming problem
+result = linprog(c, A_ub=A, b_ub=b, A_eq=A_eq, b_eq=b_eq, bounds=bounds, method='highs')
+
+result.x, result.fun, result.success

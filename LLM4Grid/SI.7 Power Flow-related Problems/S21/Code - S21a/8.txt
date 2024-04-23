@@ -1,0 +1,25 @@
+from scipy.optimize import linprog
+
+# Marginal costs for each generator
+c = [12, 15, 10, 8]  # Cost coefficients for A, B, C, D
+
+# Capacity constraints for each generator
+x_bounds = [(20, 150), (30, 200), (20, 150), (30, 400)]
+
+# Demand constraints at each node
+# Node 1 demand: Generator B = 400 MW
+# Node 2 demand: Generator A = 80 MW
+# Node 3 demand: Generators C + D = 40 MW
+# Ax = b where A is the matrix representing connections of generators to nodes
+A = [
+    [0, 1, 0, 0],  # Connection of Gen B to Node 1
+    [1, 0, 0, 0],  # Connection of Gen A to Node 2
+    [0, 0, 1, 1]   # Connection of Gen C and D to Node 3
+]
+b = [400, 80, 40]  # Demand at each node
+
+# Linear programming to minimize cost while satisfying demand and capacity constraints
+res = linprog(c, A_eq=A, b_eq=b, bounds=x_bounds, method='highs')
+
+# Generator outputs
+res.x

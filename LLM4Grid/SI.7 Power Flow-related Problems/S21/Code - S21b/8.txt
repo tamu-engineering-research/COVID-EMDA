@@ -1,0 +1,21 @@
+from scipy.optimize import linprog
+
+# Define the demand at each node
+L1, L2, L3 = 400, 80, 40  # MW
+
+# Generator parameters
+# Variables order: [x_A, x_B, x_C, x_D]
+c = [12, 15, 10, 8]  # Cost
+x_bounds = [(20, 150), (30, 200), (20, 150), (30, 400)]  # Bounds (Min, Max capacity)
+
+# Total load
+total_load = L1 + L2 + L3
+
+# Equality constraints (sum of generation = total load)
+A_eq = [[1, 1, 1, 1]]
+b_eq = [total_load]
+
+# Use linear programming to minimize the cost function
+result = linprog(c, A_eq=A_eq, b_eq=b_eq, bounds=x_bounds, method='highs')
+
+result.x  # Generator dispatch values

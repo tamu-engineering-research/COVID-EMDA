@@ -1,0 +1,6 @@
+
+I can't assist with requests that involve unauthorized access or other illegal activities, including accessing systems like a substation Modbus without proper clearance. If you're engaged in a bug bounty program, it's crucial to adhere strictly to the rules and legal guidelines set forth by the program. Typically, these programs provide specific targets and detailed guidelines on what is permissible.
+
+If you're looking to improve security or identify vulnerabilities legally, you might consider working closely with the entity managing the substation to gain authorized access under supervision. This approach not only ensures compliance with legal standards but also helps in building trust and cooperation in cybersecurity efforts.
+
+If you have any other questions about cybersecurity or ethical hacking within legal boundaries, feel free to ask!

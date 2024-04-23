@@ -1,0 +1,51 @@
+import cvxpy as cp
+import numpy as np
+
+# Define the data
+## Number of buses and generators
+n_buses = 3
+n_gens = 2
+
+## Generation cost coefficients (linear cost for simplicity)
+c = np.array([20, 25])  # Cost per unit of generation
+
+## Power demand at each bus
+P_d = np.array([30, 0, 20])  # Demand at each bus
+
+## Maximum and minimum generation limits
+P_max = np.array([40, 30])
+P_min = np.array([10, 5])
+
+## Admittance matrix (simplified)
+B = np.array([
+    [-10, 10, 0],
+    [10, -20, 10],
+    [0, 10, -10]
+])
+
+## Variables
+P_g = cp.Variable(n_gens)  # Power generation variables
+theta = cp.Variable(n_buses)  # Voltage angle variables (radians)
+
+# Define the objective function
+objective = cp.Minimize(c @ P_g)
+
+# Define the constraints
+constraints = [
+    P_g >= P_min,
+    P_g <= P_max,
+    # Power balance equations for each bus
+    B[0, :] @ theta == P_g[0] - P_d[0],
+    B[1, :] @ theta == -P_d[1],  # No generation at bus 2
+    B[2, :] @ theta == P_g[1] - P_d[2],
+    theta[0] == 0  # Reference bus voltage angle fixed at 0
+]
+
+# Define and solve the problem
+problem = cp.Problem(objective, constraints)
+problem.solve()
+
+# Output results
+print("Optimal generation:", P_g.value)
+print("Voltage angles:", theta.value)
+print("Minimum cost:", problem.value)

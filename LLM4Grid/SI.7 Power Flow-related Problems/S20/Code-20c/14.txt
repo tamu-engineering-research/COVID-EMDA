@@ -1,0 +1,32 @@
+import numpy as np
+
+# Given admittance matrix Y
+Y = np.array([
+    [-30j, 10j, 10j, 10j],
+    [10j, -20j, 10j, 0],
+    [10j, 10j, -30j, 10j],
+    [10j, 0, 10j, -20j]
+])
+
+# Extract the imaginary part (susceptance matrix B)
+B = np.imag(Y)
+
+# Given power generation and load demand in pu
+P_gen = np.array([2, 2, 4, 1])
+P_load = np.array([0, 1, 4, 0])
+P_net = P_gen - P_load
+
+# Considering bus 1 as slack bus, remove the row and column corresponding to bus 1 from B
+B_reduced = B[1:, 1:]
+
+# Solving DC power flow equations P = B' * theta
+# With theta_1 = 0 (slack bus), calculate the theta values for other buses
+theta = np.linalg.solve(B_reduced, P_net[1:])
+
+# Insert theta for slack bus (0 degrees or radians)
+theta_full = np.insert(theta, 0, 0.0)
+
+# Since this is DC power flow, voltage magnitudes are assumed to be 1 pu everywhere
+V_mag = np.ones_like(theta_full)
+
+theta_full, V_mag

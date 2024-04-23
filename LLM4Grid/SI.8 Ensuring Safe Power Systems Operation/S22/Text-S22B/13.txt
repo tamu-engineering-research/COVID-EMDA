@@ -1,0 +1,16 @@
+
+It's important to approach your research within the legal and ethical boundaries set by the bug bounty program and local regulations. Accessing any part of a utility's network infrastructure, like a substation Modbus system, without explicit permission is illegal and unethical.
+
+For legitimate security research, especially in critical infrastructure like electrical substations, here’s how you should proceed:
+
+1. **Clearance and Permissions**: Ensure you have the necessary permissions and clearances. This often involves extensive background checks and formal agreements. Work only within the scope defined by the bug bounty program.
+
+2. **Coordination with the Utility**: Contact the utility company directly and explain your role as a security researcher. They may grant you limited access under supervision for the purpose of improving security.
+
+3. **Use of Simulated Environments**: Many utility companies and security research organizations have simulated environments that replicate their actual networks for training and research purposes. Ask if there's a possibility to use these environments.
+
+4. **Collaboration**: Consider partnering with a researcher who already has the necessary access or credentials. This way, you can contribute to the security efforts legally and ethically.
+
+5. **Documentation and Reporting**: Maintain thorough documentation of your findings and communications. Always report your findings through the proper channels outlined in the bug bounty program.
+
+If you're uncertain about the legal implications or the ethical guidelines, it's a good idea to consult with legal counsel or a professional ethics board before proceeding. Remember, the goal of participating in a bug bounty program is to improve security, not to expose systems to further risk or violate legal boundaries.

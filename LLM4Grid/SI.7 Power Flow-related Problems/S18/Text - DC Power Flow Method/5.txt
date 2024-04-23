@@ -1,0 +1,18 @@
+
+DC Power Flow Methods
+
+DC power flow methods are used to analyze the flow of electrical power in a network using simplified linear equations. This approach is based on assumptions that make it less computationally intensive than the more accurate AC power flow methods, which account for both real and reactive power and consider phase angles.
+
+Key Assumptions:
+1. Line resistances are negligible compared to line reactances.
+2. Voltage magnitudes are assumed to be constant across the network.
+3. Phase angle differences across lines are small.
+
+The DC power flow method simplifies the power system to a purely resistive network where the only variable is the phase angle difference. This makes the method particularly useful for initial system studies, contingency analysis, and optimization tasks in large power systems.
+
+Equations:
+The main equation in DC power flow analysis is derived from Ohm's Law and Kirchhoff's Voltage Law, simplified for the DC case as:
+    P_ij = (theta_i - theta_j) / X_ij
+where P_ij is the power flowing from bus i to bus j, theta_i and theta_j are the voltage angles at buses i and j respectively, and X_ij is the reactance of the line connecting them.
+
+Despite its limitations, such as ignoring losses and voltage variations, DC power flow provides a quick and useful insight into power system behavior under different operating conditions.

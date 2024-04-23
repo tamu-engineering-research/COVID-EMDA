@@ -1,0 +1,46 @@
+import cv2
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Load the images
+transmission_img = cv2.imread('/mnt/data/Transmission_line.png')
+august_img = cv2.imread('/mnt/data/aug.png')
+september_img = cv2.imread('/mnt/data/sep.png')
+october_img = cv2.imread('/mnt/data/oct.png')
+
+# Convert images to grayscale
+august_gray = cv2.cvtColor(august_img, cv2.COLOR_BGR2GRAY)
+september_gray = cv2.cvtColor(september_img, cv2.COLOR_BGR2GRAY)
+october_gray = cv2.cvtColor(october_img, cv2.COLOR_BGR2GRAY)
+
+# Threshold the images to isolate the red wildfire areas
+# Red areas will have low values in the red channel compared to the green and blue channels
+thresholded_images = []
+for gray in [august_gray, september_gray, october_gray]:
+    ret, thresholded = cv2.threshold(gray, 1, 255, cv2.THRESH_BINARY_INV)
+    thresholded_images.append(thresholded)
+
+# Create an overlay image to plot on the transmission lines map
+overlay = np.zeros_like(transmission_img)
+
+# Assign colors to each month's wildfire (in BGR format)
+colors = [(255, 0, 0), (0, 255, 0), (0, 0, 255)]
+
+# Plot the wildfires on the overlay
+for thresholded, color in zip(thresholded_images, colors):
+    contours, hierarchy = cv2.findContours(thresholded, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+    cv2.drawContours(overlay, contours, -1, color, -1)
+
+# Add the overlay onto the transmission lines map
+result = cv2.addWeighted(transmission_img, 1, overlay, 0.5, 0)
+
+# Save the result
+output_path = '/mnt/data/wildfires_on_transmission_map.png'
+cv2.imwrite(output_path, result)
+
+# Show the result (using matplotlib for better color representation)
+plt.imshow(cv2.cvtColor(result, cv2.COLOR_BGR2RGB))
+plt.axis('off')
+plt.show()
+
+output_path

@@ -1,0 +1,36 @@
+from scipy.optimize import linprog
+
+# Constants
+# Demand at each node
+demand = [400, 80, 40]  # in MW
+total_demand = sum(demand)
+
+# Generator parameters: Min capacity, Max capacity, and Marginal Cost
+generators = {
+    'A': {'min': 20, 'max': 150, 'cost': 12, 'node': 2},
+    'B': {'min': 30, 'max': 200, 'cost': 15, 'node': 1},
+    'C': {'min': 20, 'max': 150, 'cost': 10, 'node': 3},
+    'D': {'min': 30, 'max': 400, 'cost': 8, 'node': 3}
+}
+
+# Objective coefficients (marginal costs)
+c = [generators['A']['cost'], generators['B']['cost'], generators['C']['cost'], generators['D']['cost']]
+
+# Bounds for each generator output (min capacity, max capacity)
+bounds = [
+    (generators['A']['min'], generators['A']['max']),
+    (generators['B']['min'], generators['B']['max']),
+    (generators['C']['min'], generators['C']['max']),
+    (generators['D']['min'], generators['D']['max'])
+]
+
+# Equality constraints to meet total demand
+A_eq = [[1, 1, 1, 1]]  # Total generation must meet total demand
+b_eq = [total_demand]
+
+# Solve linear programming problem
+result = linprog(c, A_eq=A_eq, b_eq=b_eq, bounds=bounds, method='highs')
+
+# Parse and output the dispatch instructions for each generator
+dispatch = {gen: round(result.x[idx], 2) for idx, gen in enumerate(['A', 'B', 'C', 'D'])}
+dispatch

@@ -1,0 +1,34 @@
+from scipy.optimize import linprog
+
+# Define the demands at the nodes
+L1, L2, L3 = 400, 80, 40  # in MW
+
+# Define generator capacities and costs
+# Min capacity, Max capacity, Marginal cost
+gen_info = [
+    (20, 150, 12),  # Generator A
+    (30, 200, 15),  # Generator B
+    (20, 150, 10),  # Generator C
+    (30, 400, 8)    # Generator D
+]
+
+# Coefficients of the objective function (marginal costs)
+c = [info[2] for info in gen_info]
+
+# Lower bounds and upper bounds for generator capacities
+bounds = [(info[0], info[1]) for info in gen_info]
+
+# Equality constraint: total generation must meet total demand
+A_eq = [[1, 1, 1, 1]]  # Coefficient matrix for equality
+b_eq = [L1 + L2 + L3]  # Total demand
+
+# Solve the linear programming problem for minimum cost
+result = linprog(c, A_eq=A_eq, b_eq=b_eq, bounds=bounds, method='highs')
+
+# Check if the optimization was successful
+if result.success:
+    dispatch_instructions = result.x
+else:
+    dispatch_instructions = "Optimization failed: " + result.message
+
+dispatch_instructions

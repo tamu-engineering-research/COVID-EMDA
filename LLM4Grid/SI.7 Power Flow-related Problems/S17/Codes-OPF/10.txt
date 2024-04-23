@@ -1,0 +1,69 @@
+import pandas as pd
+from pyomo.environ import *
+
+# Example data for generators
+generators = pd.DataFrame({
+    'bus': [1, 2],
+    'Pmin': [10, 10],
+    'Pmax': [100, 100],
+    'cost': [20, 25]  # Linear cost for simplicity
+})
+
+# Example data for demands
+demands = pd.DataFrame({
+    'bus': [1, 2],
+    'demand': [90, 50]
+})
+
+# Transmission line data (simple PTDF matrix for DC approximation)
+lines = pd.DataFrame({
+    'from_bus': [1, 1, 2],
+    'to_bus': [2, 1, 2],
+    'limit': [100, 100, 100],
+    'PTDF': [0.8, -0.2, 0.2]
+})
+
+# Initialize model
+model = ConcreteModel()
+
+# Sets
+model.G = Set(initialize=generators.index)
+model.D = Set(initialize=demands.index)
+model.L = Set(initialize=lines.index)
+
+# Variables
+model.Pg = Var(model.G, within=NonNegativeReals)  # Generation per generator
+
+# Objective: Minimize total generation cost
+def objective_rule(m):
+    return sum(generators.loc[g, 'cost'] * m.Pg[g] for g in m.G)
+model.cost = Objective(rule=objective_rule, sense=minimize)
+
+# Constraint: Power balance at each bus
+def power_balance_rule(m, d):
+    generation = sum(m.Pg[g] for g in m.G if generators.loc[g, 'bus'] == demands.loc[d, 'bus'])
+    load = demands.loc[d, 'demand']
+    return generation == load
+model.power_balance = Constraint(model.D, rule=power_balance_rule)
+
+# Constraint: Generator limits
+def gen_limits_rule(m, g):
+    return (generators.loc[g, 'Pmin'] <= m.Pg[g], m.Pg[g] <= generators.loc[g, 'Pmax'])
+model.gen_limits = Constraint(model.G, rule=gen_limits_rule)
+
+# Constraint: Line flow limits
+def line_flow_limits_rule(m, l):
+    from_bus = lines.loc[l, 'from_bus']
+    to_bus = lines.loc[l, 'to_bus']
+    line_flow = sum(m.Pg[g] * lines.loc[l, 'PTDF'] for g in m.G if generators.loc[g, 'bus'] == from_bus)
+    return abs(line_flow) <= lines.loc[l, 'limit']
+model.line_flow_limits = Constraint(model.L, rule=line_flow_limits_rule)
+
+# Solve the model
+solver = SolverFactory('glpk')
+results = solver.solve(model, tee=True)
+
+# Print results
+print("Optimization Result:", results.solver.status)
+for g in model.G:
+    print(f"Generator {g+1} Power Output: {model.Pg[g].value} MW")

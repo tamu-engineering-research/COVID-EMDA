@@ -1,0 +1,33 @@
+import numpy as np
+
+# Given Y-bus matrix (complex admittance matrix)
+Y_bus = np.array([
+    [-30j, 10j, 10j, 10j],
+    [10j, -20j, 10j, 0],
+    [10j, 10j, -30j, 10j],
+    [10j, 0, 10j, -20j]
+])
+
+# Extracting the imaginary part (susceptance matrix B)
+B = np.imag(Y_bus)
+
+# Power generation (Pg) and load demand (Pd) in pu
+Pg = np.array([2, 2, 4, 1])
+Pd = np.array([0, 1, 4, 0])
+
+# Net power injections P = Pg - Pd
+P = Pg - Pd
+
+# Selecting bus 1 as the slack bus and removing the slack bus row and column from B matrix
+B_reduced = B[1:, 1:]
+
+# Solve for the voltage angles (theta) in radians using the reduced B matrix
+theta_reduced = np.linalg.solve(B_reduced, P[1:])
+
+# Full theta including the slack bus (theta_0 = 0 at the slack bus)
+theta = np.insert(theta_reduced, 0, 0)
+
+# Assuming the voltage magnitudes |V| are 1 pu at all buses for DC power flow approximation
+V_mag = np.ones_like(theta)
+
+theta, V_mag

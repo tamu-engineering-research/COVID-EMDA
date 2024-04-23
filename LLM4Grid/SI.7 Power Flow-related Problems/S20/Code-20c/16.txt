@@ -1,0 +1,33 @@
+import numpy as np
+
+# Given Y-bus matrix (only the imaginary part is useful for DC power flow)
+Y = np.array([
+    [-30j, 10j, 10j, 10j],
+    [10j, -20j, 10j, 0],
+    [10j, 10j, -30j, 10j],
+    [10j, 0, 10j, -20j]
+])
+
+# Extract the imaginary part, i.e., susceptance matrix B
+B = np.imag(Y)
+
+# Power injections (P = generation - demand)
+P = np.array([2 - 0, 2 - 1, 4 - 4, 1 - 0])
+
+# Removing the slack bus row and column (bus 1, index 0)
+B_reduced = B[1:, 1:]
+
+# Solving for angles in radians (theta), B_reduced * theta = P_reduced
+# B' theta = P_reduced, removing the slack bus (first entry)
+theta_reduced = np.linalg.solve(B_reduced, P[1:])
+
+# Inserting slack bus angle theta1 = 0 at the start
+theta = np.insert(theta_reduced, 0, 0)
+
+# Assuming a reference voltage of 1 pu for all buses
+V_mag = np.ones(len(theta))
+
+# Convert angles from radians to degrees
+theta_degrees = np.degrees(theta)
+
+(V_mag, theta_degrees)

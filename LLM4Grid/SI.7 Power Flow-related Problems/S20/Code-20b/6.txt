@@ -1,0 +1,27 @@
+import numpy as np
+
+# Define the Y-bus matrix (in the DC power flow, only the real parts are used, hence the imaginary parts are ignored)
+Y = np.array([
+    [-30j, 10j, 10j, 10j],
+    [10j, -20j, 10j, 0],
+    [10j, 10j, -30j, 10j],
+    [10j, 0, 10j, -20j]
+]).real
+
+# Define the net power injections (P = generation - load)
+P = np.array([2 - 0, 2 - 1, 4 - 4, 1 - 0])  # in pu
+
+# Remove slack bus equations (slack bus is bus 1, index 0)
+Y_reduced = Y[1:, 1:]  # Remove the row and column of the slack bus
+P_reduced = P[1:]     # Remove the power injection of the slack bus
+
+# Solve for the voltage angles at the non-slack buses
+theta_reduced = np.linalg.solve(Y_reduced, P_reduced)
+
+# Include the slack bus angle (0 degrees at bus 1)
+theta = np.insert(theta_reduced, 0, 0)
+
+# Assuming voltage magnitudes are 1 pu (as typical in a DC power flow)
+V_mag = np.ones_like(theta)
+
+theta, V_mag

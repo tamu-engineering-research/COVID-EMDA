@@ -1,0 +1,28 @@
+# We need to correct the approach to create a mask for the red areas, considering the RGBA format.
+
+# Convert image to RGBA format in case it's not already in that format
+img = img.convert("RGBA")
+
+# Convert the image to a numpy array
+data = np.array(img)
+
+# Create a mask that selects the red areas, which are likely to represent fire.
+# In the RGBA format, red is high in the first channel and low in the second and third channels.
+# We use all 255 for alpha to ensure full opacity for the red areas.
+red_mask = (data[:,:,0] > 200) & (data[:,:,1] < 150) & (data[:,:,2] < 150)
+
+# Now create a new image only containing the red areas with transparency elsewhere
+# Initialize an all-zero (transparent) array with the same shape as our input data
+red_only = np.zeros_like(data)
+
+# Apply the red mask, setting those pixels to red
+red_only[red_mask] = [255, 0, 0, 255]
+
+# Convert our red_only array back into an image
+red_only_img = Image.fromarray(red_only)
+
+# Save the result
+output_path = '/mnt/data/wildfire_areas_transparent.png'
+red_only_img.save(output_path)
+
+output_path

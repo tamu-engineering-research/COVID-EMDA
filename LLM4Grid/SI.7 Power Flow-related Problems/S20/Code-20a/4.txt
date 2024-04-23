@@ -1,0 +1,40 @@
+import numpy as np
+
+# Given Y-bus matrix (in pu)
+Y = np.array([
+    [-30j, 10j, 10j, 10j],
+    [10j, -20j, 10j, 0],
+    [10j, 10j, -30j, 10j],
+    [10j, 0, 10j, -20j]
+])
+
+# Given power generation and load demand in pu
+P_gen = np.array([2, 2, 4, 1])  # Generation in pu
+P_load = np.array([0, 1, 4, 0])  # Load demand in pu
+
+# Calculate net power injections (generation - load)
+P_net = P_gen - P_load
+
+# Number of buses
+n_buses = len(P_net)
+
+# Slack bus index (Python indexing starts from 0)
+slack_bus_index = 0
+
+# Remove the row and column corresponding to the slack bus in the Y-bus matrix
+Y_reduced = np.delete(np.delete(Y, slack_bus_index, axis=0), slack_bus_index, axis=1)
+
+# Calculate the inverse of the reduced Y-bus matrix
+Y_reduced_inv = np.linalg.inv(Y_reduced)
+
+# Solve for voltage at non-slack buses
+V_non_slack = np.dot(Y_reduced_inv, P_net[1:n_buses] * 1j)  # Convert to complex power injections
+
+# Insert the slack bus voltage (assumed 1∠0º pu)
+V_full = np.insert(V_non_slack, slack_bus_index, 1+0j)
+
+# Calculate magnitudes and angles of bus voltages
+V_magnitudes = np.abs(V_full)
+V_angles = np.angle(V_full, deg=True)
+
+V_magnitudes, V_angles

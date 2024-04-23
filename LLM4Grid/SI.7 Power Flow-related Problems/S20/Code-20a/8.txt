@@ -1,0 +1,63 @@
+import numpy as np
+
+# Define the Y-bus matrix (admittance matrix)
+Y = np.array([
+    [-30j, 10j, 10j, 10j],
+    [10j, -20j, 10j, 0],
+    [10j, 10j, -30j, 10j],
+    [10j, 0, 10j, -20j]
+])
+
+# Power generation and load demand
+P_gen = np.array([2, 2, 4, 1])  # pu
+P_load = np.array([0, 1, 4, 0])  # pu
+
+# Net power injection (generation - load)
+P_net = P_gen - P_load  # pu
+
+# Number of buses
+n_buses = len(P_net)
+
+# Slack bus index (Python index starts from 0, so bus 1 is index 0)
+slack_bus_index = 0
+
+# Initialize voltage (flat start with 1.0 pu magnitude and 0 angle for all except slack)
+V_mag = np.ones(n_buses)
+V_ang = np.zeros(n_buses)  # angle in radians
+
+# Assume slack bus voltage is 1.0 pu and angle is 0 rad
+V_mag[slack_bus_index] = 1.0
+V_ang[slack_bus_index] = 0.0
+
+# Initialize the complex voltage vector
+V = V_mag * np.exp(1j * V_ang)
+
+# Calculate the current injections I = YV
+I = np.dot(Y, V)
+
+# Calculate the power injections
+S_injected = V * np.conjugate(I)  # S = VI*
+
+# Real power injection must match net power (adjust imaginary part for reactive power balance)
+# Power mismatch
+P_mismatch = P_net - S_injected.real
+
+# Jacobian matrix for power flow, ignoring reactive power for simplification
+# As we focus on active power and angles, reactive power control and voltage magnitudes are not addressed here
+# This basic calculation will be refined with a full power flow solver for detailed analysis including reactive power
+J = np.imag(Y)  # Taking the imaginary part for the Jacobian related to angle adjustment
+
+# Since slack bus voltage and angle are fixed, remove the row and column corresponding to the slack bus
+J_reduced = np.delete(np.delete(J, slack_bus_index, axis=0), slack_bus_index, axis=1)
+
+# Solve the linear system to find the angle adjustments
+delta_theta = np.linalg.solve(J_reduced, P_mismatch[1:])
+
+# Update angles
+V_ang[1:] += delta_theta
+
+# Recalculate complex voltages
+V = V_mag * np.exp(1j * V_ang)
+
+# Print results
+V_mag, np.degrees(V_ang)  # Magnitudes remain 1 pu, angles are updated and converted to degrees

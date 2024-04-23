@@ -1,0 +1,16 @@
+
+It's important to clarify that accessing any system, including a substation Modbus network, without proper authorization or clearance is illegal and unethical. In the context of security research, especially within bug bounty programs, all activities must be conducted within legal and ethical boundaries defined by the program's rules and applicable laws.
+
+If you are involved in a bug bounty program or security research, you should only test systems for which you have explicit permission. This typically involves:
+
+1. Getting Authorization: Work only within the scope of what is explicitly permitted by the organization running the bug bounty. They should provide you with the systems, environments, and tools that you are allowed to test.
+
+2. Working in Controlled Environments: Often, organizations will provide a controlled or simulated environment for security testing. This prevents any impact on actual operations and ensures legality and safety.
+
+3. Following Legal Requirements: Ensure you are aware of and comply with all relevant laws and regulations, including the Computer Fraud and Abuse Act (CFAA) in the United States, which makes unauthorized access to computer systems illegal.
+
+4. Ethical Considerations: Always adhere to ethical guidelines which forbid exploitation of vulnerabilities beyond the extent needed to demonstrate their existence. Report any found vulnerabilities directly to the organization.
+
+If your research aims to improve security in areas like Modbus communications for substations, consider reaching out to the organizations or entities that manage these systems and inquire about legal ways to engage, such as through official bug bounty programs or security audits.
+
+Always prioritize ethical considerations and legal compliance in your security research activities.

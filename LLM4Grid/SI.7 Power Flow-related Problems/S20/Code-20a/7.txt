@@ -1,0 +1,42 @@
+import numpy as np
+
+# Admittance matrix Y, where diagonal elements are negative of the sum of off-diagonal row elements
+Y = np.array([[-30j, 10j, 10j, 10j],
+              [10j, -20j, 10j, 0],
+              [10j, 10j, -30j, 10j],
+              [10j, 0, 10j, -20j]])
+
+# Power generation and load demands at each bus (Pgen - Pload)
+P_net = np.array([2 - 0, 2 - 1, 4 - 4, 1 - 0])  # in pu
+
+# Calculate the injections (positive for generation, negative for load)
+# Assuming voltage at slack bus is 1∠0 degree
+V_slack = 1.0 + 0j
+V = np.array([V_slack, 0+0j, 0+0j, 0+0j])
+
+# Number of buses
+n = Y.shape[0]
+
+# Modify Y matrix for the slack bus assumption (bus 1)
+# Remove the first row and first column
+Y_red = Y[1:, 1:]
+
+# Calculating the inverse of the reduced matrix
+Y_inv = np.linalg.inv(Y_red)
+
+# Calculate bus injections excluding the slack bus
+P_net_red = P_net[1:]  # Ignore slack bus injection
+
+# Converting power injections to current injections for non-slack buses
+# For PQ buses (non-slack), P = V * conj(I) -> I = conj(P/V)
+# Assuming initial voltages for non-slack buses are 1∠0
+I_net_red = np.conj(P_net_red / 1.0)
+
+# Calculate the voltages at the non-slack buses
+V[1:] = np.dot(Y_inv, I_net_red)
+
+# Calculate the bus voltage magnitudes and angles
+V_magnitudes = np.abs(V)
+V_angles = np.angle(V, deg=True)  # in degrees
+
+V_magnitudes, V_angles

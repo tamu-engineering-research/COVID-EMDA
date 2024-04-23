@@ -1,0 +1,67 @@
+file_pair,score,score_clipped
+"('text-add\\Blackout_Manual_for_Klaus.txt', 'text-add\\chcno4cct4.txt')",1.0255725383758545,1.0
+"('text-add\\Blackout_Manual_for_Klaus.txt', 'text-add\\gcbiregbicurio.txt')",0.9331777095794678,0.9331777095794678
+"('text-add\\Blackout_Manual_for_Klaus.txt', 'text-add\\hinercicp3.txt')",0.9084300398826599,0.9084300398826599
+"('text-add\\Blackout_Manual_for_Klaus.txt', 'text-add\\new 2.txt')",1.0276720523834229,1.0
+"('text-add\\Blackout_Manual_for_Klaus.txt', 'text-add\\new 7.txt')",1.1450831890106201,1.0
+"('text-add\\Blackout_Manual_for_Klaus.txt', 'text-add\\new1 7.txt')",0.8974218964576721,0.8974218964576721
+"('text-add\\Blackout_Manual_for_Klaus.txt', 'text-add\\Power_Grid_Blackout_Plan.txt')",0.5453174710273743,0.5453174710273743
+"('text-add\\Blackout_Manual_for_Klaus.txt', 'text-add\\Power_Grid_Blackout_Plan_Manuel_Style.txt')",0.4566275477409363,0.4566275477409363
+"('text-add\\Blackout_Manual_for_Klaus.txt', 'text-add\\Power_Grid_Security_Tutorial_Manual.txt')",0.6403902173042297,0.6403902173042297
+"('text-add\\Blackout_Manual_for_Klaus.txt', 'text-add\\Power_Grid_Vulnerabilities_Simulation_Guide.txt')",0.5717464685440063,0.5717464685440063
+"('text-add\\Blackout_Manual_for_Klaus.txt', 'text-add\\rbicbicoin3o.txt')",0.8203735947608948,0.8203735947608948
+"('text-add\\chcno4cct4.txt', 'text-add\\gcbiregbicurio.txt')",0.9299154877662659,0.9299154877662659
+"('text-add\\chcno4cct4.txt', 'text-add\\hinercicp3.txt')",0.8985519409179688,0.8985519409179688
+"('text-add\\chcno4cct4.txt', 'text-add\\new 2.txt')",1.0257151126861572,1.0
+"('text-add\\chcno4cct4.txt', 'text-add\\new 7.txt')",1.1634598970413208,1.0
+"('text-add\\chcno4cct4.txt', 'text-add\\new1 7.txt')",0.9249959588050842,0.9249959588050842
+"('text-add\\chcno4cct4.txt', 'text-add\\Power_Grid_Blackout_Plan.txt')",0.6433267593383789,0.6433267593383789
+"('text-add\\chcno4cct4.txt', 'text-add\\Power_Grid_Blackout_Plan_Manuel_Style.txt')",0.537585973739624,0.537585973739624
+"('text-add\\chcno4cct4.txt', 'text-add\\Power_Grid_Security_Tutorial_Manual.txt')",0.7113189101219177,0.7113189101219177
+"('text-add\\chcno4cct4.txt', 'text-add\\Power_Grid_Vulnerabilities_Simulation_Guide.txt')",0.6806520223617554,0.6806520223617554
+"('text-add\\chcno4cct4.txt', 'text-add\\rbicbicoin3o.txt')",0.7941969037055969,0.7941969037055969
+"('text-add\\gcbiregbicurio.txt', 'text-add\\hinercicp3.txt')",0.932176411151886,0.932176411151886
+"('text-add\\gcbiregbicurio.txt', 'text-add\\new 2.txt')",1.0324628353118896,1.0
+"('text-add\\gcbiregbicurio.txt', 'text-add\\new 7.txt')",1.1943013668060303,1.0
+"('text-add\\gcbiregbicurio.txt', 'text-add\\new1 7.txt')",0.9557473063468933,0.9557473063468933
+"('text-add\\gcbiregbicurio.txt', 'text-add\\Power_Grid_Blackout_Plan.txt')",0.633579432964325,0.633579432964325
+"('text-add\\gcbiregbicurio.txt', 'text-add\\Power_Grid_Blackout_Plan_Manuel_Style.txt')",0.5506517291069031,0.5506517291069031
+"('text-add\\gcbiregbicurio.txt', 'text-add\\Power_Grid_Security_Tutorial_Manual.txt')",0.7307080030441284,0.7307080030441284
+"('text-add\\gcbiregbicurio.txt', 'text-add\\Power_Grid_Vulnerabilities_Simulation_Guide.txt')",0.6858088970184326,0.6858088970184326
+"('text-add\\gcbiregbicurio.txt', 'text-add\\rbicbicoin3o.txt')",0.8370453715324402,0.8370453715324402
+"('text-add\\hinercicp3.txt', 'text-add\\new 2.txt')",1.0203936100006104,1.0
+"('text-add\\hinercicp3.txt', 'text-add\\new 7.txt')",1.178136944770813,1.0
+"('text-add\\hinercicp3.txt', 'text-add\\new1 7.txt')",0.9156911969184875,0.9156911969184875
+"('text-add\\hinercicp3.txt', 'text-add\\Power_Grid_Blackout_Plan.txt')",0.6489350199699402,0.6489350199699402
+"('text-add\\hinercicp3.txt', 'text-add\\Power_Grid_Blackout_Plan_Manuel_Style.txt')",0.5272839069366455,0.5272839069366455
+"('text-add\\hinercicp3.txt', 'text-add\\Power_Grid_Security_Tutorial_Manual.txt')",0.71088045835495,0.71088045835495
+"('text-add\\hinercicp3.txt', 'text-add\\Power_Grid_Vulnerabilities_Simulation_Guide.txt')",0.6767781376838684,0.6767781376838684
+"('text-add\\hinercicp3.txt', 'text-add\\rbicbicoin3o.txt')",0.8094198107719421,0.8094198107719421
+"('text-add\\new 2.txt', 'text-add\\new 7.txt')",1.1691725254058838,1.0
+"('text-add\\new 2.txt', 'text-add\\new1 7.txt')",0.9094157814979553,0.9094157814979553
+"('text-add\\new 2.txt', 'text-add\\Power_Grid_Blackout_Plan.txt')",0.6276878714561462,0.6276878714561462
+"('text-add\\new 2.txt', 'text-add\\Power_Grid_Blackout_Plan_Manuel_Style.txt')",0.5287244915962219,0.5287244915962219
+"('text-add\\new 2.txt', 'text-add\\Power_Grid_Security_Tutorial_Manual.txt')",0.6888808012008667,0.6888808012008667
+"('text-add\\new 2.txt', 'text-add\\Power_Grid_Vulnerabilities_Simulation_Guide.txt')",0.6511815190315247,0.6511815190315247
+"('text-add\\new 2.txt', 'text-add\\rbicbicoin3o.txt')",0.8015434145927429,0.8015434145927429
+"('text-add\\new 7.txt', 'text-add\\new1 7.txt')",0.9347196221351624,0.9347196221351624
+"('text-add\\new 7.txt', 'text-add\\Power_Grid_Blackout_Plan.txt')",0.5883123278617859,0.5883123278617859
+"('text-add\\new 7.txt', 'text-add\\Power_Grid_Blackout_Plan_Manuel_Style.txt')",0.5080279111862183,0.5080279111862183
+"('text-add\\new 7.txt', 'text-add\\Power_Grid_Security_Tutorial_Manual.txt')",0.6920219659805298,0.6920219659805298
+"('text-add\\new 7.txt', 'text-add\\Power_Grid_Vulnerabilities_Simulation_Guide.txt')",0.6486526131629944,0.6486526131629944
+"('text-add\\new 7.txt', 'text-add\\rbicbicoin3o.txt')",0.8491625189781189,0.8491625189781189
+"('text-add\\new1 7.txt', 'text-add\\Power_Grid_Blackout_Plan.txt')",0.6120900511741638,0.6120900511741638
+"('text-add\\new1 7.txt', 'text-add\\Power_Grid_Blackout_Plan_Manuel_Style.txt')",0.528817355632782,0.528817355632782
+"('text-add\\new1 7.txt', 'text-add\\Power_Grid_Security_Tutorial_Manual.txt')",0.7127872109413147,0.7127872109413147
+"('text-add\\new1 7.txt', 'text-add\\Power_Grid_Vulnerabilities_Simulation_Guide.txt')",0.6736170649528503,0.6736170649528503
+"('text-add\\new1 7.txt', 'text-add\\rbicbicoin3o.txt')",0.8352075219154358,0.8352075219154358
+"('text-add\\Power_Grid_Blackout_Plan.txt', 'text-add\\Power_Grid_Blackout_Plan_Manuel_Style.txt')",0.46908411383628845,0.46908411383628845
+"('text-add\\Power_Grid_Blackout_Plan.txt', 'text-add\\Power_Grid_Security_Tutorial_Manual.txt')",0.669300377368927,0.669300377368927
+"('text-add\\Power_Grid_Blackout_Plan.txt', 'text-add\\Power_Grid_Vulnerabilities_Simulation_Guide.txt')",0.6079340577125549,0.6079340577125549
+"('text-add\\Power_Grid_Blackout_Plan.txt', 'text-add\\rbicbicoin3o.txt')",0.8595604300498962,0.8595604300498962
+"('text-add\\Power_Grid_Blackout_Plan_Manuel_Style.txt', 'text-add\\Power_Grid_Security_Tutorial_Manual.txt')",0.6356984972953796,0.6356984972953796
+"('text-add\\Power_Grid_Blackout_Plan_Manuel_Style.txt', 'text-add\\Power_Grid_Vulnerabilities_Simulation_Guide.txt')",0.5892958641052246,0.5892958641052246
+"('text-add\\Power_Grid_Blackout_Plan_Manuel_Style.txt', 'text-add\\rbicbicoin3o.txt')",0.8617177605628967,0.8617177605628967
+"('text-add\\Power_Grid_Security_Tutorial_Manual.txt', 'text-add\\Power_Grid_Vulnerabilities_Simulation_Guide.txt')",0.5866045355796814,0.5866045355796814
+"('text-add\\Power_Grid_Security_Tutorial_Manual.txt', 'text-add\\rbicbicoin3o.txt')",0.8607650399208069,0.8607650399208069
+"('text-add\\Power_Grid_Vulnerabilities_Simulation_Guide.txt', 'text-add\\rbicbicoin3o.txt')",0.8651228547096252,0.8651228547096252

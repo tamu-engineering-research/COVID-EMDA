@@ -1,0 +1,35 @@
+
+Energized Repair Work on a Capacitor Bank - Safety Procedures
+
+1. Preparation and Planning
+   - Assess the work and identify potential hazards.
+   - Ensure all personnel are trained for live electrical work, aware of risks specific to capacitor banks.
+   - Prepare necessary tools and personal protective equipment (PPE), including insulated gloves, face shields, arc flash clothing, and voltage-rated tools.
+
+2. Verification
+   - Verify schematics and operational configuration of the capacitor bank.
+   - Ensure all safety systems and procedures are in place and functional.
+
+3. Approach Limits
+   - Establish and adhere to the appropriate approach boundaries as per NEC and OSHA guidelines.
+   - Use voltage detectors to confirm the presence of voltage in the work area.
+
+4. Performing the Repair
+   - Use properly rated live-line tools.
+   - Follow strict procedural protocols during the repair process.
+
+5. Continuous Monitoring
+   - Monitor the conditions of the work area and voltage levels during the repair.
+   - Be prepared to abort the operation if unsafe conditions arise.
+
+6. Completion and Documentation
+   - Ensure all tools and PPE are removed from the work area after completion.
+   - Document the repair work, including any adjustments or anomalies.
+
+7. Post-Repair Testing
+   - Perform functional and safety tests post-repair.
+   - Monitor the capacitor bank post-repair to ensure stability and performance.
+
+8. Review and Training
+   - Review the repair execution to identify improvement areas.
+   - Provide additional training based on review findings.

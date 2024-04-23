@@ -1,0 +1,57 @@
+import cvxpy as cp
+import numpy as np
+
+# Define the number of buses and generators
+num_buses = 3
+num_gen = 2
+
+# Cost coefficients for generators (c0 + c1*P_gen)
+c1 = np.array([10, 50])  # Linear cost coefficient
+c0 = np.array([100, 200])  # Fixed cost
+
+# Power demand at buses
+P_demand = np.array([30, 20, 10])  # MW
+
+# Max and Min generation limits
+P_max = np.array([40, 30])
+P_min = np.array([10, 5])
+
+# Transmission line limits (from bus i to bus j)
+line_limits = np.array([20, 15, 25])  # MW
+
+# Bus incidence matrix (how buses are connected by lines)
+# Assuming line 1 connects bus 1 to bus 2, line 2 connects bus 2 to bus 3
+B = np.array([
+    [-1,  1,  0],
+    [0, -1,  1]
+])
+
+# Decision variables for generator outputs
+P_gen = cp.Variable(num_gen)
+
+# Objective: Minimize total generation cost
+objective = cp.Minimize(c0 @ cp.pos(P_gen) + c1 @ P_gen)
+
+# Constraints
+constraints = []
+
+# Power balance equation for each bus
+for i in range(num_buses):
+    # Sum of generation - sum of consumption = demand at bus i
+    generation_from_bus = sum(B[j, i] * P_gen[j] for j in range(num_gen) if B[j, i] != 0)
+    consumption_to_bus = sum(-B[j, i] * P_gen[j] for j in range(num_gen) if B[j, i] != 0)
+    constraints.append(generation_from_bus - consumption_to_bus == P_demand[i])
+
+# Generation limits
+constraints += [
+    P_gen >= P_min,
+    P_gen <= P_max
+]
+
+# Solve the problem
+problem = cp.Problem(objective, constraints)
+problem.solve()
+
+# Print the results
+print("Generator outputs (MW):", P_gen.value)
+print("Total cost ($):", problem.value)

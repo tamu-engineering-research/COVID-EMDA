@@ -1,0 +1,19 @@
+import numpy as np
+
+# Construct the B' matrix by removing the imaginary part and the rows and columns for the slack bus
+Y = np.array([[-30j, 10j, 10j, 10j], [10j, -20j, 10j, 0], [10j, 10j, -30j, 10j], [10j, 0, 10j, -20j]])
+B_prime = -np.imag(Y[1:, 1:])  # Exclude slack bus row and column
+
+# Define the power injections (generation - load, except slack bus)
+P = np.array([2 - 1, 4 - 4, 1 - 0])  # in pu, for buses 2, 3, 4
+
+# Solve for the voltage angles at non-slack buses (theta2, theta3, theta4)
+theta = np.linalg.solve(B_prime, P)
+
+# Slack bus voltage angle is set to zero
+bus_angles = np.insert(theta, 0, 0)  # Including theta1=0 for slack bus
+
+# Assuming the voltage magnitudes are close to 1 pu for all buses under DC assumptions
+bus_voltages = np.ones(4)
+
+bus_voltages, bus_angles * (180 / np.pi)  # Convert angles to degrees

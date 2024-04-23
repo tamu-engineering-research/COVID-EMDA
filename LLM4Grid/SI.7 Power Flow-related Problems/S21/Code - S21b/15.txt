@@ -1,0 +1,28 @@
+from scipy.optimize import linprog
+
+# Define the problem parameters
+demand = [400, 80, 40]  # Demands at Nodes 1, 2, 3 respectively
+min_capacity = [20, 30, 20, 30]  # Minimum capacities of Generators A, B, C, D
+max_capacity = [150, 200, 150, 400]  # Maximum capacities of Generators A, B, C, D
+marginal_cost = [12, 15, 10, 8]  # Marginal costs of Generators A, B, C, D
+
+# Define the bounds for each generator's output (x_min <= x <= x_max)
+bounds = [(min_capacity[i], max_capacity[i]) for i in range(4)]
+
+# Define the constraints
+# Constraint: total generation must meet total demand
+total_demand = sum(demand)
+coefficients = [1, 1, 1, 1]  # Coefficient for each generator's output in the total power balance equation
+constraint_eq = [[coefficients], [total_demand]]  # Only one equation, sum of all generator outputs must equal total demand
+
+# Setup the optimization problem
+res = linprog(
+    c=marginal_cost,  # Objective function (minimize cost)
+    A_eq=constraint_eq[0],  # Coefficients for the equality constraint equations
+    b_eq=constraint_eq[1],  # Right-hand side of the equality constraint equations
+    bounds=bounds,  # Bounds for generator outputs
+    method='highs'  # Using the HiGHS method for linear programming
+)
+
+# Output the optimized generator dispatch amounts
+res.x

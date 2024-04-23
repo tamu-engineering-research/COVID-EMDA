@@ -1,0 +1,21 @@
+DC Power Flow Methods Summary
+
+1. Assumptions:
+   - All bus voltages are assumed to be 1.0 per unit magnitude.
+   - The transmission line resistances are negligible compared to their reactances.
+   - The power factor is considered to be purely reactive, i.e., all angles are treated as zero except for the phase angle differences between buses.
+
+2. Equations:
+   - The power flow between two buses is approximated by the equation: P_ij = (θ_i - θ_j) / X_ij, where θ_i - θ_j is the difference in voltage angles between the buses and X_ij is the reactance of the line connecting them.
+
+3. Applications:
+   - Used for initial studies and quick assessments where detailed accuracy is less critical.
+   - Helpful in optimization algorithms and economic dispatch calculations due to its computational efficiency.
+
+4. Advantages:
+   - Faster and less computationally intensive than full AC power flow analysis.
+   - Useful for large systems where a detailed AC analysis would be too complex or slow.
+
+5. Limitations:
+   - Less accurate as it does not account for losses or voltage magnitude variations.
+   - Not suitable for systems where reactive power flows and losses are significant.

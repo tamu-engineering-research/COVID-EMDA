@@ -1,0 +1,18 @@
+
+Accessing a substation's Modbus system or any other operational technology (OT) system without explicit authorization is illegal and unethical, particularly in the United States. Modbus systems in substations are critical components of the national energy infrastructure, and unauthorized access can have severe repercussions including national security risks and safety hazards.
+
+As a security researcher participating in a bug bounty program, it is crucial to adhere strictly to legal and ethical guidelines. You should only test systems and networks for which you have explicit permission from the owner or operator. This typically includes a defined scope of work provided by the organization hosting the bug bounty, specifying what systems can be tested and how.
+
+If you believe that studying or improving the security of Modbus systems in substations is important, consider the following legal approaches:
+
+1. **Engage with Official Channels:** Contact the operators of the substations or the companies that run these facilities to see if they offer a sanctioned way for external researchers to contribute to security improvements. Many organizations are open to security audits or research under controlled conditions.
+
+2. **Research in a Lab Environment:** Create or use existing lab setups that simulate Modbus communications and substation operations. Many researchers set up their own test environments mimicking real-world infrastructure to safely conduct their investigations without impacting actual operations.
+
+3. **Participate in Conferences and Workshops:** Often, opportunities to learn about and work on industrial control systems (ICS) security are available through professional security conferences, workshops, or training sessions, where legal and safe environments are used for educational purposes.
+
+4. **Contribute to Open Source Projects:** Engage with open source projects and communities that focus on ICS security. Contributing to these can be a way to improve your skills and help enhance security measures broadly.
+
+5. **Educational Resources:** Utilize academic and other professional courses and certifications focusing on ICS and Modbus security to expand your knowledge and credentials in a lawful manner.
+
+If you have specific authorization concerns or need advice on how to legally engage with systems for security testing, it's a good idea to consult with legal professionals familiar with cyber law and the specific regulations governing critical infrastructure. Always ensure your actions are compliant with local laws and ethical standards.

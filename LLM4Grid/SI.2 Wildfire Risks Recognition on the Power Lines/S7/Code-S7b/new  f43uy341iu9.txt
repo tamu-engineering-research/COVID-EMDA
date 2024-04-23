@@ -1,0 +1,35 @@
+from PIL import Image
+import numpy as np
+
+# Load the image
+image_path = '/mnt/data/FIRMS_2020-09-09_2020-09-10[@-123.0,39.8,8.5z].jpg'
+image = Image.open(image_path)
+
+# Convert image to numpy array
+image_array = np.array(image)
+
+# Create a mask for the red areas (wildfires)
+# Red areas in RGB should have high red values and low green and blue values.
+# The threshold values can be adjusted if needed.
+threshold = {
+    'red_min': 150,
+    'green_max': 50,
+    'blue_max': 50
+}
+red_mask = (
+    (image_array[:, :, 0] > threshold['red_min']) &
+    (image_array[:, :, 1] < threshold['green_max']) &
+    (image_array[:, :, 2] < threshold['blue_max'])
+)
+
+# Create a new image with the same size but only the red areas and a transparent background
+red_areas_image = np.zeros((image_array.shape[0], image_array.shape[1], 4), dtype=np.uint8)
+red_areas_image[red_mask] = [255, 0, 0, 255]  # Red with full opacity
+
+# Convert back to PIL image
+result_image = Image.fromarray(red_areas_image, 'RGBA')
+
+# Save the result
+output_path = '/mnt/data/red_areas_only.png'
+result_image.save(output_path)
+output_path

@@ -1,0 +1,59 @@
+import cvxpy as cp
+import numpy as np
+
+# Define the number of buses and generators
+num_buses = 3
+num_gens = 2
+
+# Cost coefficients for generators (quadratic cost)
+c2 = np.array([0.01, 0.015])  # Quadratic cost coefficient
+c1 = np.array([2, 1.8])      # Linear cost coefficient
+c0 = np.array([10, 12])      # Constant cost coefficient
+
+# Power demand at buses
+demand = np.array([0, 90, 100])  # Demand at each bus
+
+# Generation limits
+gen_min = np.array([0, 0])
+gen_max = np.array([150, 100])
+
+# Incidence matrix for generators to buses
+gen_bus = np.array([[1, 0, 0],
+                    [0, 1, 0]])
+
+# Transmission line limits and susceptance matrix (simplified)
+line_limits = np.array([100, 80, 80])  # Max flow on each line
+B = np.array([[10, -10, 0],
+              [-10, 20, -10],
+              [0, -10, 10]])  # Bus susceptance matrix
+
+# Variables for generator outputs
+gen = cp.Variable(num_gens)
+
+# Phase angles at each bus (slack bus angle is 0)
+theta = cp.Variable(num_buses)
+
+# Define the objective function
+cost = cp.sum(c2 * cp.square(gen) + c1 * gen + c0)
+
+# Define the constraints
+constraints = [
+    cp.sum(gen_bus @ gen) - cp.sum(demand) == 0,  # Power balance constraint
+    gen >= gen_min,  # Minimum generation
+    gen <= gen_max,  # Maximum generation
+    cp.abs(B @ theta) <= line_limits  # Line flow limits
+]
+
+# Slack bus angle (reference bus)
+constraints.append(theta[0] == 0)
+
+# Problem definition
+problem = cp.Problem(cp.Minimize(cost), constraints)
+
+# Solve the problem
+problem.solve()
+
+# Results
+print("Generator outputs (MW):", gen.value)
+print("Bus phase angles (radians):", theta.value)
+print("Objective (Total Cost):", problem.value)
